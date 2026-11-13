@@ -77,3 +77,29 @@ retain gradient history. Therefore low loss alone cannot certify either
 negligible epsilon or a small normalized margin gap. We report the first retained
 checkpoint below loss 1e-8 and its moment ratios without treating it as the exact
 first crossing or as a separate early-stopped training run.
+
+
+## 2026-11-13 primary-source follow-up
+
+The final NeurIPS paper's checklist item 5 explicitly answers **No** to open
+access to data and code sufficient to reproduce the experiments. Item 6 states
+that the experimental details are supplied. These are the authors' statements
+at publication, not proof that no code could have been released later. A fresh
+check of the arXiv version history and the authors' publication entries still
+located no verified implementation or erratum. OpenReview remained behind a
+verification challenge, so mirrored review/rebuttal text is still excluded.
+
+A newer independent primary source, Gronich and Vardi,
+[Watch Your Step: Adam's Margin Maximization Bias Depends on the Learning Rate
+Schedule](https://arxiv.org/html/2611.01929v1), Appendix F.2 / Figure 5,
+measures the relative norm difference between updates with and without epsilon
+at the **same** moments. Its MNIST network experiments also show epsilon
+becoming influential during finite training. This is related mechanism evidence,
+not a reproduction of Zhang et al.'s binary-linear experiment, and not evidence
+of an author implementation error. The model, bias correction, beta2 and other
+settings differ. Its deep-model learning-rate claims are not transferred to our
+linear model.
+
+The source audit record is retained with the
+[full literal replay](primary_sources_20261113.json).
+No author was contacted and no external message was sent.

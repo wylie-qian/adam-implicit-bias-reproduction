@@ -1,0 +1,3263 @@
+{
+  "schema_version": 1,
+  "comparison": "Independent native long-double raw recurrence versus retained binary64 scaled recurrence",
+  "relative_norm_definition": "||raw-replay minus raw-reference||_infinity / max(||raw-replay||_infinity, ||raw-reference||_infinity); zero for two zero vectors",
+  "arithmetic_difference": "Replay uses long-double decimal beta constants, arithmetic, powers and scalar reductions. Baseline uses binary64 constants, NumPy/BLAS and joint moment scaling. Differences are reported without silently treating them as zero.",
+  "conditions": [
+    {
+      "a": 0.5,
+      "mode": "zero_epsilon",
+      "checkpoints": 61,
+      "raw_run": {
+        "completed_steps": 1000000,
+        "a": 0.5,
+        "epsilon": 0,
+        "LDBL_MANT_DIG": 64,
+        "LDBL_MAX_EXP": 16384,
+        "zero_logistic_weight_count": 237949,
+        "first_zero_logistic_weight_step": 826832,
+        "zero_nonzero_gradient_square_count": 0,
+        "first_zero_nonzero_gradient_square_step": 0,
+        "max_margin_evaluated": 12917.443848585928,
+        "min_nonzero_logistic_weight_log10": -4950.438278694171,
+        "min_positive_second_moment_log10": -1706.123219356646,
+        "long_double_min_subnormal_log10": -4950.438278694171,
+        "checkpoints": 61,
+        "wall_seconds": 24.07228332
+      },
+      "maximum_differences": {
+        "max_weight_absolute_difference": 0.016865450053866728,
+        "weight_relative_linf_difference": 7.884939355539603e-05,
+        "first_moment_relative_linf_difference": 0.00024383263523812532,
+        "second_moment_relative_linf_difference": 8.078675108440314e-05,
+        "relative_gap_difference": 5.929271600702002e-06
+      },
+      "endpoint": {
+        "step": 1000000,
+        "max_weight_absolute_difference": 0.013728041855559037,
+        "weight_relative_linf_difference": 1.0082089557253365e-05,
+        "first_moment_relative_linf_difference": 8.384501846240156e-05,
+        "second_moment_relative_linf_difference": 2.1141999923972293e-05,
+        "relative_gap_difference": 6.481591618978655e-08,
+        "relative_gap": 0.006572482299534443,
+        "min_log10_raw_second_moment": -1706.0496371818322
+      },
+      "trace": [
+        {
+          "step": 0,
+          "max_weight_absolute_difference": 0.0,
+          "weight_relative_linf_difference": 0.0,
+          "first_moment_relative_linf_difference": 0.0,
+          "second_moment_relative_linf_difference": 0.0,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 6.490235247011739,
+          "min_log10_raw_second_moment": null
+        },
+        {
+          "step": 1,
+          "max_weight_absolute_difference": 8.990204414249803e-16,
+          "weight_relative_linf_difference": 2.95791231470394e-16,
+          "first_moment_relative_linf_difference": 3.1416992648832134e-16,
+          "second_moment_relative_linf_difference": 1.1341357450439578e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 3.9772445479817407,
+          "min_log10_raw_second_moment": -9.268051993393502
+        },
+        {
+          "step": 2,
+          "max_weight_absolute_difference": 1.614160194396419e-15,
+          "weight_relative_linf_difference": 5.057494798458062e-16,
+          "first_moment_relative_linf_difference": 5.589968457625911e-16,
+          "second_moment_relative_linf_difference": 1.1526924047205409e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 3.3169276565878194,
+          "min_log10_raw_second_moment": -5.296708693705386
+        },
+        {
+          "step": 3,
+          "max_weight_absolute_difference": 2.185751579730777e-15,
+          "weight_relative_linf_difference": 6.513491529041705e-16,
+          "first_moment_relative_linf_difference": 4.931017678659768e-16,
+          "second_moment_relative_linf_difference": 1.1779126794729535e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 2.8972612938884934,
+          "min_log10_raw_second_moment": -5.265653049614615
+        },
+        {
+          "step": 4,
+          "max_weight_absolute_difference": 3.639233012164844e-15,
+          "weight_relative_linf_difference": 1.0185499174498813e-15,
+          "first_moment_relative_linf_difference": 4.999798440459187e-16,
+          "second_moment_relative_linf_difference": 1.1463464279354112e-15,
+          "relative_gap_difference": 1.7763568394002505e-15,
+          "relative_gap": 2.1673176122388327,
+          "min_log10_raw_second_moment": -4.86311686135046
+        },
+        {
+          "step": 5,
+          "max_weight_absolute_difference": 4.4933674836489246e-15,
+          "weight_relative_linf_difference": 1.1621017164099575e-15,
+          "first_moment_relative_linf_difference": 5.885964593862557e-16,
+          "second_moment_relative_linf_difference": 1.2389608214549206e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 2.273721535944678,
+          "min_log10_raw_second_moment": -4.676636142083781
+        },
+        {
+          "step": 7,
+          "max_weight_absolute_difference": 3.560086253573402e-15,
+          "weight_relative_linf_difference": 7.243009181968014e-16,
+          "first_moment_relative_linf_difference": 9.338182038797654e-16,
+          "second_moment_relative_linf_difference": 1.362062979917468e-15,
+          "relative_gap_difference": 1.7763568394002505e-15,
+          "relative_gap": 2.1507781408451,
+          "min_log10_raw_second_moment": -4.685249564367379
+        },
+        {
+          "step": 8,
+          "max_weight_absolute_difference": 3.77231882883744e-15,
+          "weight_relative_linf_difference": 6.984896647272242e-16,
+          "first_moment_relative_linf_difference": 1.2289020883174257e-15,
+          "second_moment_relative_linf_difference": 1.3938783104773924e-15,
+          "relative_gap_difference": 1.9984014443252818e-15,
+          "relative_gap": 1.777749044704301,
+          "min_log10_raw_second_moment": -4.633972926478995
+        },
+        {
+          "step": 11,
+          "max_weight_absolute_difference": 3.338041648648371e-15,
+          "weight_relative_linf_difference": 5.414192777267041e-16,
+          "first_moment_relative_linf_difference": 1.6370942210196605e-15,
+          "second_moment_relative_linf_difference": 1.3805306537330017e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 1.4002883448847818,
+          "min_log10_raw_second_moment": -4.406766821169936
+        },
+        {
+          "step": 13,
+          "max_weight_absolute_difference": 3.907464629637758e-15,
+          "weight_relative_linf_difference": 6.006665177361115e-16,
+          "first_moment_relative_linf_difference": 1.9714852928966784e-15,
+          "second_moment_relative_linf_difference": 1.5046949730770621e-15,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 1.0349000229141612,
+          "min_log10_raw_second_moment": -4.305312177221663
+        },
+        {
+          "step": 17,
+          "max_weight_absolute_difference": 5.143888787140227e-15,
+          "weight_relative_linf_difference": 7.000059526296896e-16,
+          "first_moment_relative_linf_difference": 1.7472408790230208e-15,
+          "second_moment_relative_linf_difference": 1.6050637081820075e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.951984582723864,
+          "min_log10_raw_second_moment": -4.308994342196768
+        },
+        {
+          "step": 21,
+          "max_weight_absolute_difference": 4.197163450125885e-15,
+          "weight_relative_linf_difference": 5.351357977675082e-16,
+          "first_moment_relative_linf_difference": 1.3482003231562167e-15,
+          "second_moment_relative_linf_difference": 1.6030579386728431e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.8719717924628707,
+          "min_log10_raw_second_moment": -4.323823420908562
+        },
+        {
+          "step": 26,
+          "max_weight_absolute_difference": 5.142587744533245e-15,
+          "weight_relative_linf_difference": 6.410084616274033e-16,
+          "first_moment_relative_linf_difference": 1.6275075493456238e-15,
+          "second_moment_relative_linf_difference": 1.565790432533377e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.8031235003820947,
+          "min_log10_raw_second_moment": -4.344269678534513
+        },
+        {
+          "step": 33,
+          "max_weight_absolute_difference": 3.4612070154427244e-15,
+          "weight_relative_linf_difference": 4.2414775605465024e-16,
+          "first_moment_relative_linf_difference": 3.61132907098148e-15,
+          "second_moment_relative_linf_difference": 2.198336916112718e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.7819749641842825,
+          "min_log10_raw_second_moment": -4.371960394563377
+        },
+        {
+          "step": 41,
+          "max_weight_absolute_difference": 5.052382123782451e-15,
+          "weight_relative_linf_difference": 6.163025626068304e-16,
+          "first_moment_relative_linf_difference": 2.121707459767288e-15,
+          "second_moment_relative_linf_difference": 1.7586572823590865e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.6312877785810693,
+          "min_log10_raw_second_moment": -4.406668818603271
+        },
+        {
+          "step": 51,
+          "max_weight_absolute_difference": 4.853756285783106e-15,
+          "weight_relative_linf_difference": 5.884963072288476e-16,
+          "first_moment_relative_linf_difference": 3.94092861350936e-15,
+          "second_moment_relative_linf_difference": 1.990555150767133e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.6042883080615225,
+          "min_log10_raw_second_moment": -4.450213588242778
+        },
+        {
+          "step": 64,
+          "max_weight_absolute_difference": 6.480059544511363e-15,
+          "weight_relative_linf_difference": 7.804157273060241e-16,
+          "first_moment_relative_linf_difference": 4.898725095794369e-15,
+          "second_moment_relative_linf_difference": 1.3143407352142497e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5932781817470235,
+          "min_log10_raw_second_moment": -4.506868647537296
+        },
+        {
+          "step": 80,
+          "max_weight_absolute_difference": 6.40546643504436e-15,
+          "weight_relative_linf_difference": 7.674114544399497e-16,
+          "first_moment_relative_linf_difference": 5.511035570791642e-15,
+          "second_moment_relative_linf_difference": 1.4599041473405298e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5855901350954669,
+          "min_log10_raw_second_moment": -4.576697851438504
+        },
+        {
+          "step": 100,
+          "max_weight_absolute_difference": 6.895525817007808e-15,
+          "weight_relative_linf_difference": 8.220134551399759e-16,
+          "first_moment_relative_linf_difference": 7.0944509538216885e-15,
+          "second_moment_relative_linf_difference": 1.8020878958601286e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.5783964395977699,
+          "min_log10_raw_second_moment": -4.66399393276058
+        },
+        {
+          "step": 124,
+          "max_weight_absolute_difference": 7.308390004290288e-15,
+          "weight_relative_linf_difference": 8.66457875739177e-16,
+          "first_moment_relative_linf_difference": 8.33855439792906e-15,
+          "second_moment_relative_linf_difference": 2.014125418853694e-15,
+          "relative_gap_difference": 1.1102230246251565e-15,
+          "relative_gap": 0.5717310262115496,
+          "min_log10_raw_second_moment": -4.768748828786029
+        },
+        {
+          "step": 155,
+          "max_weight_absolute_difference": 8.134552059724243e-15,
+          "weight_relative_linf_difference": 9.58001311859728e-16,
+          "first_moment_relative_linf_difference": 1.2723009610392917e-14,
+          "second_moment_relative_linf_difference": 6.183778760941158e-16,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.5662018174777093,
+          "min_log10_raw_second_moment": -4.904057571877878
+        },
+        {
+          "step": 193,
+          "max_weight_absolute_difference": 8.013988778143855e-15,
+          "weight_relative_linf_difference": 9.368192242326086e-16,
+          "first_moment_relative_linf_difference": 1.047313276743168e-14,
+          "second_moment_relative_linf_difference": 8.024267860136947e-16,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.5601286013287816,
+          "min_log10_raw_second_moment": -5.069919766729773
+        },
+        {
+          "step": 240,
+          "max_weight_absolute_difference": 1.0784342169278816e-14,
+          "weight_relative_linf_difference": 1.2500249082606211e-15,
+          "first_moment_relative_linf_difference": 1.6521064505042976e-14,
+          "second_moment_relative_linf_difference": 1.4021869530191294e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5524090948915927,
+          "min_log10_raw_second_moment": -5.275062377851844
+        },
+        {
+          "step": 299,
+          "max_weight_absolute_difference": 1.1578845521276193e-14,
+          "weight_relative_linf_difference": 1.328620048202101e-15,
+          "first_moment_relative_linf_difference": 1.004655405567505e-14,
+          "second_moment_relative_linf_difference": 8.863282268745005e-16,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 0.5431831877599926,
+          "min_log10_raw_second_moment": -5.532574839760708
+        },
+        {
+          "step": 372,
+          "max_weight_absolute_difference": 1.1145164652281991e-14,
+          "weight_relative_linf_difference": 1.263129984926456e-15,
+          "first_moment_relative_linf_difference": 1.6394102714477787e-14,
+          "second_moment_relative_linf_difference": 9.269089519005589e-16,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.533174267847208,
+          "min_log10_raw_second_moment": -5.851182185642619
+        },
+        {
+          "step": 464,
+          "max_weight_absolute_difference": 1.3259358888628725e-14,
+          "weight_relative_linf_difference": 1.4781349925462759e-15,
+          "first_moment_relative_linf_difference": 1.0432133902549927e-14,
+          "second_moment_relative_linf_difference": 2.0169156331916346e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5231237841481541,
+          "min_log10_raw_second_moment": -6.252701905143742
+        },
+        {
+          "step": 577,
+          "max_weight_absolute_difference": 1.344367325795126e-14,
+          "weight_relative_linf_difference": 1.4641164773261467e-15,
+          "first_moment_relative_linf_difference": 1.0133584687674186e-14,
+          "second_moment_relative_linf_difference": 3.239914923455692e-15,
+          "relative_gap_difference": 9.992007221626409e-16,
+          "relative_gap": 0.5130925664927983,
+          "min_log10_raw_second_moment": -6.745827346160673
+        },
+        {
+          "step": 719,
+          "max_weight_absolute_difference": 1.2572842073010904e-14,
+          "weight_relative_linf_difference": 1.3209213096966439e-15,
+          "first_moment_relative_linf_difference": 1.1856825931012921e-14,
+          "second_moment_relative_linf_difference": 8.507592058464269e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5014679865074239,
+          "min_log10_raw_second_moment": -7.365324952158853
+        },
+        {
+          "step": 896,
+          "max_weight_absolute_difference": 9.672384421177682e-15,
+          "weight_relative_linf_difference": 9.616376234387899e-16,
+          "first_moment_relative_linf_difference": 1.2391313433852618e-14,
+          "second_moment_relative_linf_difference": 1.0212421392425169e-14,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.4890403258310293,
+          "min_log10_raw_second_moment": -8.137047590495095
+        },
+        {
+          "step": 1115,
+          "max_weight_absolute_difference": 1.6172826966531773e-14,
+          "weight_relative_linf_difference": 1.4879138273932877e-15,
+          "first_moment_relative_linf_difference": 1.168439886943901e-14,
+          "second_moment_relative_linf_difference": 1.2499338526222673e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.47725485834966075,
+          "min_log10_raw_second_moment": -9.091489836430606
+        },
+        {
+          "step": 1389,
+          "max_weight_absolute_difference": 1.720975792429691e-14,
+          "weight_relative_linf_difference": 1.4407910019647353e-15,
+          "first_moment_relative_linf_difference": 1.296441385584789e-14,
+          "second_moment_relative_linf_difference": 1.7325488833724585e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.4612112483367665,
+          "min_log10_raw_second_moment": -10.285249089008948
+        },
+        {
+          "step": 1730,
+          "max_weight_absolute_difference": 1.685370593085267e-14,
+          "weight_relative_linf_difference": 1.270771021951388e-15,
+          "first_moment_relative_linf_difference": 1.3980772572641911e-14,
+          "second_moment_relative_linf_difference": 2.120137641199999e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.4372014162722977,
+          "min_log10_raw_second_moment": -11.769842552630882
+        },
+        {
+          "step": 2154,
+          "max_weight_absolute_difference": 1.7541523789077473e-14,
+          "weight_relative_linf_difference": 1.1775600126491972e-15,
+          "first_moment_relative_linf_difference": 1.660174452302877e-14,
+          "second_moment_relative_linf_difference": 2.438994018731024e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.40808071082261355,
+          "min_log10_raw_second_moment": -13.614085681512526
+        },
+        {
+          "step": 2682,
+          "max_weight_absolute_difference": 2.4683380339673988e-14,
+          "weight_relative_linf_difference": 1.4594146178689411e-15,
+          "first_moment_relative_linf_difference": 2.3442993858473828e-14,
+          "second_moment_relative_linf_difference": 2.761325156657421e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.3771188464360502,
+          "min_log10_raw_second_moment": -15.908416744699556
+        },
+        {
+          "step": 3340,
+          "max_weight_absolute_difference": 2.764802276011835e-14,
+          "weight_relative_linf_difference": 1.4211241482992174e-15,
+          "first_moment_relative_linf_difference": 1.9238645418173787e-14,
+          "second_moment_relative_linf_difference": 3.0412449518758586e-14,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.3472133851391599,
+          "min_log10_raw_second_moment": -18.760095226317656
+        },
+        {
+          "step": 4159,
+          "max_weight_absolute_difference": 4.0945545565218566e-14,
+          "weight_relative_linf_difference": 1.8119147582692548e-15,
+          "first_moment_relative_linf_difference": 2.4948209858165533e-14,
+          "second_moment_relative_linf_difference": 3.8996502196899546e-14,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.31920738361934975,
+          "min_log10_raw_second_moment": -22.296904521353547
+        },
+        {
+          "step": 5179,
+          "max_weight_absolute_difference": 4.8428275278844524e-14,
+          "weight_relative_linf_difference": 1.829846077787501e-15,
+          "first_moment_relative_linf_difference": 5.3571795756560697e-14,
+          "second_moment_relative_linf_difference": 4.794264147071181e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.292725934096812,
+          "min_log10_raw_second_moment": -26.693465596648156
+        },
+        {
+          "step": 6449,
+          "max_weight_absolute_difference": 7.160071147094271e-14,
+          "weight_relative_linf_difference": 2.297901767838195e-15,
+          "first_moment_relative_linf_difference": 3.470302509183893e-14,
+          "second_moment_relative_linf_difference": 4.9048973853529727e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.266511253679523,
+          "min_log10_raw_second_moment": -32.16797089363303
+        },
+        {
+          "step": 8030,
+          "max_weight_absolute_difference": 7.871307772244762e-14,
+          "weight_relative_linf_difference": 2.150628026297724e-15,
+          "first_moment_relative_linf_difference": 5.6092126646621326e-14,
+          "second_moment_relative_linf_difference": 6.239466964894425e-14,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.23639253740868382,
+          "min_log10_raw_second_moment": -39.030531259782684
+        },
+        {
+          "step": 10000,
+          "max_weight_absolute_difference": 1.3371595497524424e-13,
+          "weight_relative_linf_difference": 3.110602106229003e-15,
+          "first_moment_relative_linf_difference": 4.432682529644732e-14,
+          "second_moment_relative_linf_difference": 7.629481871639238e-14,
+          "relative_gap_difference": 7.771561172376096e-16,
+          "relative_gap": 0.2043927900760938,
+          "min_log10_raw_second_moment": -47.58617332717436
+        },
+        {
+          "step": 12451,
+          "max_weight_absolute_difference": 3.15000846587421e-13,
+          "weight_relative_linf_difference": 6.21352211777077e-15,
+          "first_moment_relative_linf_difference": 8.27446297943071e-14,
+          "second_moment_relative_linf_difference": 9.180442925628453e-14,
+          "relative_gap_difference": 1.4432899320127035e-15,
+          "relative_gap": 0.1745008414056296,
+          "min_log10_raw_second_moment": -58.16582692424073
+        },
+        {
+          "step": 15505,
+          "max_weight_absolute_difference": 3.516674798587083e-13,
+          "weight_relative_linf_difference": 5.853577346762885e-15,
+          "first_moment_relative_linf_difference": 7.840392701851043e-14,
+          "second_moment_relative_linf_difference": 1.52540411194114e-13,
+          "relative_gap_difference": 2.3314683517128287e-15,
+          "relative_gap": 0.1481889859906852,
+          "min_log10_raw_second_moment": -71.49352001811293
+        },
+        {
+          "step": 19306,
+          "max_weight_absolute_difference": 0.0003764013191721871,
+          "weight_relative_linf_difference": 5.274808006347606e-06,
+          "first_moment_relative_linf_difference": 8.463096729559792e-05,
+          "second_moment_relative_linf_difference": 4.3531223608344855e-06,
+          "relative_gap_difference": 5.929271600702002e-06,
+          "relative_gap": 0.1240388352332169,
+          "min_log10_raw_second_moment": -86.99316763787418
+        },
+        {
+          "step": 24040,
+          "max_weight_absolute_difference": 0.00148126341383081,
+          "weight_relative_linf_difference": 1.739993504644333e-05,
+          "first_moment_relative_linf_difference": 0.00012298987896369067,
+          "second_moment_relative_linf_difference": 3.505273089168832e-05,
+          "relative_gap_difference": 1.7316432595615439e-06,
+          "relative_gap": 0.10468812367369051,
+          "min_log10_raw_second_moment": -104.06783663092446
+        },
+        {
+          "step": 29935,
+          "max_weight_absolute_difference": 0.006145384588059035,
+          "weight_relative_linf_difference": 6.042573185901527e-05,
+          "first_moment_relative_linf_difference": 6.836109165926848e-05,
+          "second_moment_relative_linf_difference": 6.089413864897875e-05,
+          "relative_gap_difference": 4.4594093084882047e-07,
+          "relative_gap": 0.0884404186740988,
+          "min_log10_raw_second_moment": -124.8935376477126
+        },
+        {
+          "step": 37275,
+          "max_weight_absolute_difference": 0.005157076950942689,
+          "weight_relative_linf_difference": 4.2462188232037997e-05,
+          "first_moment_relative_linf_difference": 8.202978150597245e-05,
+          "second_moment_relative_linf_difference": 4.6236021126333934e-05,
+          "relative_gap_difference": 4.1322355337491956e-07,
+          "relative_gap": 0.07403175279888852,
+          "min_log10_raw_second_moment": -149.71122010160812
+        },
+        {
+          "step": 46415,
+          "max_weight_absolute_difference": 0.009688768787184023,
+          "weight_relative_linf_difference": 6.681661205135704e-05,
+          "first_moment_relative_linf_difference": 6.970018360198644e-05,
+          "second_moment_relative_linf_difference": 3.69526902428937e-05,
+          "relative_gap_difference": 1.0750033967443784e-06,
+          "relative_gap": 0.06196133246223645,
+          "min_log10_raw_second_moment": -179.30526050250356
+        },
+        {
+          "step": 57796,
+          "max_weight_absolute_difference": 0.013638460443545497,
+          "weight_relative_linf_difference": 7.884939355539603e-05,
+          "first_moment_relative_linf_difference": 0.00013105398006032587,
+          "second_moment_relative_linf_difference": 5.235470755203284e-05,
+          "relative_gap_difference": 1.412871393879911e-06,
+          "relative_gap": 0.051939012788475014,
+          "min_log10_raw_second_moment": -214.49775599449796
+        },
+        {
+          "step": 71968,
+          "max_weight_absolute_difference": 0.01164452740420103,
+          "weight_relative_linf_difference": 5.652684111631797e-05,
+          "first_moment_relative_linf_difference": 7.881289317645377e-05,
+          "second_moment_relative_linf_difference": 4.4002122178108705e-05,
+          "relative_gap_difference": 3.862437927271145e-07,
+          "relative_gap": 0.04360438184469817,
+          "min_log10_raw_second_moment": -255.9383385098564
+        },
+        {
+          "step": 89615,
+          "max_weight_absolute_difference": 0.012361555456105362,
+          "weight_relative_linf_difference": 5.048981570771878e-05,
+          "first_moment_relative_linf_difference": 0.00017973787974866177,
+          "second_moment_relative_linf_difference": 7.581245121103411e-05,
+          "relative_gap_difference": 1.7341648983482116e-07,
+          "relative_gap": 0.0366756877544504,
+          "min_log10_raw_second_moment": -304.7143221381188
+        },
+        {
+          "step": 111588,
+          "max_weight_absolute_difference": 0.016865450053866728,
+          "weight_relative_linf_difference": 5.810140823489432e-05,
+          "first_moment_relative_linf_difference": 0.00013925907929181072,
+          "second_moment_relative_linf_difference": 5.251596360757946e-05,
+          "relative_gap_difference": 2.1684041834335588e-06,
+          "relative_gap": 0.030919720053835253,
+          "min_log10_raw_second_moment": -361.7960323638502
+        },
+        {
+          "step": 138949,
+          "max_weight_absolute_difference": 0.012642744796268694,
+          "weight_relative_linf_difference": 3.683475240931348e-05,
+          "first_moment_relative_linf_difference": 0.00012459672340516404,
+          "second_moment_relative_linf_difference": 3.8836542978622905e-05,
+          "relative_gap_difference": 7.542212810962567e-07,
+          "relative_gap": 0.026132714170446825,
+          "min_log10_raw_second_moment": -428.33249229424575
+        },
+        {
+          "step": 173019,
+          "max_weight_absolute_difference": 0.012425499637898907,
+          "weight_relative_linf_difference": 3.07045387600783e-05,
+          "first_moment_relative_linf_difference": 7.662840200829898e-05,
+          "second_moment_relative_linf_difference": 6.669773205973361e-05,
+          "relative_gap_difference": 2.113971129258374e-07,
+          "relative_gap": 0.022147157502203196,
+          "min_log10_raw_second_moment": -505.562717009584
+        },
+        {
+          "step": 215443,
+          "max_weight_absolute_difference": 0.013111429437171473,
+          "weight_relative_linf_difference": 2.7561139674073742e-05,
+          "first_moment_relative_linf_difference": 0.00024383263523812532,
+          "second_moment_relative_linf_difference": 6.056513523618929e-05,
+          "relative_gap_difference": 4.5208459176215854e-07,
+          "relative_gap": 0.01882380368555503,
+          "min_log10_raw_second_moment": -594.6785482350044
+        },
+        {
+          "step": 268269,
+          "max_weight_absolute_difference": 0.012851926937560099,
+          "weight_relative_linf_difference": 2.305013992572126e-05,
+          "first_moment_relative_linf_difference": 0.00010014901212861148,
+          "second_moment_relative_linf_difference": 4.134412799858107e-05,
+          "relative_gap_difference": 5.975621436560274e-07,
+          "relative_gap": 0.01604646297825063,
+          "min_log10_raw_second_moment": -697.3170218277413
+        },
+        {
+          "step": 334048,
+          "max_weight_absolute_difference": 0.012346586110506319,
+          "weight_relative_linf_difference": 1.894944600627236e-05,
+          "first_moment_relative_linf_difference": 0.0001258550305084338,
+          "second_moment_relative_linf_difference": 3.355746297461697e-05,
+          "relative_gap_difference": 2.935311641527605e-07,
+          "relative_gap": 0.013735610447967561,
+          "min_log10_raw_second_moment": -815.282074510627
+        },
+        {
+          "step": 415956,
+          "max_weight_absolute_difference": 0.01052930417116947,
+          "weight_relative_linf_difference": 1.3869681371459408e-05,
+          "first_moment_relative_linf_difference": 6.653907062026908e-05,
+          "second_moment_relative_linf_difference": 8.078675108440314e-05,
+          "relative_gap_difference": 4.5237242729534444e-08,
+          "relative_gap": 0.0117881261651277,
+          "min_log10_raw_second_moment": -950.2634681872507
+        },
+        {
+          "step": 517947,
+          "max_weight_absolute_difference": 0.010197520574602353,
+          "weight_relative_linf_difference": 1.1561359503318665e-05,
+          "first_moment_relative_linf_difference": 0.00015513957073944506,
+          "second_moment_relative_linf_difference": 7.945989427013909e-05,
+          "relative_gap_difference": 1.0258379012917374e-07,
+          "relative_gap": 0.010146068758258409,
+          "min_log10_raw_second_moment": -1104.3595256956326
+        },
+        {
+          "step": 644946,
+          "max_weight_absolute_difference": 0.012382406586309541,
+          "weight_relative_linf_difference": 1.211574592947115e-05,
+          "first_moment_relative_linf_difference": 0.00011577801629617092,
+          "second_moment_relative_linf_difference": 4.815957311362056e-05,
+          "relative_gap_difference": 2.0602503969513464e-07,
+          "relative_gap": 0.008756383766282738,
+          "min_log10_raw_second_moment": -1279.982186157364
+        },
+        {
+          "step": 803085,
+          "max_weight_absolute_difference": 0.013040595358034451,
+          "weight_relative_linf_difference": 1.1040885428856024e-05,
+          "first_moment_relative_linf_difference": 0.00011352737024367003,
+          "second_moment_relative_linf_difference": 2.1644061746079788e-05,
+          "relative_gap_difference": 2.3084480438306798e-08,
+          "relative_gap": 0.007577047360665445,
+          "min_log10_raw_second_moment": -1479.7088331047562
+        },
+        {
+          "step": 1000000,
+          "max_weight_absolute_difference": 0.013728041855559037,
+          "weight_relative_linf_difference": 1.0082089557253365e-05,
+          "first_moment_relative_linf_difference": 8.384501846240156e-05,
+          "second_moment_relative_linf_difference": 2.1141999923972293e-05,
+          "relative_gap_difference": 6.481591618978655e-08,
+          "relative_gap": 0.006572482299534443,
+          "min_log10_raw_second_moment": -1706.0496371818322
+        }
+      ]
+    },
+    {
+      "a": 0.3,
+      "mode": "fixed_epsilon",
+      "checkpoints": 61,
+      "raw_run": {
+        "completed_steps": 1000000,
+        "a": 0.3,
+        "epsilon": 1e-08,
+        "LDBL_MANT_DIG": 64,
+        "LDBL_MAX_EXP": 16384,
+        "zero_logistic_weight_count": 0,
+        "first_zero_logistic_weight_step": 0,
+        "zero_nonzero_gradient_square_count": 0,
+        "first_zero_nonzero_gradient_square_step": 0,
+        "max_margin_evaluated": 168.46604457417953,
+        "min_nonzero_logistic_weight_log10": -73.16387354663344,
+        "min_positive_second_moment_log10": -28.67567278925883,
+        "long_double_min_subnormal_log10": -4950.438278694171,
+        "checkpoints": 61,
+        "wall_seconds": 24.125101361
+      },
+      "maximum_differences": {
+        "max_weight_absolute_difference": 1.1376923708672493e-12,
+        "weight_relative_linf_difference": 4.351271135965968e-14,
+        "first_moment_relative_linf_difference": 3.6108194753705364e-12,
+        "second_moment_relative_linf_difference": 3.1568004900699713e-12,
+        "relative_gap_difference": 4.75175454539567e-14
+      },
+      "endpoint": {
+        "step": 1000000,
+        "max_weight_absolute_difference": 1.1376923708672493e-12,
+        "weight_relative_linf_difference": 4.351271135965968e-14,
+        "first_moment_relative_linf_difference": 3.0368706170442396e-12,
+        "second_moment_relative_linf_difference": 2.9909032456983037e-12,
+        "relative_gap_difference": 1.454392162258955e-14,
+        "relative_gap": 0.34336482569609705,
+        "min_log10_raw_second_moment": -28.67567278925883
+      },
+      "trace": [
+        {
+          "step": 0,
+          "max_weight_absolute_difference": 0.0,
+          "weight_relative_linf_difference": 0.0,
+          "first_moment_relative_linf_difference": 0.0,
+          "second_moment_relative_linf_difference": 0.0,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 6.490235247011739,
+          "min_log10_raw_second_moment": null
+        },
+        {
+          "step": 1,
+          "max_weight_absolute_difference": 1.0299920638612292e-15,
+          "weight_relative_linf_difference": 3.388829963517782e-16,
+          "first_moment_relative_linf_difference": 3.1416992648832134e-16,
+          "second_moment_relative_linf_difference": 1.1341357450439578e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 3.977201301631605,
+          "min_log10_raw_second_moment": -9.268051993393502
+        },
+        {
+          "step": 2,
+          "max_weight_absolute_difference": 1.8800065670898647e-15,
+          "weight_relative_linf_difference": 5.8171739420175805e-16,
+          "first_moment_relative_linf_difference": 4.543149980084557e-16,
+          "second_moment_relative_linf_difference": 1.1984983494661377e-15,
+          "relative_gap_difference": 1.3322676295501878e-15,
+          "relative_gap": 3.3679420385260146,
+          "min_log10_raw_second_moment": -5.296662916306037
+        },
+        {
+          "step": 3,
+          "max_weight_absolute_difference": 3.140500012821512e-15,
+          "weight_relative_linf_difference": 9.0576690003678e-16,
+          "first_moment_relative_linf_difference": 4.484847230041901e-16,
+          "second_moment_relative_linf_difference": 1.3175801232572917e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 2.816333953834917,
+          "min_log10_raw_second_moment": -5.27999617311524
+        },
+        {
+          "step": 4,
+          "max_weight_absolute_difference": 5.4602589810714974e-15,
+          "weight_relative_linf_difference": 1.4253760543106867e-15,
+          "first_moment_relative_linf_difference": 5.366498065237716e-16,
+          "second_moment_relative_linf_difference": 1.4011373844649164e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 2.08375227114535,
+          "min_log10_raw_second_moment": -4.885834668076182
+        },
+        {
+          "step": 5,
+          "max_weight_absolute_difference": 6.3373785386122705e-15,
+          "weight_relative_linf_difference": 1.3803674124886063e-15,
+          "first_moment_relative_linf_difference": 5.822961245756109e-16,
+          "second_moment_relative_linf_difference": 1.4388585274670439e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 2.5121612459624076,
+          "min_log10_raw_second_moment": -4.719485325235321
+        },
+        {
+          "step": 7,
+          "max_weight_absolute_difference": 5.2108924813998314e-15,
+          "weight_relative_linf_difference": 8.4359643777655875e-16,
+          "first_moment_relative_linf_difference": 8.971824166310542e-16,
+          "second_moment_relative_linf_difference": 1.526463963528581e-15,
+          "relative_gap_difference": 1.5543122344752192e-15,
+          "relative_gap": 1.970891497671913,
+          "min_log10_raw_second_moment": -4.606557698472868
+        },
+        {
+          "step": 8,
+          "max_weight_absolute_difference": 4.421376459395887e-15,
+          "weight_relative_linf_difference": 6.59799311890919e-16,
+          "first_moment_relative_linf_difference": 1.2628312324618602e-15,
+          "second_moment_relative_linf_difference": 1.5775789184896667e-15,
+          "relative_gap_difference": 1.9984014443252818e-15,
+          "relative_gap": 1.510990384698743,
+          "min_log10_raw_second_moment": -4.480088002260495
+        },
+        {
+          "step": 11,
+          "max_weight_absolute_difference": 4.7509739198314804e-15,
+          "weight_relative_linf_difference": 6.18341850581764e-16,
+          "first_moment_relative_linf_difference": 1.4046704896434066e-15,
+          "second_moment_relative_linf_difference": 1.6849747905459258e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 1.082865737149535,
+          "min_log10_raw_second_moment": -4.272696576928517
+        },
+        {
+          "step": 13,
+          "max_weight_absolute_difference": 4.984294227350361e-15,
+          "weight_relative_linf_difference": 5.685777906259031e-16,
+          "first_moment_relative_linf_difference": 1.6668301778773057e-15,
+          "second_moment_relative_linf_difference": 1.465814129910181e-15,
+          "relative_gap_difference": 1.2212453270876722e-15,
+          "relative_gap": 0.9564591797080457,
+          "min_log10_raw_second_moment": -4.270294600645147
+        },
+        {
+          "step": 17,
+          "max_weight_absolute_difference": 6.919053004150744e-15,
+          "weight_relative_linf_difference": 6.669454479775809e-16,
+          "first_moment_relative_linf_difference": 2.0015040651945295e-15,
+          "second_moment_relative_linf_difference": 1.0516323939958602e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.9264356078182074,
+          "min_log10_raw_second_moment": -4.287200920084
+        },
+        {
+          "step": 21,
+          "max_weight_absolute_difference": 6.409369562865308e-15,
+          "weight_relative_linf_difference": 5.771736233028543e-16,
+          "first_moment_relative_linf_difference": 3.187483708250794e-15,
+          "second_moment_relative_linf_difference": 8.228755670425796e-16,
+          "relative_gap_difference": 1.1102230246251565e-15,
+          "relative_gap": 0.8616872088448351,
+          "min_log10_raw_second_moment": -4.296427096241584
+        },
+        {
+          "step": 26,
+          "max_weight_absolute_difference": 7.190428807923865e-15,
+          "weight_relative_linf_difference": 6.268647568337427e-16,
+          "first_moment_relative_linf_difference": 2.235942525762761e-15,
+          "second_moment_relative_linf_difference": 8.888843471049566e-16,
+          "relative_gap_difference": 1.5543122344752192e-15,
+          "relative_gap": 0.8272012257725747,
+          "min_log10_raw_second_moment": -4.317644853340945
+        },
+        {
+          "step": 33,
+          "max_weight_absolute_difference": 8.545247842661752e-15,
+          "weight_relative_linf_difference": 7.290289276780057e-16,
+          "first_moment_relative_linf_difference": 1.998439606902834e-15,
+          "second_moment_relative_linf_difference": 4.96182284714535e-16,
+          "relative_gap_difference": 1.4432899320127035e-15,
+          "relative_gap": 0.7613390577607959,
+          "min_log10_raw_second_moment": -4.348129757569057
+        },
+        {
+          "step": 41,
+          "max_weight_absolute_difference": 8.337948387282523e-15,
+          "weight_relative_linf_difference": 7.031831171573292e-16,
+          "first_moment_relative_linf_difference": 2.906597368440298e-15,
+          "second_moment_relative_linf_difference": 7.240672309248188e-16,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.7171031247202218,
+          "min_log10_raw_second_moment": -4.3830472789471875
+        },
+        {
+          "step": 51,
+          "max_weight_absolute_difference": 7.391223050268181e-15,
+          "weight_relative_linf_difference": 6.203080418083689e-16,
+          "first_moment_relative_linf_difference": 5.6458853680202194e-15,
+          "second_moment_relative_linf_difference": 5.993251534310559e-16,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.666301762091619,
+          "min_log10_raw_second_moment": -4.42668878274506
+        },
+        {
+          "step": 64,
+          "max_weight_absolute_difference": 5.937091096530622e-15,
+          "weight_relative_linf_difference": 4.974963555948103e-16,
+          "first_moment_relative_linf_difference": 8.275537870164406e-15,
+          "second_moment_relative_linf_difference": 6.546228452115424e-16,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.6387464965313698,
+          "min_log10_raw_second_moment": -4.483426462271025
+        },
+        {
+          "step": 80,
+          "max_weight_absolute_difference": 6.6418225086462e-15,
+          "weight_relative_linf_difference": 5.56300534742956e-16,
+          "first_moment_relative_linf_difference": 8.21574673905947e-15,
+          "second_moment_relative_linf_difference": 5.167444050271504e-16,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.6319266569778328,
+          "min_log10_raw_second_moment": -4.553262752509559
+        },
+        {
+          "step": 100,
+          "max_weight_absolute_difference": 7.449769967582398e-15,
+          "weight_relative_linf_difference": 6.235894942013029e-16,
+          "first_moment_relative_linf_difference": 9.86708762412946e-15,
+          "second_moment_relative_linf_difference": 6.251470404589113e-16,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.6204999252410894,
+          "min_log10_raw_second_moment": -4.64055884708687
+        },
+        {
+          "step": 124,
+          "max_weight_absolute_difference": 7.70911112724093e-15,
+          "weight_relative_linf_difference": 6.446144791001079e-16,
+          "first_moment_relative_linf_difference": 1.2767501867508314e-14,
+          "second_moment_relative_linf_difference": 9.53005021737373e-16,
+          "relative_gap_difference": 1.1102230246251565e-15,
+          "relative_gap": 0.6152136899645644,
+          "min_log10_raw_second_moment": -4.745314140390444
+        },
+        {
+          "step": 155,
+          "max_weight_absolute_difference": 6.302684069092734e-15,
+          "weight_relative_linf_difference": 5.262005902855042e-16,
+          "first_moment_relative_linf_difference": 2.5723092649302417e-14,
+          "second_moment_relative_linf_difference": 5.514820332564567e-16,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.6096078656228621,
+          "min_log10_raw_second_moment": -4.88062309598551
+        },
+        {
+          "step": 193,
+          "max_weight_absolute_difference": 9.365772046798782e-15,
+          "weight_relative_linf_difference": 7.803251067899e-16,
+          "first_moment_relative_linf_difference": 2.5470424966335052e-14,
+          "second_moment_relative_linf_difference": 2.4395877682041292e-15,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.6023678716098508,
+          "min_log10_raw_second_moment": -5.046485668992201
+        },
+        {
+          "step": 240,
+          "max_weight_absolute_difference": 8.076005142410025e-15,
+          "weight_relative_linf_difference": 6.708748443614876e-16,
+          "first_moment_relative_linf_difference": 1.6103702833219133e-14,
+          "second_moment_relative_linf_difference": 2.792456590448052e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.5943445490919542,
+          "min_log10_raw_second_moment": -5.251631152314182
+        },
+        {
+          "step": 299,
+          "max_weight_absolute_difference": 1.1750583145397897e-14,
+          "weight_relative_linf_difference": 9.717267209161141e-16,
+          "first_moment_relative_linf_difference": 1.878367836835632e-14,
+          "second_moment_relative_linf_difference": 5.3724622642936896e-15,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.5856676195217463,
+          "min_log10_raw_second_moment": -5.509153036733263
+        },
+        {
+          "step": 372,
+          "max_weight_absolute_difference": 1.478418082401234e-14,
+          "weight_relative_linf_difference": 1.2144438195961286e-15,
+          "first_moment_relative_linf_difference": 1.7309114185581572e-14,
+          "second_moment_relative_linf_difference": 7.601074047176479e-15,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.5760720843795913,
+          "min_log10_raw_second_moment": -5.827778963136154
+        },
+        {
+          "step": 464,
+          "max_weight_absolute_difference": 1.7332489610222268e-14,
+          "weight_relative_linf_difference": 1.4099343862241293e-15,
+          "first_moment_relative_linf_difference": 1.8064765448942784e-14,
+          "second_moment_relative_linf_difference": 9.27496506404298e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.5649106867219519,
+          "min_log10_raw_second_moment": -6.229327300397437
+        },
+        {
+          "step": 577,
+          "max_weight_absolute_difference": 2.3876733923344773e-14,
+          "weight_relative_linf_difference": 1.9158033043811886e-15,
+          "first_moment_relative_linf_difference": 2.4202952253994833e-14,
+          "second_moment_relative_linf_difference": 1.132216078640036e-14,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.5533449225806257,
+          "min_log10_raw_second_moment": -6.722509490279581
+        },
+        {
+          "step": 719,
+          "max_weight_absolute_difference": 2.582916519555667e-14,
+          "weight_relative_linf_difference": 2.032494462393218e-15,
+          "first_moment_relative_linf_difference": 4.56949903538579e-14,
+          "second_moment_relative_linf_difference": 1.1158380148330208e-14,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.5414059155639435,
+          "min_log10_raw_second_moment": -7.342198652885213
+        },
+        {
+          "step": 896,
+          "max_weight_absolute_difference": 2.5690387317478525e-14,
+          "weight_relative_linf_difference": 1.9689479913856166e-15,
+          "first_moment_relative_linf_difference": 1.9595446625172197e-14,
+          "second_moment_relative_linf_difference": 1.234702284661739e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.5218909075742482,
+          "min_log10_raw_second_moment": -8.114574897806646
+        },
+        {
+          "step": 1115,
+          "max_weight_absolute_difference": 2.0502696762569883e-14,
+          "weight_relative_linf_difference": 1.5093829229159722e-15,
+          "first_moment_relative_linf_difference": 2.345151628571361e-14,
+          "second_moment_relative_linf_difference": 1.5762031876589932e-14,
+          "relative_gap_difference": 9.992007221626409e-16,
+          "relative_gap": 0.49659857016797126,
+          "min_log10_raw_second_moment": -9.070268077724213
+        },
+        {
+          "step": 1389,
+          "max_weight_absolute_difference": 2.655081016156302e-14,
+          "weight_relative_linf_difference": 1.8225462746850413e-15,
+          "first_moment_relative_linf_difference": 1.5529974293761678e-14,
+          "second_moment_relative_linf_difference": 1.5916769031360314e-14,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.4763455868687232,
+          "min_log10_raw_second_moment": -10.265742885851715
+        },
+        {
+          "step": 1730,
+          "max_weight_absolute_difference": 2.0859182436883117e-14,
+          "weight_relative_linf_difference": 1.2988518273736867e-15,
+          "first_moment_relative_linf_difference": 1.863874383087517e-14,
+          "second_moment_relative_linf_difference": 1.935793623234832e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.46303806250042734,
+          "min_log10_raw_second_moment": -11.753665029991836
+        },
+        {
+          "step": 2154,
+          "max_weight_absolute_difference": 2.113500346956343e-14,
+          "weight_relative_linf_difference": 1.1802988648507356e-15,
+          "first_moment_relative_linf_difference": 1.7269564957634756e-14,
+          "second_moment_relative_linf_difference": 2.4675742698210474e-14,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.44556766205468146,
+          "min_log10_raw_second_moment": -13.60407696738263
+        },
+        {
+          "step": 2682,
+          "max_weight_absolute_difference": 2.4303475898435067e-14,
+          "weight_relative_linf_difference": 1.2166955709035455e-15,
+          "first_moment_relative_linf_difference": 1.92488239876104e-14,
+          "second_moment_relative_linf_difference": 3.2584094275423944e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.42067570317735814,
+          "min_log10_raw_second_moment": -15.908090006421542
+        },
+        {
+          "step": 3340,
+          "max_weight_absolute_difference": 2.897421885750262e-14,
+          "weight_relative_linf_difference": 1.3490433479618184e-15,
+          "first_moment_relative_linf_difference": 5.398642721549391e-14,
+          "second_moment_relative_linf_difference": 3.451512632132787e-14,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.40028898595073015,
+          "min_log10_raw_second_moment": -18.77027443113391
+        },
+        {
+          "step": 4159,
+          "max_weight_absolute_difference": 3.161181169261673e-14,
+          "weight_relative_linf_difference": 1.4266503728777876e-15,
+          "first_moment_relative_linf_difference": 1.3522508839875987e-13,
+          "second_moment_relative_linf_difference": 6.249877807167255e-14,
+          "relative_gap_difference": 7.771561172376096e-16,
+          "relative_gap": 0.390218387572944,
+          "min_log10_raw_second_moment": -21.960835997204104
+        },
+        {
+          "step": 5179,
+          "max_weight_absolute_difference": 3.2149630180278166e-14,
+          "weight_relative_linf_difference": 1.4251481676262616e-15,
+          "first_moment_relative_linf_difference": 1.1066344593741524e-13,
+          "second_moment_relative_linf_difference": 8.416597720922634e-14,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 0.3845420323263966,
+          "min_log10_raw_second_moment": -24.988683083099723
+        },
+        {
+          "step": 6449,
+          "max_weight_absolute_difference": 5.536716918275175e-14,
+          "weight_relative_linf_difference": 2.4225645825392466e-15,
+          "first_moment_relative_linf_difference": 1.8996253204710406e-13,
+          "second_moment_relative_linf_difference": 1.8264859725613562e-13,
+          "relative_gap_difference": 2.220446049250313e-15,
+          "relative_gap": 0.38053258941214985,
+          "min_log10_raw_second_moment": -25.253471597600633
+        },
+        {
+          "step": 8030,
+          "max_weight_absolute_difference": 6.193309753932397e-14,
+          "weight_relative_linf_difference": 2.681445006292941e-15,
+          "first_moment_relative_linf_difference": 2.149524738850367e-13,
+          "second_moment_relative_linf_difference": 1.6897069332357358e-13,
+          "relative_gap_difference": 1.3322676295501878e-15,
+          "relative_gap": 0.3773570370488387,
+          "min_log10_raw_second_moment": -25.456946011191157
+        },
+        {
+          "step": 10000,
+          "max_weight_absolute_difference": 9.917240639811808e-14,
+          "weight_relative_linf_difference": 4.255109046819281e-15,
+          "first_moment_relative_linf_difference": 2.6330895807777817e-13,
+          "second_moment_relative_linf_difference": 5.203962644087814e-13,
+          "relative_gap_difference": 2.7755575615628914e-15,
+          "relative_gap": 0.3746757583816379,
+          "min_log10_raw_second_moment": -25.64977154294546
+        },
+        {
+          "step": 12451,
+          "max_weight_absolute_difference": 1.3559466049972713e-13,
+          "weight_relative_linf_difference": 5.7712961097570155e-15,
+          "first_moment_relative_linf_difference": 2.3891790551569566e-13,
+          "second_moment_relative_linf_difference": 3.486197877390685e-13,
+          "relative_gap_difference": 3.219646771412954e-15,
+          "relative_gap": 0.3723238546882559,
+          "min_log10_raw_second_moment": -25.83092138121607
+        },
+        {
+          "step": 15505,
+          "max_weight_absolute_difference": 1.259773535489117e-13,
+          "weight_relative_linf_difference": 5.322786533408042e-15,
+          "first_moment_relative_linf_difference": 1.920585734480476e-13,
+          "second_moment_relative_linf_difference": 3.4716195588759016e-13,
+          "relative_gap_difference": 2.9976021664879227e-15,
+          "relative_gap": 0.3702013493293578,
+          "min_log10_raw_second_moment": -26.002415080650756
+        },
+        {
+          "step": 19306,
+          "max_weight_absolute_difference": 1.8743860630276998e-13,
+          "weight_relative_linf_difference": 7.865931801831351e-15,
+          "first_moment_relative_linf_difference": 5.458366230493352e-13,
+          "second_moment_relative_linf_difference": 6.533275417464361e-13,
+          "relative_gap_difference": 5.329070518200751e-15,
+          "relative_gap": 0.3682507982513692,
+          "min_log10_raw_second_moment": -26.165894048805022
+        },
+        {
+          "step": 24040,
+          "max_weight_absolute_difference": 1.6557068216460635e-13,
+          "weight_relative_linf_difference": 6.903863769579053e-15,
+          "first_moment_relative_linf_difference": 2.409651477243299e-13,
+          "second_moment_relative_linf_difference": 2.8330727932715326e-13,
+          "relative_gap_difference": 9.992007221626409e-16,
+          "relative_gap": 0.3664309580485584,
+          "min_log10_raw_second_moment": -26.323030813552496
+        },
+        {
+          "step": 29935,
+          "max_weight_absolute_difference": 1.4082311705632122e-13,
+          "weight_relative_linf_difference": 5.836286989625424e-15,
+          "first_moment_relative_linf_difference": 7.181895773184287e-13,
+          "second_moment_relative_linf_difference": 5.885037199895505e-13,
+          "relative_gap_difference": 3.552713678800501e-15,
+          "relative_gap": 0.36471460198198513,
+          "min_log10_raw_second_moment": -26.475035605506818
+        },
+        {
+          "step": 37275,
+          "max_weight_absolute_difference": 1.3466658344007953e-13,
+          "weight_relative_linf_difference": 5.548630306167475e-15,
+          "first_moment_relative_linf_difference": 3.842557457214917e-13,
+          "second_moment_relative_linf_difference": 5.880161199007039e-13,
+          "relative_gap_difference": 3.219646771412954e-15,
+          "relative_gap": 0.3630819681595302,
+          "min_log10_raw_second_moment": -26.62288435782992
+        },
+        {
+          "step": 46415,
+          "max_weight_absolute_difference": 1.7690016118621088e-13,
+          "weight_relative_linf_difference": 7.247801320417724e-15,
+          "first_moment_relative_linf_difference": 7.70976810523416e-13,
+          "second_moment_relative_linf_difference": 6.160216031657133e-13,
+          "relative_gap_difference": 2.1094237467877974e-15,
+          "relative_gap": 0.3615181289794649,
+          "min_log10_raw_second_moment": -26.767384269070092
+        },
+        {
+          "step": 57796,
+          "max_weight_absolute_difference": 2.0595244260013246e-13,
+          "weight_relative_linf_difference": 8.392098290685348e-15,
+          "first_moment_relative_linf_difference": 6.510443895593005e-13,
+          "second_moment_relative_linf_difference": 7.395715773384461e-13,
+          "relative_gap_difference": 2.3314683517128287e-15,
+          "relative_gap": 0.3600119332261712,
+          "min_log10_raw_second_moment": -26.90917409053148
+        },
+        {
+          "step": 71968,
+          "max_weight_absolute_difference": 2.8216838587891147e-13,
+          "weight_relative_linf_difference": 1.1436650774078378e-14,
+          "first_moment_relative_linf_difference": 7.056899059820522e-13,
+          "second_moment_relative_linf_difference": 9.26695427556829e-13,
+          "relative_gap_difference": 3.774758283725532e-15,
+          "relative_gap": 0.3585546572741424,
+          "min_log10_raw_second_moment": -27.04879131192398
+        },
+        {
+          "step": 89615,
+          "max_weight_absolute_difference": 2.661672965365014e-13,
+          "weight_relative_linf_difference": 1.0732081254410627e-14,
+          "first_moment_relative_linf_difference": 1.0031527714635093e-12,
+          "second_moment_relative_linf_difference": 1.6033563580367861e-12,
+          "relative_gap_difference": 1.7763568394002505e-15,
+          "relative_gap": 0.3571395373973688,
+          "min_log10_raw_second_moment": -27.186681128883965
+        },
+        {
+          "step": 111588,
+          "max_weight_absolute_difference": 2.286565034537169e-13,
+          "weight_relative_linf_difference": 9.172672201771203e-15,
+          "first_moment_relative_linf_difference": 7.980483507426009e-13,
+          "second_moment_relative_linf_difference": 1.1373303853442053e-12,
+          "relative_gap_difference": 2.7755575615628914e-15,
+          "relative_gap": 0.3557612262708092,
+          "min_log10_raw_second_moment": -27.323225695016088
+        },
+        {
+          "step": 138949,
+          "max_weight_absolute_difference": 4.4003342636322884e-13,
+          "weight_relative_linf_difference": 1.7563820370063558e-14,
+          "first_moment_relative_linf_difference": 1.2205470572245615e-12,
+          "second_moment_relative_linf_difference": 1.6183524156520517e-12,
+          "relative_gap_difference": 6.994405055138486e-15,
+          "relative_gap": 0.35441530808807276,
+          "min_log10_raw_second_moment": -27.458777171053
+        },
+        {
+          "step": 173019,
+          "max_weight_absolute_difference": 6.725453527423042e-13,
+          "weight_relative_linf_difference": 2.6712142962740244e-14,
+          "first_moment_relative_linf_difference": 1.0066788435558828e-12,
+          "second_moment_relative_linf_difference": 1.4478487995094969e-12,
+          "relative_gap_difference": 6.217248937900877e-15,
+          "relative_gap": 0.353098301398191,
+          "min_log10_raw_second_moment": -27.593647261282147
+        },
+        {
+          "step": 215443,
+          "max_weight_absolute_difference": 7.436030957652662e-13,
+          "weight_relative_linf_difference": 2.9390754195393316e-14,
+          "first_moment_relative_linf_difference": 1.485952115565002e-12,
+          "second_moment_relative_linf_difference": 1.9878414432504063e-12,
+          "relative_gap_difference": 1.0658141036401503e-14,
+          "relative_gap": 0.3518073896982754,
+          "min_log10_raw_second_moment": -27.728125372053437
+        },
+        {
+          "step": 268269,
+          "max_weight_absolute_difference": 9.791247673751613e-13,
+          "weight_relative_linf_difference": 3.851366947010426e-14,
+          "first_moment_relative_linf_difference": 1.2134081846811847e-12,
+          "second_moment_relative_linf_difference": 1.684693423704914e-12,
+          "relative_gap_difference": 2.298161660974074e-14,
+          "relative_gap": 0.35054031464663093,
+          "min_log10_raw_second_moment": -27.862480241246555
+        },
+        {
+          "step": 334048,
+          "max_weight_absolute_difference": 1.086249146187157e-12,
+          "weight_relative_linf_difference": 4.2524128221373845e-14,
+          "first_moment_relative_linf_difference": 2.026356153150276e-12,
+          "second_moment_relative_linf_difference": 3.0167714132124467e-12,
+          "relative_gap_difference": 2.8199664825478976e-14,
+          "relative_gap": 0.34929526553391,
+          "min_log10_raw_second_moment": -27.996958898358205
+        },
+        {
+          "step": 415956,
+          "max_weight_absolute_difference": 8.961806990948062e-13,
+          "weight_relative_linf_difference": 3.4918028280577073e-14,
+          "first_moment_relative_linf_difference": 1.9002518404555486e-12,
+          "second_moment_relative_linf_difference": 2.791801473580477e-12,
+          "relative_gap_difference": 3.11972669919669e-14,
+          "relative_gap": 0.34807085514192837,
+          "min_log10_raw_second_moment": -28.1317705643481
+        },
+        {
+          "step": 517947,
+          "max_weight_absolute_difference": 1.0069167721837857e-12,
+          "weight_relative_linf_difference": 3.904922932122965e-14,
+          "first_moment_relative_linf_difference": 3.6108194753705364e-12,
+          "second_moment_relative_linf_difference": 3.153113252611085e-12,
+          "relative_gap_difference": 4.75175454539567e-14,
+          "relative_gap": 0.34686608087287973,
+          "min_log10_raw_second_moment": -28.267063625246276
+        },
+        {
+          "step": 644946,
+          "max_weight_absolute_difference": 1.0185376847493544e-12,
+          "weight_relative_linf_difference": 3.9316525098281186e-14,
+          "first_moment_relative_linf_difference": 1.3587101711862723e-12,
+          "second_moment_relative_linf_difference": 1.6463527409722105e-12,
+          "relative_gap_difference": 1.765254609153999e-14,
+          "relative_gap": 0.34568028460624545,
+          "min_log10_raw_second_moment": -28.40289403605965
+        },
+        {
+          "step": 803085,
+          "max_weight_absolute_difference": 1.0798324040495189e-12,
+          "weight_relative_linf_difference": 4.1490228055883555e-14,
+          "first_moment_relative_linf_difference": 2.619336042053717e-12,
+          "second_moment_relative_linf_difference": 3.1568004900699713e-12,
+          "relative_gap_difference": 2.531308496145357e-14,
+          "relative_gap": 0.3445131766281365,
+          "min_log10_raw_second_moment": -28.539181268515918
+        },
+        {
+          "step": 1000000,
+          "max_weight_absolute_difference": 1.1376923708672493e-12,
+          "weight_relative_linf_difference": 4.351271135965968e-14,
+          "first_moment_relative_linf_difference": 3.0368706170442396e-12,
+          "second_moment_relative_linf_difference": 2.9909032456983037e-12,
+          "relative_gap_difference": 1.454392162258955e-14,
+          "relative_gap": 0.34336482569609705,
+          "min_log10_raw_second_moment": -28.67567278925883
+        }
+      ]
+    },
+    {
+      "a": 0.5,
+      "mode": "fixed_epsilon",
+      "checkpoints": 61,
+      "raw_run": {
+        "completed_steps": 1000000,
+        "a": 0.5,
+        "epsilon": 1e-08,
+        "LDBL_MANT_DIG": 64,
+        "LDBL_MAX_EXP": 16384,
+        "zero_logistic_weight_count": 0,
+        "first_zero_logistic_weight_step": 0,
+        "zero_nonzero_gradient_square_count": 0,
+        "first_zero_nonzero_gradient_square_step": 0,
+        "max_margin_evaluated": 147.50054568534986,
+        "min_nonzero_logistic_weight_log10": -64.05867306886594,
+        "min_positive_second_moment_log10": -26.588167881920853,
+        "long_double_min_subnormal_log10": -4950.438278694171,
+        "checkpoints": 61,
+        "wall_seconds": 23.517662448
+      },
+      "maximum_differences": {
+        "max_weight_absolute_difference": 1.1025243218387715e-12,
+        "weight_relative_linf_difference": 4.9024156159502436e-14,
+        "first_moment_relative_linf_difference": 4.2196629650500305e-12,
+        "second_moment_relative_linf_difference": 8.59824496688512e-12,
+        "relative_gap_difference": 1.554312234475219e-14
+      },
+      "endpoint": {
+        "step": 1000000,
+        "max_weight_absolute_difference": 8.311094867874402e-13,
+        "weight_relative_linf_difference": 3.680052281987992e-14,
+        "first_moment_relative_linf_difference": 2.452140454933635e-12,
+        "second_moment_relative_linf_difference": 3.631619831471491e-12,
+        "relative_gap_difference": 1.554312234475219e-14,
+        "relative_gap": 0.31511942504046697,
+        "min_log10_raw_second_moment": -26.588167881920853
+      },
+      "trace": [
+        {
+          "step": 0,
+          "max_weight_absolute_difference": 0.0,
+          "weight_relative_linf_difference": 0.0,
+          "first_moment_relative_linf_difference": 0.0,
+          "second_moment_relative_linf_difference": 0.0,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 6.490235247011739,
+          "min_log10_raw_second_moment": null
+        },
+        {
+          "step": 1,
+          "max_weight_absolute_difference": 1.0299920638612292e-15,
+          "weight_relative_linf_difference": 3.388829963517782e-16,
+          "first_moment_relative_linf_difference": 3.1416992648832134e-16,
+          "second_moment_relative_linf_difference": 1.1341357450439578e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 3.977201301631605,
+          "min_log10_raw_second_moment": -9.268051993393502
+        },
+        {
+          "step": 2,
+          "max_weight_absolute_difference": 1.4514214483063448e-15,
+          "weight_relative_linf_difference": 4.547597806644833e-16,
+          "first_moment_relative_linf_difference": 4.543149980084557e-16,
+          "second_moment_relative_linf_difference": 1.1984983494661377e-15,
+          "relative_gap_difference": 1.3322676295501878e-15,
+          "relative_gap": 3.3169588991216914,
+          "min_log10_raw_second_moment": -5.296662916306037
+        },
+        {
+          "step": 3,
+          "max_weight_absolute_difference": 2.8161067228138492e-15,
+          "weight_relative_linf_difference": 8.391878044659605e-16,
+          "first_moment_relative_linf_difference": 4.683798553327963e-16,
+          "second_moment_relative_linf_difference": 1.255615092209521e-15,
+          "relative_gap_difference": 1.3322676295501878e-15,
+          "relative_gap": 2.897233823473472,
+          "min_log10_raw_second_moment": -5.265614306815143
+        },
+        {
+          "step": 4,
+          "max_weight_absolute_difference": 4.59094567917262e-15,
+          "weight_relative_linf_difference": 1.284900616514677e-15,
+          "first_moment_relative_linf_difference": 6.131553543496818e-16,
+          "second_moment_relative_linf_difference": 1.352262429411821e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 2.1671730434053833,
+          "min_log10_raw_second_moment": -4.86310338307532
+        },
+        {
+          "step": 5,
+          "max_weight_absolute_difference": 5.841681305351898e-15,
+          "weight_relative_linf_difference": 1.5107899822397038e-15,
+          "first_moment_relative_linf_difference": 6.17129185322657e-16,
+          "second_moment_relative_linf_difference": 1.3387227310536558e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 2.2738198820513262,
+          "min_log10_raw_second_moment": -4.676766180663453
+        },
+        {
+          "step": 7,
+          "max_weight_absolute_difference": 3.818776891928444e-15,
+          "weight_relative_linf_difference": 7.769213561061129e-16,
+          "first_moment_relative_linf_difference": 1.0125511205433929e-15,
+          "second_moment_relative_linf_difference": 1.3065348965100045e-15,
+          "relative_gap_difference": 2.6645352591003757e-15,
+          "relative_gap": 2.1509109068008536,
+          "min_log10_raw_second_moment": -4.68537993904923
+        },
+        {
+          "step": 8,
+          "max_weight_absolute_difference": 2.9858927830250792e-15,
+          "weight_relative_linf_difference": 5.528662610041369e-16,
+          "first_moment_relative_linf_difference": 9.24404715716592e-16,
+          "second_moment_relative_linf_difference": 1.2873440789797885e-15,
+          "relative_gap_difference": 1.7763568394002505e-15,
+          "relative_gap": 1.7778676089186556,
+          "min_log10_raw_second_moment": -4.634076646685503
+        },
+        {
+          "step": 11,
+          "max_weight_absolute_difference": 3.404828502473478e-15,
+          "weight_relative_linf_difference": 5.522492284410356e-16,
+          "first_moment_relative_linf_difference": 1.2858060294501612e-15,
+          "second_moment_relative_linf_difference": 1.1919034966528877e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 1.400240510850656,
+          "min_log10_raw_second_moment": -4.406793462515237
+        },
+        {
+          "step": 13,
+          "max_weight_absolute_difference": 3.8140064023695075e-15,
+          "weight_relative_linf_difference": 5.862991934282998e-16,
+          "first_moment_relative_linf_difference": 1.26347217843806e-15,
+          "second_moment_relative_linf_difference": 1.1573664594640232e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 1.0349201699078965,
+          "min_log10_raw_second_moment": -4.3052861429556994
+        },
+        {
+          "step": 17,
+          "max_weight_absolute_difference": 4.500306377552832e-15,
+          "weight_relative_linf_difference": 6.124102618149408e-16,
+          "first_moment_relative_linf_difference": 2.1113026904821393e-15,
+          "second_moment_relative_linf_difference": 1.8069447530691076e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.9519911977810497,
+          "min_log10_raw_second_moment": -4.3089604058569275
+        },
+        {
+          "step": 21,
+          "max_weight_absolute_difference": 4.463877184557319e-15,
+          "weight_relative_linf_difference": 5.691283837951999e-16,
+          "first_moment_relative_linf_difference": 1.3285841109445117e-15,
+          "second_moment_relative_linf_difference": 1.662018170857237e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.8719874929642419,
+          "min_log10_raw_second_moment": -4.323789932256668
+        },
+        {
+          "step": 26,
+          "max_weight_absolute_difference": 4.695896449469217e-15,
+          "weight_relative_linf_difference": 5.853280854679618e-16,
+          "first_moment_relative_linf_difference": 1.2499139473192401e-15,
+          "second_moment_relative_linf_difference": 1.4959045998908525e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.8031202593820173,
+          "min_log10_raw_second_moment": -4.344236294621646
+        },
+        {
+          "step": 33,
+          "max_weight_absolute_difference": 4.0614213381307e-15,
+          "weight_relative_linf_difference": 4.976980748275938e-16,
+          "first_moment_relative_linf_difference": 1.904573403113266e-15,
+          "second_moment_relative_linf_difference": 1.4898319471449625e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.7819835749418098,
+          "min_log10_raw_second_moment": -4.371927162582623
+        },
+        {
+          "step": 41,
+          "max_weight_absolute_difference": 5.7332610881033474e-15,
+          "weight_relative_linf_difference": 6.993547011511218e-16,
+          "first_moment_relative_linf_difference": 2.1886028516451706e-15,
+          "second_moment_relative_linf_difference": 2.0579180267921023e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.6312921830726722,
+          "min_log10_raw_second_moment": -4.406635489853885
+        },
+        {
+          "step": 51,
+          "max_weight_absolute_difference": 6.428885201970047e-15,
+          "weight_relative_linf_difference": 7.794591317060924e-16,
+          "first_moment_relative_linf_difference": 3.380794573126301e-15,
+          "second_moment_relative_linf_difference": 1.7167583170574865e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.6042825665183265,
+          "min_log10_raw_second_moment": -4.450180351772662
+        },
+        {
+          "step": 64,
+          "max_weight_absolute_difference": 7.765489640210177e-15,
+          "weight_relative_linf_difference": 9.352049862946109e-16,
+          "first_moment_relative_linf_difference": 3.880328036298428e-15,
+          "second_moment_relative_linf_difference": 1.3689993717418257e-15,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.5932762914387133,
+          "min_log10_raw_second_moment": -4.506835410198924
+        },
+        {
+          "step": 80,
+          "max_weight_absolute_difference": 7.894726539170449e-15,
+          "weight_relative_linf_difference": 9.458118771036813e-16,
+          "first_moment_relative_linf_difference": 5.141176714663915e-15,
+          "second_moment_relative_linf_difference": 1.4155123124447872e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.5855967688608943,
+          "min_log10_raw_second_moment": -4.576664606932483
+        },
+        {
+          "step": 100,
+          "max_weight_absolute_difference": 7.275430258246729e-15,
+          "weight_relative_linf_difference": 8.672812409709248e-16,
+          "first_moment_relative_linf_difference": 7.69346774770032e-15,
+          "second_moment_relative_linf_difference": 2.099961856132731e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5784050888313284,
+          "min_log10_raw_second_moment": -4.663960688348252
+        },
+        {
+          "step": 124,
+          "max_weight_absolute_difference": 6.823534792754771e-15,
+          "weight_relative_linf_difference": 8.089556481545944e-16,
+          "first_moment_relative_linf_difference": 7.082202625242051e-15,
+          "second_moment_relative_linf_difference": 2.5988111970699476e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.5717393376422988,
+          "min_log10_raw_second_moment": -4.768715585713112
+        },
+        {
+          "step": 155,
+          "max_weight_absolute_difference": 9.85583142876223e-15,
+          "weight_relative_linf_difference": 1.1606872072423096e-15,
+          "first_moment_relative_linf_difference": 6.6078273723129966e-15,
+          "second_moment_relative_linf_difference": 2.3587349479352282e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.5662103957810127,
+          "min_log10_raw_second_moment": -4.904024329582172
+        },
+        {
+          "step": 193,
+          "max_weight_absolute_difference": 1.149080830487037e-14,
+          "weight_relative_linf_difference": 1.3432198104856498e-15,
+          "first_moment_relative_linf_difference": 8.260234555627767e-15,
+          "second_moment_relative_linf_difference": 1.2414157300981193e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5601374295970254,
+          "min_log10_raw_second_moment": -5.0698865230975985
+        },
+        {
+          "step": 240,
+          "max_weight_absolute_difference": 1.4292386718572914e-14,
+          "weight_relative_linf_difference": 1.6566061873642952e-15,
+          "first_moment_relative_linf_difference": 2.5717087288245493e-14,
+          "second_moment_relative_linf_difference": 1.4902134663855965e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.5524181599362917,
+          "min_log10_raw_second_moment": -5.2750291293040235
+        },
+        {
+          "step": 299,
+          "max_weight_absolute_difference": 1.2189901865689023e-14,
+          "weight_relative_linf_difference": 1.3987027705825214e-15,
+          "first_moment_relative_linf_difference": 1.74036340567367e-14,
+          "second_moment_relative_linf_difference": 3.2896268584699727e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.543192468557532,
+          "min_log10_raw_second_moment": -5.532541580472985
+        },
+        {
+          "step": 372,
+          "max_weight_absolute_difference": 9.440365156265784e-15,
+          "weight_relative_linf_difference": 1.0698928026530357e-15,
+          "first_moment_relative_linf_difference": 1.0631006367099675e-14,
+          "second_moment_relative_linf_difference": 4.2774061093569775e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5331835317390787,
+          "min_log10_raw_second_moment": -5.851148909138677
+        },
+        {
+          "step": 464,
+          "max_weight_absolute_difference": 1.1326009574652574e-14,
+          "weight_relative_linf_difference": 1.2625791517576658e-15,
+          "first_moment_relative_linf_difference": 1.642173542599538e-14,
+          "second_moment_relative_linf_difference": 5.999626404974318e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.5231364059930206,
+          "min_log10_raw_second_moment": -6.2526686110063245
+        },
+        {
+          "step": 577,
+          "max_weight_absolute_difference": 7.346553920761778e-15,
+          "weight_relative_linf_difference": 8.000768563121474e-16,
+          "first_moment_relative_linf_difference": 1.0053039854140855e-14,
+          "second_moment_relative_linf_difference": 8.609433879980466e-15,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.5131036190049825,
+          "min_log10_raw_second_moment": -6.7457940477536065
+        },
+        {
+          "step": 719,
+          "max_weight_absolute_difference": 8.495808223596413e-15,
+          "weight_relative_linf_difference": 8.92563392781286e-16,
+          "first_moment_relative_linf_difference": 9.215202433318376e-15,
+          "second_moment_relative_linf_difference": 1.000735494174238e-14,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5014784742253882,
+          "min_log10_raw_second_moment": -7.365291669553901
+        },
+        {
+          "step": 896,
+          "max_weight_absolute_difference": 8.961581476896185e-15,
+          "weight_relative_linf_difference": 8.909525943710417e-16,
+          "first_moment_relative_linf_difference": 1.440489656351314e-14,
+          "second_moment_relative_linf_difference": 1.3452361015369208e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.48905055378888884,
+          "min_log10_raw_second_moment": -8.137014252926171
+        },
+        {
+          "step": 1115,
+          "max_weight_absolute_difference": 2.061805587372234e-14,
+          "weight_relative_linf_difference": 1.896856677832227e-15,
+          "first_moment_relative_linf_difference": 1.048698927604632e-14,
+          "second_moment_relative_linf_difference": 1.8302410083412158e-14,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.47726525524285834,
+          "min_log10_raw_second_moment": -9.091456022638875
+        },
+        {
+          "step": 1389,
+          "max_weight_absolute_difference": 1.6352370846295372e-14,
+          "weight_relative_linf_difference": 1.3690251758864704e-15,
+          "first_moment_relative_linf_difference": 1.6523315888283505e-14,
+          "second_moment_relative_linf_difference": 1.6423406017385172e-14,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.4612228554318558,
+          "min_log10_raw_second_moment": -10.285212808633048
+        },
+        {
+          "step": 1730,
+          "max_weight_absolute_difference": 1.4651474478100113e-14,
+          "weight_relative_linf_difference": 1.1048501378792032e-15,
+          "first_moment_relative_linf_difference": 1.536541888400322e-14,
+          "second_moment_relative_linf_difference": 1.996131939487824e-14,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.43722600707490167,
+          "min_log10_raw_second_moment": -11.769785309251114
+        },
+        {
+          "step": 2154,
+          "max_weight_absolute_difference": 1.5995451491113144e-14,
+          "weight_relative_linf_difference": 1.0747534366308361e-15,
+          "first_moment_relative_linf_difference": 2.4872661019480762e-14,
+          "second_moment_relative_linf_difference": 2.707522739860822e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.40820418484325605,
+          "min_log10_raw_second_moment": -13.613765226657247
+        },
+        {
+          "step": 2682,
+          "max_weight_absolute_difference": 2.1621593404574924e-14,
+          "weight_relative_linf_difference": 1.290212673499452e-15,
+          "first_moment_relative_linf_difference": 2.5403621506968452e-14,
+          "second_moment_relative_linf_difference": 4.0749198160907887e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.37840773082325196,
+          "min_log10_raw_second_moment": -15.902644091262728
+        },
+        {
+          "step": 3340,
+          "max_weight_absolute_difference": 3.779788981805865e-14,
+          "weight_relative_linf_difference": 2.0724091934536897e-15,
+          "first_moment_relative_linf_difference": 5.009488673767037e-14,
+          "second_moment_relative_linf_difference": 3.6985759442159606e-14,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 0.35715142709318826,
+          "min_log10_raw_second_moment": -18.589040198274823
+        },
+        {
+          "step": 4159,
+          "max_weight_absolute_difference": 2.3510707269913667e-14,
+          "weight_relative_linf_difference": 1.240327252548326e-15,
+          "first_moment_relative_linf_difference": 9.933747715179303e-14,
+          "second_moment_relative_linf_difference": 5.308793629649235e-14,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 0.34817521390015127,
+          "min_log10_raw_second_moment": -21.851167402137584
+        },
+        {
+          "step": 5179,
+          "max_weight_absolute_difference": 3.555922917231058e-14,
+          "weight_relative_linf_difference": 1.8354341950231175e-15,
+          "first_moment_relative_linf_difference": 6.940532764250468e-14,
+          "second_moment_relative_linf_difference": 8.418919215741635e-14,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 0.3434324173715859,
+          "min_log10_raw_second_moment": -23.493324218353457
+        },
+        {
+          "step": 6449,
+          "max_weight_absolute_difference": 5.239732259187946e-14,
+          "weight_relative_linf_difference": 2.6628990564054166e-15,
+          "first_moment_relative_linf_difference": 1.507926233839135e-13,
+          "second_moment_relative_linf_difference": 2.1009630874696574e-13,
+          "relative_gap_difference": 1.9984014443252818e-15,
+          "relative_gap": 0.340218537730715,
+          "min_log10_raw_second_moment": -23.649820293603163
+        },
+        {
+          "step": 8030,
+          "max_weight_absolute_difference": 7.591843820264899e-14,
+          "weight_relative_linf_difference": 3.811227020265696e-15,
+          "first_moment_relative_linf_difference": 2.0080773827400617e-13,
+          "second_moment_relative_linf_difference": 3.0125520639023395e-13,
+          "relative_gap_difference": 1.9984014443252818e-15,
+          "relative_gap": 0.3377549517088426,
+          "min_log10_raw_second_moment": -23.832044308855505
+        },
+        {
+          "step": 10000,
+          "max_weight_absolute_difference": 9.497611030973019e-14,
+          "weight_relative_linf_difference": 4.719072624215149e-15,
+          "first_moment_relative_linf_difference": 1.4676673319443482e-13,
+          "second_moment_relative_linf_difference": 1.8724237201064894e-13,
+          "relative_gap_difference": 3.3306690738754696e-15,
+          "relative_gap": 0.33573112281438944,
+          "min_log10_raw_second_moment": -24.00809885637632
+        },
+        {
+          "step": 12451,
+          "max_weight_absolute_difference": 1.0003282924220258e-13,
+          "weight_relative_linf_difference": 4.9258894465781274e-15,
+          "first_moment_relative_linf_difference": 3.115585601805491e-13,
+          "second_moment_relative_linf_difference": 3.3127790406048355e-13,
+          "relative_gap_difference": 1.6653345369377348e-15,
+          "relative_gap": 0.3339978237609912,
+          "min_log10_raw_second_moment": -24.173336257345756
+        },
+        {
+          "step": 15505,
+          "max_weight_absolute_difference": 1.618132711156406e-13,
+          "weight_relative_linf_difference": 7.904248252278305e-15,
+          "first_moment_relative_linf_difference": 3.277398666367056e-13,
+          "second_moment_relative_linf_difference": 3.995249950150912e-13,
+          "relative_gap_difference": 6.5503158452884236e-15,
+          "relative_gap": 0.3324664959732715,
+          "min_log10_raw_second_moment": -24.32857251910741
+        },
+        {
+          "step": 19306,
+          "max_weight_absolute_difference": 1.794051018855214e-13,
+          "weight_relative_linf_difference": 8.69942619660086e-15,
+          "first_moment_relative_linf_difference": 3.486967774592675e-13,
+          "second_moment_relative_linf_difference": 6.336927128129791e-13,
+          "relative_gap_difference": 5.218048215738236e-15,
+          "relative_gap": 0.33108595239496585,
+          "min_log10_raw_second_moment": -24.4750378152447
+        },
+        {
+          "step": 24040,
+          "max_weight_absolute_difference": 1.3830950273963083e-13,
+          "weight_relative_linf_difference": 6.661169171654088e-15,
+          "first_moment_relative_linf_difference": 6.236916672970816e-13,
+          "second_moment_relative_linf_difference": 1.2251591813724332e-12,
+          "relative_gap_difference": 4.6629367034256575e-15,
+          "relative_gap": 0.3298201646170995,
+          "min_log10_raw_second_moment": -24.614231644568644
+        },
+        {
+          "step": 29935,
+          "max_weight_absolute_difference": 1.239286451237831e-13,
+          "weight_relative_linf_difference": 5.930591308198487e-15,
+          "first_moment_relative_linf_difference": 2.2582023382732543e-13,
+          "second_moment_relative_linf_difference": 4.589979754345835e-13,
+          "relative_gap_difference": 3.774758283725532e-15,
+          "relative_gap": 0.3286451932788743,
+          "min_log10_raw_second_moment": -24.747312884960213
+        },
+        {
+          "step": 37275,
+          "max_weight_absolute_difference": 1.3902420881173327e-13,
+          "weight_relative_linf_difference": 6.612940651855172e-15,
+          "first_moment_relative_linf_difference": 4.424515336144493e-13,
+          "second_moment_relative_linf_difference": 3.565296843386392e-13,
+          "relative_gap_difference": 3.1086244689504383e-15,
+          "relative_gap": 0.32754369068893785,
+          "min_log10_raw_second_moment": -24.87524801469172
+        },
+        {
+          "step": 46415,
+          "max_weight_absolute_difference": 2.878964427965869e-13,
+          "weight_relative_linf_difference": 1.3615752090655838e-14,
+          "first_moment_relative_linf_difference": 6.962275102395809e-13,
+          "second_moment_relative_linf_difference": 1.3305425604456107e-12,
+          "relative_gap_difference": 7.993605777301127e-15,
+          "relative_gap": 0.3265025869978936,
+          "min_log10_raw_second_moment": -24.998846917389596
+        },
+        {
+          "step": 57796,
+          "max_weight_absolute_difference": 2.368626128568252e-13,
+          "weight_relative_linf_difference": 1.11405327333081e-14,
+          "first_moment_relative_linf_difference": 4.378700371529721e-13,
+          "second_moment_relative_linf_difference": 8.675572960848718e-13,
+          "relative_gap_difference": 2.3314683517128287e-15,
+          "relative_gap": 0.32551204686082547,
+          "min_log10_raw_second_moment": -25.118755946771206
+        },
+        {
+          "step": 71968,
+          "max_weight_absolute_difference": 2.93572458009983e-13,
+          "weight_relative_linf_difference": 1.3734592468082831e-14,
+          "first_moment_relative_linf_difference": 8.114661597461589e-13,
+          "second_moment_relative_linf_difference": 1.5681502348692345e-12,
+          "relative_gap_difference": 1.4432899320127035e-15,
+          "relative_gap": 0.32456435179619925,
+          "min_log10_raw_second_moment": -25.235513598347474
+        },
+        {
+          "step": 89615,
+          "max_weight_absolute_difference": 4.3262962656775983e-13,
+          "weight_relative_linf_difference": 2.0136409095859647e-14,
+          "first_moment_relative_linf_difference": 9.765333333529338e-13,
+          "second_moment_relative_linf_difference": 1.4851057475743935e-12,
+          "relative_gap_difference": 2.55351295663786e-15,
+          "relative_gap": 0.3236534455429939,
+          "min_log10_raw_second_moment": -25.349557739585126
+        },
+        {
+          "step": 111588,
+          "max_weight_absolute_difference": 3.4608080290432497e-13,
+          "weight_relative_linf_difference": 1.602775443798411e-14,
+          "first_moment_relative_linf_difference": 1.0165938635659056e-12,
+          "second_moment_relative_linf_difference": 1.683284847535914e-12,
+          "relative_gap_difference": 2.6645352591003757e-15,
+          "relative_gap": 0.32277447512104296,
+          "min_log10_raw_second_moment": -25.461250528442303
+        },
+        {
+          "step": 138949,
+          "max_weight_absolute_difference": 3.3225158735383786e-13,
+          "weight_relative_linf_difference": 1.5312539028234253e-14,
+          "first_moment_relative_linf_difference": 1.3655028829921616e-12,
+          "second_moment_relative_linf_difference": 2.2872312971092833e-12,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.32192340544147147,
+          "min_log10_raw_second_moment": -25.573058491463108
+        },
+        {
+          "step": 173019,
+          "max_weight_absolute_difference": 4.147784546382205e-13,
+          "weight_relative_linf_difference": 1.9025231787004614e-14,
+          "first_moment_relative_linf_difference": 1.4518228041223404e-12,
+          "second_moment_relative_linf_difference": 2.7059645925789424e-12,
+          "relative_gap_difference": 2.6645352591003757e-15,
+          "relative_gap": 0.32109696498930873,
+          "min_log10_raw_second_moment": -25.693186393698554
+        },
+        {
+          "step": 215443,
+          "max_weight_absolute_difference": 6.764606236275839e-13,
+          "weight_relative_linf_difference": 3.0883945413034595e-14,
+          "first_moment_relative_linf_difference": 7.349769464448145e-13,
+          "second_moment_relative_linf_difference": 1.3396904311629002e-12,
+          "relative_gap_difference": 3.885780586188048e-15,
+          "relative_gap": 0.3202924296122597,
+          "min_log10_raw_second_moment": -25.810907621338988
+        },
+        {
+          "step": 268269,
+          "max_weight_absolute_difference": 6.809119240669403e-13,
+          "weight_relative_linf_difference": 3.0945370675718155e-14,
+          "first_moment_relative_linf_difference": 1.6642309062185794e-12,
+          "second_moment_relative_linf_difference": 2.298870060537771e-12,
+          "relative_gap_difference": 2.886579864025407e-15,
+          "relative_gap": 0.3195075185149848,
+          "min_log10_raw_second_moment": -25.926524523133683
+        },
+        {
+          "step": 334048,
+          "max_weight_absolute_difference": 6.067767815975955e-13,
+          "weight_relative_linf_difference": 2.7452510351967403e-14,
+          "first_moment_relative_linf_difference": 2.0835163219096737e-12,
+          "second_moment_relative_linf_difference": 2.6444093255286977e-12,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.31874029274516835,
+          "min_log10_raw_second_moment": -26.040295269093757
+        },
+        {
+          "step": 415956,
+          "max_weight_absolute_difference": 9.039713422254181e-13,
+          "weight_relative_linf_difference": 4.0718004213994344e-14,
+          "first_moment_relative_linf_difference": 4.2196629650500305e-12,
+          "second_moment_relative_linf_difference": 8.59824496688512e-12,
+          "relative_gap_difference": 4.773959005888173e-15,
+          "relative_gap": 0.3179891093357532,
+          "min_log10_raw_second_moment": -26.152439438018515
+        },
+        {
+          "step": 517947,
+          "max_weight_absolute_difference": 6.379853242921563e-13,
+          "weight_relative_linf_difference": 2.861202312334158e-14,
+          "first_moment_relative_linf_difference": 3.19585777858806e-12,
+          "second_moment_relative_linf_difference": 2.9902328529560946e-12,
+          "relative_gap_difference": 6.772360450213455e-15,
+          "relative_gap": 0.31725256636674204,
+          "min_log10_raw_second_moment": -26.26314516479006
+        },
+        {
+          "step": 644946,
+          "max_weight_absolute_difference": 7.707584570582071e-13,
+          "weight_relative_linf_difference": 3.4418106190900515e-14,
+          "first_moment_relative_linf_difference": 2.2838896807148375e-12,
+          "second_moment_relative_linf_difference": 3.0773878468902573e-12,
+          "relative_gap_difference": 8.659739592076221e-15,
+          "relative_gap": 0.3165294470705766,
+          "min_log10_raw_second_moment": -26.372576696410768
+        },
+        {
+          "step": 803085,
+          "max_weight_absolute_difference": 1.1025243218387715e-12,
+          "weight_relative_linf_difference": 4.9024156159502436e-14,
+          "first_moment_relative_linf_difference": 2.644246773893814e-12,
+          "second_moment_relative_linf_difference": 4.04042435543996e-12,
+          "relative_gap_difference": 1.1102230246251565e-14,
+          "relative_gap": 0.3158187037371024,
+          "min_log10_raw_second_moment": -26.48087615090837
+        },
+        {
+          "step": 1000000,
+          "max_weight_absolute_difference": 8.311094867874402e-13,
+          "weight_relative_linf_difference": 3.680052281987992e-14,
+          "first_moment_relative_linf_difference": 2.452140454933635e-12,
+          "second_moment_relative_linf_difference": 3.631619831471491e-12,
+          "relative_gap_difference": 1.554312234475219e-14,
+          "relative_gap": 0.31511942504046697,
+          "min_log10_raw_second_moment": -26.588167881920853
+        }
+      ]
+    },
+    {
+      "a": 0.7,
+      "mode": "fixed_epsilon",
+      "checkpoints": 61,
+      "raw_run": {
+        "completed_steps": 1000000,
+        "a": 0.7,
+        "epsilon": 1e-08,
+        "LDBL_MANT_DIG": 64,
+        "LDBL_MAX_EXP": 16384,
+        "zero_logistic_weight_count": 0,
+        "first_zero_logistic_weight_step": 0,
+        "zero_nonzero_gradient_square_count": 0,
+        "first_zero_nonzero_gradient_square_step": 0,
+        "max_margin_evaluated": 128.48763262889665,
+        "min_nonzero_logistic_weight_log10": -55.80146984354202,
+        "min_positive_second_moment_log10": -25.368427935403524,
+        "long_double_min_subnormal_log10": -4950.438278694171,
+        "checkpoints": 61,
+        "wall_seconds": 19.234472225
+      },
+      "maximum_differences": {
+        "max_weight_absolute_difference": 7.696759896091976e-13,
+        "weight_relative_linf_difference": 4.1279157587823644e-14,
+        "first_moment_relative_linf_difference": 3.8962488133267135e-12,
+        "second_moment_relative_linf_difference": 5.6146995447191465e-12,
+        "relative_gap_difference": 2.4091839634365897e-14
+      },
+      "endpoint": {
+        "step": 1000000,
+        "max_weight_absolute_difference": 5.779873107902844e-13,
+        "weight_relative_linf_difference": 3.04101910043239e-14,
+        "first_moment_relative_linf_difference": 3.425139741874655e-12,
+        "second_moment_relative_linf_difference": 4.9242812126806315e-12,
+        "relative_gap_difference": 1.6986412276764895e-14,
+        "relative_gap": 0.2742959631928694,
+        "min_log10_raw_second_moment": -25.368427935403524
+      },
+      "trace": [
+        {
+          "step": 0,
+          "max_weight_absolute_difference": 0.0,
+          "weight_relative_linf_difference": 0.0,
+          "first_moment_relative_linf_difference": 0.0,
+          "second_moment_relative_linf_difference": 0.0,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 6.490235247011739,
+          "min_log10_raw_second_moment": null
+        },
+        {
+          "step": 1,
+          "max_weight_absolute_difference": 1.0299920638612292e-15,
+          "weight_relative_linf_difference": 3.388829963517782e-16,
+          "first_moment_relative_linf_difference": 3.1416992648832134e-16,
+          "second_moment_relative_linf_difference": 1.1341357450439578e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 3.977201301631605,
+          "min_log10_raw_second_moment": -9.268051993393502
+        },
+        {
+          "step": 2,
+          "max_weight_absolute_difference": 1.6861512186494565e-15,
+          "weight_relative_linf_difference": 5.341623002500898e-16,
+          "first_moment_relative_linf_difference": 4.543149980084557e-16,
+          "second_moment_relative_linf_difference": 1.1984983494661377e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 3.2715182418607363,
+          "min_log10_raw_second_moment": -5.296662916306037
+        },
+        {
+          "step": 3,
+          "max_weight_absolute_difference": 2.5912431922403556e-15,
+          "weight_relative_linf_difference": 7.940089536719725e-16,
+          "first_moment_relative_linf_difference": 6.336821660012088e-16,
+          "second_moment_relative_linf_difference": 1.245943157646173e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 2.9639909676304947,
+          "min_log10_raw_second_moment": -5.233530292043529
+        },
+        {
+          "step": 4,
+          "max_weight_absolute_difference": 3.8807932561946146e-15,
+          "weight_relative_linf_difference": 1.150338945868193e-15,
+          "first_moment_relative_linf_difference": 7.442327186519757e-16,
+          "second_moment_relative_linf_difference": 1.383746453821424e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 2.310709558474395,
+          "min_log10_raw_second_moment": -5.152921309348622
+        },
+        {
+          "step": 5,
+          "max_weight_absolute_difference": 4.969006976718315e-15,
+          "weight_relative_linf_difference": 1.4043325321621147e-15,
+          "first_moment_relative_linf_difference": 6.29886386625846e-16,
+          "second_moment_relative_linf_difference": 1.347304152379093e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 2.119137067392316,
+          "min_log10_raw_second_moment": -4.833737013879467
+        },
+        {
+          "step": 7,
+          "max_weight_absolute_difference": 3.827450509308328e-15,
+          "weight_relative_linf_difference": 9.566630560724527e-16,
+          "first_moment_relative_linf_difference": 9.258109765011581e-16,
+          "second_moment_relative_linf_difference": 1.336983058509637e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 2.135493537143428,
+          "min_log10_raw_second_moment": -4.69818811623458
+        },
+        {
+          "step": 8,
+          "max_weight_absolute_difference": 3.0424881364288225e-15,
+          "weight_relative_linf_difference": 6.985620431274181e-16,
+          "first_moment_relative_linf_difference": 1.025267101433621e-15,
+          "second_moment_relative_linf_difference": 1.3105769969637062e-15,
+          "relative_gap_difference": 1.5543122344752192e-15,
+          "relative_gap": 1.9962340905771279,
+          "min_log10_raw_second_moment": -4.702520286941406
+        },
+        {
+          "step": 11,
+          "max_weight_absolute_difference": 3.3765308257716065e-15,
+          "weight_relative_linf_difference": 6.594388628440256e-16,
+          "first_moment_relative_linf_difference": 1.67813264452688e-15,
+          "second_moment_relative_linf_difference": 1.283667033160426e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 1.3664797578990429,
+          "min_log10_raw_second_moment": -4.5594590322037005
+        },
+        {
+          "step": 13,
+          "max_weight_absolute_difference": 3.209780531643336e-15,
+          "weight_relative_linf_difference": 5.979937148496213e-16,
+          "first_moment_relative_linf_difference": 1.7950757143307457e-15,
+          "second_moment_relative_linf_difference": 1.3276328389667832e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 1.3651852754447817,
+          "min_log10_raw_second_moment": -4.518417095525218
+        },
+        {
+          "step": 17,
+          "max_weight_absolute_difference": 3.2040342601291627e-15,
+          "weight_relative_linf_difference": 5.609617203564664e-16,
+          "first_moment_relative_linf_difference": 1.2534132311097745e-15,
+          "second_moment_relative_linf_difference": 1.4080567260954212e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.9039448846618587,
+          "min_log10_raw_second_moment": -4.350709421394309
+        },
+        {
+          "step": 21,
+          "max_weight_absolute_difference": 3.5147666027635083e-15,
+          "weight_relative_linf_difference": 5.844991018210161e-16,
+          "first_moment_relative_linf_difference": 2.1956204490891326e-15,
+          "second_moment_relative_linf_difference": 1.8485591062390476e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.8857340569870032,
+          "min_log10_raw_second_moment": -4.3532009660409745
+        },
+        {
+          "step": 26,
+          "max_weight_absolute_difference": 4.1663721084272964e-15,
+          "weight_relative_linf_difference": 6.657269861365217e-16,
+          "first_moment_relative_linf_difference": 2.5032990402597925e-15,
+          "second_moment_relative_linf_difference": 2.009135295553979e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.8385171707616961,
+          "min_log10_raw_second_moment": -4.373350555742624
+        },
+        {
+          "step": 33,
+          "max_weight_absolute_difference": 3.904645703989296e-15,
+          "weight_relative_linf_difference": 6.111819405457579e-16,
+          "first_moment_relative_linf_difference": 1.6807368250497958e-15,
+          "second_moment_relative_linf_difference": 1.1503533338059764e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.7489373394306699,
+          "min_log10_raw_second_moment": -4.402908820490846
+        },
+        {
+          "step": 41,
+          "max_weight_absolute_difference": 3.07783312725185e-15,
+          "weight_relative_linf_difference": 4.815398420141756e-16,
+          "first_moment_relative_linf_difference": 2.860920951964873e-15,
+          "second_moment_relative_linf_difference": 9.992907738419364e-16,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.7102076569115798,
+          "min_log10_raw_second_moment": -4.435903934972506
+        },
+        {
+          "step": 51,
+          "max_weight_absolute_difference": 4.9855952699573436e-15,
+          "weight_relative_linf_difference": 7.863243532749762e-16,
+          "first_moment_relative_linf_difference": 2.9164896764890963e-15,
+          "second_moment_relative_linf_difference": 9.860931312176124e-16,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.6235288975515336,
+          "min_log10_raw_second_moment": -4.479438056887156
+        },
+        {
+          "step": 64,
+          "max_weight_absolute_difference": 3.460339653704736e-15,
+          "weight_relative_linf_difference": 5.495342984252134e-16,
+          "first_moment_relative_linf_difference": 3.4580756346859422e-15,
+          "second_moment_relative_linf_difference": 1.2952290439440508e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.6067323464875187,
+          "min_log10_raw_second_moment": -4.536057716759398
+        },
+        {
+          "step": 80,
+          "max_weight_absolute_difference": 4.34634966905989e-15,
+          "weight_relative_linf_difference": 6.838615749603277e-16,
+          "first_moment_relative_linf_difference": 3.620222872219363e-15,
+          "second_moment_relative_linf_difference": 6.148210400127338e-16,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.5962841179962373,
+          "min_log10_raw_second_moment": -4.605870100959455
+        },
+        {
+          "step": 100,
+          "max_weight_absolute_difference": 4.238363132680334e-15,
+          "weight_relative_linf_difference": 6.611912318801612e-16,
+          "first_moment_relative_linf_difference": 6.3594816743516244e-15,
+          "second_moment_relative_linf_difference": 1.1884775039330173e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.5838610730179166,
+          "min_log10_raw_second_moment": -4.693165339119313
+        },
+        {
+          "step": 124,
+          "max_weight_absolute_difference": 5.012483483834984e-15,
+          "weight_relative_linf_difference": 7.748773628146777e-16,
+          "first_moment_relative_linf_difference": 9.532981013824296e-15,
+          "second_moment_relative_linf_difference": 1.4473496791894839e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.5742278970237926,
+          "min_log10_raw_second_moment": -4.797918030355082
+        },
+        {
+          "step": 155,
+          "max_weight_absolute_difference": 5.272692005231505e-15,
+          "weight_relative_linf_difference": 8.068444466974534e-16,
+          "first_moment_relative_linf_difference": 9.20816551887115e-15,
+          "second_moment_relative_linf_difference": 1.6968968240363766e-15,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.5669238225995793,
+          "min_log10_raw_second_moment": -4.93322670763333
+        },
+        {
+          "step": 193,
+          "max_weight_absolute_difference": 4.0080243811357885e-15,
+          "weight_relative_linf_difference": 6.0660250709294785e-16,
+          "first_moment_relative_linf_difference": 1.0579481279942417e-14,
+          "second_moment_relative_linf_difference": 1.4267436362113682e-15,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.5594611254403155,
+          "min_log10_raw_second_moment": -5.099088979935639
+        },
+        {
+          "step": 240,
+          "max_weight_absolute_difference": 4.1330871017319915e-15,
+          "weight_relative_linf_difference": 6.176470212235471e-16,
+          "first_moment_relative_linf_difference": 7.997163542496944e-15,
+          "second_moment_relative_linf_difference": 3.6016038619205656e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.551993846906971,
+          "min_log10_raw_second_moment": -5.304232138532401
+        },
+        {
+          "step": 299,
+          "max_weight_absolute_difference": 5.0935818063369e-15,
+          "weight_relative_linf_difference": 7.494506800225833e-16,
+          "first_moment_relative_linf_difference": 8.359366786169945e-15,
+          "second_moment_relative_linf_difference": 6.281122300180963e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.5442216887428137,
+          "min_log10_raw_second_moment": -5.561742900669013
+        },
+        {
+          "step": 372,
+          "max_weight_absolute_difference": 5.5304068616313096e-15,
+          "weight_relative_linf_difference": 7.978697093541861e-16,
+          "first_moment_relative_linf_difference": 8.793776711018556e-15,
+          "second_moment_relative_linf_difference": 7.9176154465345e-15,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.5357276349425009,
+          "min_log10_raw_second_moment": -5.880325182601352
+        },
+        {
+          "step": 464,
+          "max_weight_absolute_difference": 6.3990154321180714e-15,
+          "weight_relative_linf_difference": 8.99004952905784e-16,
+          "first_moment_relative_linf_difference": 1.109278532448861e-14,
+          "second_moment_relative_linf_difference": 9.220203043429985e-15,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.5260322277994468,
+          "min_log10_raw_second_moment": -6.281721392868937
+        },
+        {
+          "step": 577,
+          "max_weight_absolute_difference": 7.570441669380035e-15,
+          "weight_relative_linf_difference": 1.0261944527776942e-15,
+          "first_moment_relative_linf_difference": 1.2630088638442887e-14,
+          "second_moment_relative_linf_difference": 1.0938884456248844e-14,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.5187689476839166,
+          "min_log10_raw_second_moment": -6.774470527857722
+        },
+        {
+          "step": 719,
+          "max_weight_absolute_difference": 7.37409265594291e-15,
+          "weight_relative_linf_difference": 9.518395247472316e-16,
+          "first_moment_relative_linf_difference": 7.385728017271668e-15,
+          "second_moment_relative_linf_difference": 9.448233323529874e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.5121199760092215,
+          "min_log10_raw_second_moment": -7.392763606667374
+        },
+        {
+          "step": 896,
+          "max_weight_absolute_difference": 8.91040713435487e-15,
+          "weight_relative_linf_difference": 1.0800233037241933e-15,
+          "first_moment_relative_linf_difference": 9.950211470942431e-15,
+          "second_moment_relative_linf_difference": 9.122643923571182e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.50107757212855,
+          "min_log10_raw_second_moment": -8.159918759891177
+        },
+        {
+          "step": 1115,
+          "max_weight_absolute_difference": 1.0921819004749977e-14,
+          "weight_relative_linf_difference": 1.2285264728922647e-15,
+          "first_moment_relative_linf_difference": 2.1427492499858854e-14,
+          "second_moment_relative_linf_difference": 1.2067747756258932e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.48208087547889467,
+          "min_log10_raw_second_moment": -9.1016343759738
+        },
+        {
+          "step": 1389,
+          "max_weight_absolute_difference": 1.300088509070818e-14,
+          "weight_relative_linf_difference": 1.3427015510871066e-15,
+          "first_moment_relative_linf_difference": 1.0228963058949976e-14,
+          "second_moment_relative_linf_difference": 1.502613655482061e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.4533861741197732,
+          "min_log10_raw_second_moment": -10.268921224727196
+        },
+        {
+          "step": 1730,
+          "max_weight_absolute_difference": 1.5953384446820706e-14,
+          "weight_relative_linf_difference": 1.502743804146672e-15,
+          "first_moment_relative_linf_difference": 1.1117376258127698e-14,
+          "second_moment_relative_linf_difference": 1.88034365840868e-14,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.41742396024092343,
+          "min_log10_raw_second_moment": -11.700291970164933
+        },
+        {
+          "step": 2154,
+          "max_weight_absolute_difference": 1.9908553972047827e-14,
+          "weight_relative_linf_difference": 1.7033718485898961e-15,
+          "first_moment_relative_linf_difference": 1.793523859996326e-14,
+          "second_moment_relative_linf_difference": 2.0708663195610057e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.3761549519517696,
+          "min_log10_raw_second_moment": -13.428347026473206
+        },
+        {
+          "step": 2682,
+          "max_weight_absolute_difference": 2.71657696337968e-14,
+          "weight_relative_linf_difference": 2.1016963620518218e-15,
+          "first_moment_relative_linf_difference": 3.2243268146277583e-14,
+          "second_moment_relative_linf_difference": 2.8161252929825362e-14,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.33739621866751945,
+          "min_log10_raw_second_moment": -15.630928138868502
+        },
+        {
+          "step": 3340,
+          "max_weight_absolute_difference": 2.7640216504476456e-14,
+          "weight_relative_linf_difference": 1.9414434649882152e-15,
+          "first_moment_relative_linf_difference": 2.8351396361595886e-14,
+          "second_moment_relative_linf_difference": 2.977544428173134e-14,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.310331500303193,
+          "min_log10_raw_second_moment": -18.356153004073718
+        },
+        {
+          "step": 4159,
+          "max_weight_absolute_difference": 3.5557494448834603e-14,
+          "weight_relative_linf_difference": 2.329360165994246e-15,
+          "first_moment_relative_linf_difference": 2.145992435988876e-14,
+          "second_moment_relative_linf_difference": 3.415723288637505e-14,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.29868677987410897,
+          "min_log10_raw_second_moment": -20.914447676450234
+        },
+        {
+          "step": 5179,
+          "max_weight_absolute_difference": 4.826260918688874e-14,
+          "weight_relative_linf_difference": 3.037795046784047e-15,
+          "first_moment_relative_linf_difference": 6.493349779153357e-14,
+          "second_moment_relative_linf_difference": 3.7108697117347907e-14,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.29319780924848593,
+          "min_log10_raw_second_moment": -21.313306941454133
+        },
+        {
+          "step": 6449,
+          "max_weight_absolute_difference": 5.893549537283604e-14,
+          "weight_relative_linf_difference": 3.616827673033719e-15,
+          "first_moment_relative_linf_difference": 1.0219555141461253e-13,
+          "second_moment_relative_linf_difference": 1.2513012740657985e-13,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 0.2900678521573954,
+          "min_log10_raw_second_moment": -21.781742807863303
+        },
+        {
+          "step": 8030,
+          "max_weight_absolute_difference": 5.6751478516581244e-14,
+          "weight_relative_linf_difference": 3.4198048463987805e-15,
+          "first_moment_relative_linf_difference": 1.0071069911950092e-13,
+          "second_moment_relative_linf_difference": 1.6760963884438016e-13,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 0.28795726997050897,
+          "min_log10_raw_second_moment": -22.248495713424706
+        },
+        {
+          "step": 10000,
+          "max_weight_absolute_difference": 6.211611086603952e-14,
+          "weight_relative_linf_difference": 3.689943820292826e-15,
+          "first_moment_relative_linf_difference": 1.6160642008662293e-13,
+          "second_moment_relative_linf_difference": 1.5074639258851112e-13,
+          "relative_gap_difference": 2.55351295663786e-15,
+          "relative_gap": 0.2863742139601386,
+          "min_log10_raw_second_moment": -22.545212466519615
+        },
+        {
+          "step": 12451,
+          "max_weight_absolute_difference": 8.270814588762221e-14,
+          "weight_relative_linf_difference": 4.855615379323565e-15,
+          "first_moment_relative_linf_difference": 2.671195509551104e-13,
+          "second_moment_relative_linf_difference": 3.368034090349939e-13,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.2851076592021762,
+          "min_log10_raw_second_moment": -22.758449242487856
+        },
+        {
+          "step": 15505,
+          "max_weight_absolute_difference": 8.392939121470988e-14,
+          "weight_relative_linf_difference": 4.877827166369431e-15,
+          "first_moment_relative_linf_difference": 3.1435260071065695e-13,
+          "second_moment_relative_linf_difference": 2.3678950889155116e-13,
+          "relative_gap_difference": 2.9976021664879227e-15,
+          "relative_gap": 0.2840469292756007,
+          "min_log10_raw_second_moment": -22.927346035941778
+        },
+        {
+          "step": 19306,
+          "max_weight_absolute_difference": 1.022307238862652e-13,
+          "weight_relative_linf_difference": 5.8890531277072846e-15,
+          "first_moment_relative_linf_difference": 3.8137839291056205e-13,
+          "second_moment_relative_linf_difference": 5.529384665493239e-13,
+          "relative_gap_difference": 4.551914400963142e-15,
+          "relative_gap": 0.2831314113291902,
+          "min_log10_raw_second_moment": -23.069996799120645
+        },
+        {
+          "step": 24040,
+          "max_weight_absolute_difference": 1.0735162758734873e-13,
+          "weight_relative_linf_difference": 6.13514564500302e-15,
+          "first_moment_relative_linf_difference": 4.498669382457593e-13,
+          "second_moment_relative_linf_difference": 6.402882187081615e-13,
+          "relative_gap_difference": 2.3314683517128287e-15,
+          "relative_gap": 0.28232210292812543,
+          "min_log10_raw_second_moment": -23.195882943723802
+        },
+        {
+          "step": 29935,
+          "max_weight_absolute_difference": 1.0793449467527694e-13,
+          "weight_relative_linf_difference": 6.124079283057329e-15,
+          "first_moment_relative_linf_difference": 5.508014450859232e-13,
+          "second_moment_relative_linf_difference": 3.828596114514517e-13,
+          "relative_gap_difference": 4.884981308350689e-15,
+          "relative_gap": 0.2815940248151968,
+          "min_log10_raw_second_moment": -23.310177413382412
+        },
+        {
+          "step": 37275,
+          "max_weight_absolute_difference": 1.5976803213746393e-13,
+          "weight_relative_linf_difference": 9.005006446766294e-15,
+          "first_moment_relative_linf_difference": 5.879332908892943e-13,
+          "second_moment_relative_linf_difference": 7.898384648052022e-13,
+          "relative_gap_difference": 7.993605777301127e-15,
+          "relative_gap": 0.28092986560807554,
+          "min_log10_raw_second_moment": -23.41598614485128
+        },
+        {
+          "step": 46415,
+          "max_weight_absolute_difference": 1.303158969623297e-13,
+          "weight_relative_linf_difference": 7.299750733617912e-15,
+          "first_moment_relative_linf_difference": 4.912092244760974e-13,
+          "second_moment_relative_linf_difference": 6.68114679778147e-13,
+          "relative_gap_difference": 2.886579864025407e-15,
+          "relative_gap": 0.28031710230539086,
+          "min_log10_raw_second_moment": -23.515310985265966
+        },
+        {
+          "step": 57796,
+          "max_weight_absolute_difference": 1.8632664855466885e-13,
+          "weight_relative_linf_difference": 1.037696563125474e-14,
+          "first_moment_relative_linf_difference": 5.182226596264317e-13,
+          "second_moment_relative_linf_difference": 8.811172363782744e-13,
+          "relative_gap_difference": 3.552713678800501e-15,
+          "relative_gap": 0.2797465432064389,
+          "min_log10_raw_second_moment": -23.679636885292172
+        },
+        {
+          "step": 71968,
+          "max_weight_absolute_difference": 1.8850285915528175e-13,
+          "weight_relative_linf_difference": 1.0440939178313198e-14,
+          "first_moment_relative_linf_difference": 8.654484867498441e-13,
+          "second_moment_relative_linf_difference": 1.3235272994916912e-12,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.27921117118382344,
+          "min_log10_raw_second_moment": -23.844285452640182
+        },
+        {
+          "step": 89615,
+          "max_weight_absolute_difference": 1.9962330399803108e-13,
+          "weight_relative_linf_difference": 1.099966780585342e-14,
+          "first_moment_relative_linf_difference": 1.0144526993099623e-12,
+          "second_moment_relative_linf_difference": 1.56877965014173e-12,
+          "relative_gap_difference": 8.992806499463768e-15,
+          "relative_gap": 0.2787055724853609,
+          "min_log10_raw_second_moment": -24.00102407368356
+        },
+        {
+          "step": 111588,
+          "max_weight_absolute_difference": 2.6309683598402245e-13,
+          "weight_relative_linf_difference": 1.4425617924740756e-14,
+          "first_moment_relative_linf_difference": 9.096081912540154e-13,
+          "second_moment_relative_linf_difference": 1.367697969569335e-12,
+          "relative_gap_difference": 7.327471962526033e-15,
+          "relative_gap": 0.27822547467563186,
+          "min_log10_raw_second_moment": -24.150696045640167
+        },
+        {
+          "step": 138949,
+          "max_weight_absolute_difference": 3.3928415632544784e-13,
+          "weight_relative_linf_difference": 1.8514962485235485e-14,
+          "first_moment_relative_linf_difference": 8.898643350611017e-13,
+          "second_moment_relative_linf_difference": 1.0371652139017421e-12,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.27776739995560984,
+          "min_log10_raw_second_moment": -24.294003882414895
+        },
+        {
+          "step": 173019,
+          "max_weight_absolute_difference": 5.140297909544955e-13,
+          "weight_relative_linf_difference": 2.7923303018007452e-14,
+          "first_moment_relative_linf_difference": 1.4688777635288213e-12,
+          "second_moment_relative_linf_difference": 1.4888004215370479e-12,
+          "relative_gap_difference": 1.0658141036401503e-14,
+          "relative_gap": 0.27732854321174694,
+          "min_log10_raw_second_moment": -24.431519447333677
+        },
+        {
+          "step": 215443,
+          "max_weight_absolute_difference": 4.2312247455766894e-13,
+          "weight_relative_linf_difference": 2.288407169866612e-14,
+          "first_moment_relative_linf_difference": 2.6187963368877555e-12,
+          "second_moment_relative_linf_difference": 3.1833856620626357e-12,
+          "relative_gap_difference": 5.329070518200751e-15,
+          "relative_gap": 0.276906588935815,
+          "min_log10_raw_second_moment": -24.563721863926727
+        },
+        {
+          "step": 268269,
+          "max_weight_absolute_difference": 6.507051841797562e-13,
+          "weight_relative_linf_difference": 3.5043043718658743e-14,
+          "first_moment_relative_linf_difference": 1.2958402661236343e-12,
+          "second_moment_relative_linf_difference": 2.3376687739567166e-12,
+          "relative_gap_difference": 1.1435297153639112e-14,
+          "relative_gap": 0.2764996087631245,
+          "min_log10_raw_second_moment": -24.691016130858532
+        },
+        {
+          "step": 334048,
+          "max_weight_absolute_difference": 7.696759896091976e-13,
+          "weight_relative_linf_difference": 4.1279157587823644e-14,
+          "first_moment_relative_linf_difference": 2.2982317146337307e-12,
+          "second_moment_relative_linf_difference": 2.8571296021200568e-12,
+          "relative_gap_difference": 5.10702591327572e-15,
+          "relative_gap": 0.2761059736030683,
+          "min_log10_raw_second_moment": -24.81375104223657
+        },
+        {
+          "step": 415956,
+          "max_weight_absolute_difference": 4.662138730626708e-13,
+          "weight_relative_linf_difference": 2.490363416529942e-14,
+          "first_moment_relative_linf_difference": 2.744822248019544e-12,
+          "second_moment_relative_linf_difference": 5.6146995447191465e-12,
+          "relative_gap_difference": 1.1546319456101628e-14,
+          "relative_gap": 0.2757243039240954,
+          "min_log10_raw_second_moment": -24.932227802934147
+        },
+        {
+          "step": 517947,
+          "max_weight_absolute_difference": 4.688567242783215e-13,
+          "weight_relative_linf_difference": 2.4946911014861244e-14,
+          "first_moment_relative_linf_difference": 1.883859071730474e-12,
+          "second_moment_relative_linf_difference": 2.5820140352241815e-12,
+          "relative_gap_difference": 1.5987211554602254e-14,
+          "relative_gap": 0.27535342166999444,
+          "min_log10_raw_second_moment": -25.04670997292957
+        },
+        {
+          "step": 644946,
+          "max_weight_absolute_difference": 7.394015955064503e-13,
+          "weight_relative_linf_difference": 3.9191899199824255e-14,
+          "first_moment_relative_linf_difference": 3.8962488133267135e-12,
+          "second_moment_relative_linf_difference": 3.941744615984376e-12,
+          "relative_gap_difference": 6.8833827526759706e-15,
+          "relative_gap": 0.2749923067479081,
+          "min_log10_raw_second_moment": -25.15743319983922
+        },
+        {
+          "step": 803085,
+          "max_weight_absolute_difference": 7.394675149985375e-13,
+          "weight_relative_linf_difference": 3.904908316995187e-14,
+          "first_moment_relative_linf_difference": 3.2177344727110737e-12,
+          "second_moment_relative_linf_difference": 4.642806970508293e-12,
+          "relative_gap_difference": 2.4091839634365897e-14,
+          "relative_gap": 0.2746400771386963,
+          "min_log10_raw_second_moment": -25.264608497930865
+        },
+        {
+          "step": 1000000,
+          "max_weight_absolute_difference": 5.779873107902844e-13,
+          "weight_relative_linf_difference": 3.04101910043239e-14,
+          "first_moment_relative_linf_difference": 3.425139741874655e-12,
+          "second_moment_relative_linf_difference": 4.9242812126806315e-12,
+          "relative_gap_difference": 1.6986412276764895e-14,
+          "relative_gap": 0.2742959631928694,
+          "min_log10_raw_second_moment": -25.368427935403524
+        }
+      ]
+    },
+    {
+      "a": 1.0,
+      "mode": "fixed_epsilon",
+      "checkpoints": 61,
+      "raw_run": {
+        "completed_steps": 1000000,
+        "a": 1,
+        "epsilon": 1e-08,
+        "LDBL_MANT_DIG": 64,
+        "LDBL_MAX_EXP": 16384,
+        "zero_logistic_weight_count": 0,
+        "first_zero_logistic_weight_step": 0,
+        "zero_nonzero_gradient_square_count": 0,
+        "first_zero_nonzero_gradient_square_step": 0,
+        "max_margin_evaluated": 92.66160847599525,
+        "min_nonzero_logistic_weight_log10": -40.24242524540433,
+        "min_positive_second_moment_log10": -25.380473248813512,
+        "long_double_min_subnormal_log10": -4950.438278694171,
+        "checkpoints": 61,
+        "wall_seconds": 18.978888608
+      },
+      "maximum_differences": {
+        "max_weight_absolute_difference": 3.461988329093112e-07,
+        "weight_relative_linf_difference": 5.0624553538050996e-08,
+        "first_moment_relative_linf_difference": 2.1935878915502196e-07,
+        "second_moment_relative_linf_difference": 3.225967425298195e-07,
+        "relative_gap_difference": 5.477835296474609e-09
+      },
+      "endpoint": {
+        "step": 1000000,
+        "max_weight_absolute_difference": 2.5592802297552675e-08,
+        "weight_relative_linf_difference": 2.079570664251843e-09,
+        "first_moment_relative_linf_difference": 7.433150636062917e-10,
+        "second_moment_relative_linf_difference": 1.408944921322323e-09,
+        "relative_gap_difference": 2.479894067874966e-11,
+        "relative_gap": 0.24072277430330458,
+        "min_log10_raw_second_moment": -19.69456862217512
+      },
+      "trace": [
+        {
+          "step": 0,
+          "max_weight_absolute_difference": 0.0,
+          "weight_relative_linf_difference": 0.0,
+          "first_moment_relative_linf_difference": 0.0,
+          "second_moment_relative_linf_difference": 0.0,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 6.490235247011739,
+          "min_log10_raw_second_moment": null
+        },
+        {
+          "step": 1,
+          "max_weight_absolute_difference": 1.0299920638612292e-15,
+          "weight_relative_linf_difference": 3.388829963517782e-16,
+          "first_moment_relative_linf_difference": 3.1416992648832134e-16,
+          "second_moment_relative_linf_difference": 1.1341357450439578e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 3.977201301631605,
+          "min_log10_raw_second_moment": -9.268051993393502
+        },
+        {
+          "step": 2,
+          "max_weight_absolute_difference": 1.3402907256265806e-15,
+          "weight_relative_linf_difference": 4.2821913597684123e-16,
+          "first_moment_relative_linf_difference": 4.543149980084557e-16,
+          "second_moment_relative_linf_difference": 1.1984983494661377e-15,
+          "relative_gap_difference": 8.881784197001252e-16,
+          "relative_gap": 3.200330486889061,
+          "min_log10_raw_second_moment": -5.296662916306037
+        },
+        {
+          "step": 3,
+          "max_weight_absolute_difference": 2.0363485203622744e-15,
+          "weight_relative_linf_difference": 6.429195962915608e-16,
+          "first_moment_relative_linf_difference": 5.843245554156208e-16,
+          "second_moment_relative_linf_difference": 1.2602535540381499e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 3.025550312644157,
+          "min_log10_raw_second_moment": -5.172073407792388
+        },
+        {
+          "step": 4,
+          "max_weight_absolute_difference": 2.9674613460928256e-15,
+          "weight_relative_linf_difference": 9.25676411513695e-16,
+          "first_moment_relative_linf_difference": 5.140748849940937e-16,
+          "second_moment_relative_linf_difference": 1.3320021867113315e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 2.6627851834929057,
+          "min_log10_raw_second_moment": -5.174808281564065
+        },
+        {
+          "step": 5,
+          "max_weight_absolute_difference": 3.650833975410439e-15,
+          "weight_relative_linf_difference": 1.1193314460054471e-15,
+          "first_moment_relative_linf_difference": 5.049579845994186e-16,
+          "second_moment_relative_linf_difference": 1.4582760646146292e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 2.149142838555295,
+          "min_log10_raw_second_moment": -4.904058137946386
+        },
+        {
+          "step": 7,
+          "max_weight_absolute_difference": 3.807175928682849e-15,
+          "weight_relative_linf_difference": 1.1055878016588223e-15,
+          "first_moment_relative_linf_difference": 5.789297638677479e-16,
+          "second_moment_relative_linf_difference": 1.5462249036601245e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 1.845790025116369,
+          "min_log10_raw_second_moment": -4.636720739726632
+        },
+        {
+          "step": 8,
+          "max_weight_absolute_difference": 3.4204410137572694e-15,
+          "weight_relative_linf_difference": 9.61239809173914e-16,
+          "first_moment_relative_linf_difference": 7.609955937733188e-16,
+          "second_moment_relative_linf_difference": 1.5603169983076593e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 1.8672543537434974,
+          "min_log10_raw_second_moment": -4.621709978055355
+        },
+        {
+          "step": 11,
+          "max_weight_absolute_difference": 2.5380088655713173e-15,
+          "weight_relative_linf_difference": 6.497228515685974e-16,
+          "first_moment_relative_linf_difference": 1.0403337885491471e-15,
+          "second_moment_relative_linf_difference": 1.4617893838456255e-15,
+          "relative_gap_difference": 1.1102230246251565e-15,
+          "relative_gap": 1.703464437665842,
+          "min_log10_raw_second_moment": -4.628698884698219
+        },
+        {
+          "step": 13,
+          "max_weight_absolute_difference": 2.589725309198876e-15,
+          "weight_relative_linf_difference": 6.317050021091119e-16,
+          "first_moment_relative_linf_difference": 1.1556397198349792e-15,
+          "second_moment_relative_linf_difference": 1.5665458638941461e-15,
+          "relative_gap_difference": 1.7763568394002505e-15,
+          "relative_gap": 1.4454938552059957,
+          "min_log10_raw_second_moment": -4.598567917544693
+        },
+        {
+          "step": 17,
+          "max_weight_absolute_difference": 3.0492101898982327e-15,
+          "weight_relative_linf_difference": 6.996123236297873e-16,
+          "first_moment_relative_linf_difference": 1.5367608649928768e-15,
+          "second_moment_relative_linf_difference": 1.61524656481085e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 1.1163358405535158,
+          "min_log10_raw_second_moment": -4.568406323198169
+        },
+        {
+          "step": 21,
+          "max_weight_absolute_difference": 4.224919025741514e-15,
+          "weight_relative_linf_difference": 9.382450329771044e-16,
+          "first_moment_relative_linf_difference": 2.8279518873914876e-15,
+          "second_moment_relative_linf_difference": 1.5359726882237652e-15,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 1.0266542341496987,
+          "min_log10_raw_second_moment": -4.474262322713135
+        },
+        {
+          "step": 26,
+          "max_weight_absolute_difference": 3.4330177589581012e-15,
+          "weight_relative_linf_difference": 7.459034949864636e-16,
+          "first_moment_relative_linf_difference": 2.0256941446642443e-15,
+          "second_moment_relative_linf_difference": 1.5577334410240518e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.8619235033705059,
+          "min_log10_raw_second_moment": -4.4182851923119255
+        },
+        {
+          "step": 33,
+          "max_weight_absolute_difference": 3.1066729050399644e-15,
+          "weight_relative_linf_difference": 6.640544604874902e-16,
+          "first_moment_relative_linf_difference": 2.272554331874486e-15,
+          "second_moment_relative_linf_difference": 2.7442853705838706e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.8386970964630296,
+          "min_log10_raw_second_moment": -4.445097364345998
+        },
+        {
+          "step": 41,
+          "max_weight_absolute_difference": 3.808151710638086e-15,
+          "weight_relative_linf_difference": 8.035854246940424e-16,
+          "first_moment_relative_linf_difference": 1.886911847804088e-15,
+          "second_moment_relative_linf_difference": 1.7816554672032217e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.7683132133464992,
+          "min_log10_raw_second_moment": -4.479815705108239
+        },
+        {
+          "step": 51,
+          "max_weight_absolute_difference": 4.512232601450172e-15,
+          "weight_relative_linf_difference": 9.405349762236288e-16,
+          "first_moment_relative_linf_difference": 3.688571630222394e-15,
+          "second_moment_relative_linf_difference": 1.849929578964546e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.7222517340655924,
+          "min_log10_raw_second_moment": -4.522920762738076
+        },
+        {
+          "step": 64,
+          "max_weight_absolute_difference": 4.0223900599212215e-15,
+          "weight_relative_linf_difference": 8.300574717500641e-16,
+          "first_moment_relative_linf_difference": 4.981697694191655e-15,
+          "second_moment_relative_linf_difference": 1.791627252835497e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.697567121405509,
+          "min_log10_raw_second_moment": -4.5795007277548905
+        },
+        {
+          "step": 80,
+          "max_weight_absolute_difference": 4.615014967401798e-15,
+          "weight_relative_linf_difference": 9.45042752749866e-16,
+          "first_moment_relative_linf_difference": 9.529692315523481e-15,
+          "second_moment_relative_linf_difference": 1.2356854502165861e-15,
+          "relative_gap_difference": 2.220446049250313e-16,
+          "relative_gap": 0.6885673763342248,
+          "min_log10_raw_second_moment": -4.649332868346569
+        },
+        {
+          "step": 100,
+          "max_weight_absolute_difference": 4.500306377552832e-15,
+          "weight_relative_linf_difference": 9.147843175317028e-16,
+          "first_moment_relative_linf_difference": 5.2287706765547555e-15,
+          "second_moment_relative_linf_difference": 1.7729544286633952e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.6784738138823001,
+          "min_log10_raw_second_moment": -4.736564868952204
+        },
+        {
+          "step": 124,
+          "max_weight_absolute_difference": 4.201500258815827e-15,
+          "weight_relative_linf_difference": 8.48004147727412e-16,
+          "first_moment_relative_linf_difference": 4.499864465577559e-15,
+          "second_moment_relative_linf_difference": 1.964236622534668e-15,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.6665272925146841,
+          "min_log10_raw_second_moment": -4.841234993011559
+        },
+        {
+          "step": 155,
+          "max_weight_absolute_difference": 4.5900783174346316e-15,
+          "weight_relative_linf_difference": 9.194579654034833e-16,
+          "first_moment_relative_linf_difference": 8.596197639465155e-15,
+          "second_moment_relative_linf_difference": 2.4774265432423078e-15,
+          "relative_gap_difference": 5.551115123125783e-16,
+          "relative_gap": 0.6556780158936353,
+          "min_log10_raw_second_moment": -4.976456785977436
+        },
+        {
+          "step": 193,
+          "max_weight_absolute_difference": 6.203804830962056e-15,
+          "weight_relative_linf_difference": 1.2327788127493904e-15,
+          "first_moment_relative_linf_difference": 9.755624511637172e-15,
+          "second_moment_relative_linf_difference": 3.7132591153098536e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.6455875430081164,
+          "min_log10_raw_second_moment": -5.142171202468718
+        },
+        {
+          "step": 240,
+          "max_weight_absolute_difference": 3.920908736576578e-15,
+          "weight_relative_linf_difference": 7.722565728534841e-16,
+          "first_moment_relative_linf_difference": 9.114278991724109e-15,
+          "second_moment_relative_linf_difference": 4.065425220832747e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.635097531408126,
+          "min_log10_raw_second_moment": -5.34703537858092
+        },
+        {
+          "step": 299,
+          "max_weight_absolute_difference": 4.2309905579074325e-15,
+          "weight_relative_linf_difference": 8.247984521309542e-16,
+          "first_moment_relative_linf_difference": 7.230738211236668e-15,
+          "second_moment_relative_linf_difference": 4.7404387215587186e-15,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.6236988905565413,
+          "min_log10_raw_second_moment": -5.603972529781413
+        },
+        {
+          "step": 372,
+          "max_weight_absolute_difference": 4.626941191299139e-15,
+          "weight_relative_linf_difference": 8.910629723977847e-16,
+          "first_moment_relative_linf_difference": 6.4431630144754365e-15,
+          "second_moment_relative_linf_difference": 3.9079805933444554e-15,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.6130187336626507,
+          "min_log10_raw_second_moment": -5.921340853483916
+        },
+        {
+          "step": 464,
+          "max_weight_absolute_difference": 5.564559230064603e-15,
+          "weight_relative_linf_difference": 1.0555154850275607e-15,
+          "first_moment_relative_linf_difference": 1.118612715197405e-14,
+          "second_moment_relative_linf_difference": 2.6180307573733365e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.600064711511902,
+          "min_log10_raw_second_moment": -6.3200217483147965
+        },
+        {
+          "step": 577,
+          "max_weight_absolute_difference": 7.979294308624318e-15,
+          "weight_relative_linf_difference": 1.4855083207922266e-15,
+          "first_moment_relative_linf_difference": 1.0077910968701346e-14,
+          "second_moment_relative_linf_difference": 3.866227964494071e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.5842212652801039,
+          "min_log10_raw_second_moment": -6.806750334480694
+        },
+        {
+          "step": 719,
+          "max_weight_absolute_difference": 8.874845303097345e-15,
+          "weight_relative_linf_difference": 1.6138489705467628e-15,
+          "first_moment_relative_linf_difference": 6.185589576849013e-15,
+          "second_moment_relative_linf_difference": 5.289188979286637e-15,
+          "relative_gap_difference": 7.771561172376096e-16,
+          "relative_gap": 0.5649271246594597,
+          "min_log10_raw_second_moment": -7.411144179157872
+        },
+        {
+          "step": 896,
+          "max_weight_absolute_difference": 1.1156874035744835e-14,
+          "weight_relative_linf_difference": 1.9723263067577424e-15,
+          "first_moment_relative_linf_difference": 6.033954478445253e-15,
+          "second_moment_relative_linf_difference": 7.481753056708227e-15,
+          "relative_gap_difference": 1.1102230246251565e-16,
+          "relative_gap": 0.5430799739472468,
+          "min_log10_raw_second_moment": -8.140490315839065
+        },
+        {
+          "step": 1115,
+          "max_weight_absolute_difference": 1.17653282949437e-14,
+          "weight_relative_linf_difference": 2.015867890833443e-15,
+          "first_moment_relative_linf_difference": 7.830270633911968e-15,
+          "second_moment_relative_linf_difference": 7.5114988989625e-15,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.5198525219859942,
+          "min_log10_raw_second_moment": -9.029433726453073
+        },
+        {
+          "step": 1389,
+          "max_weight_absolute_difference": 1.492469342556646e-14,
+          "weight_relative_linf_difference": 2.4760979129224706e-15,
+          "first_moment_relative_linf_difference": 7.975166364415643e-15,
+          "second_moment_relative_linf_difference": 4.823088832807005e-15,
+          "relative_gap_difference": 0.0,
+          "relative_gap": 0.4953916618072125,
+          "min_log10_raw_second_moment": -10.20601109086235
+        },
+        {
+          "step": 1730,
+          "max_weight_absolute_difference": 1.776833888356144e-14,
+          "weight_relative_linf_difference": 2.85527957723661e-15,
+          "first_moment_relative_linf_difference": 9.298192078068874e-15,
+          "second_moment_relative_linf_difference": 7.639921080513774e-15,
+          "relative_gap_difference": 3.3306690738754696e-16,
+          "relative_gap": 0.47330553961587263,
+          "min_log10_raw_second_moment": -11.650809752440766
+        },
+        {
+          "step": 2154,
+          "max_weight_absolute_difference": 1.899348733847006e-14,
+          "weight_relative_linf_difference": 2.9571316545260607e-15,
+          "first_moment_relative_linf_difference": 1.1079180574073683e-14,
+          "second_moment_relative_linf_difference": 2.134321209415357e-14,
+          "relative_gap_difference": 4.440892098500626e-16,
+          "relative_gap": 0.4543142172574359,
+          "min_log10_raw_second_moment": -13.41498776586018
+        },
+        {
+          "step": 2682,
+          "max_weight_absolute_difference": 1.9181704835613544e-14,
+          "weight_relative_linf_difference": 2.8938558273867022e-15,
+          "first_moment_relative_linf_difference": 9.844035686838638e-15,
+          "second_moment_relative_linf_difference": 2.034092603004621e-14,
+          "relative_gap_difference": 6.661338147750939e-16,
+          "relative_gap": 0.43779414701753216,
+          "min_log10_raw_second_moment": -15.545600858120059
+        },
+        {
+          "step": 3340,
+          "max_weight_absolute_difference": 3.461988329093112e-07,
+          "weight_relative_linf_difference": 5.0624553538050996e-08,
+          "first_moment_relative_linf_difference": 2.1935878915502196e-07,
+          "second_moment_relative_linf_difference": 3.225967425298195e-07,
+          "relative_gap_difference": 5.477835296474609e-09,
+          "relative_gap": 0.42428688874612963,
+          "min_log10_raw_second_moment": -17.11958344167957
+        },
+        {
+          "step": 4159,
+          "max_weight_absolute_difference": 3.643012849458699e-08,
+          "weight_relative_linf_difference": 5.166821183459568e-09,
+          "first_moment_relative_linf_difference": 1.0181955634467733e-08,
+          "second_moment_relative_linf_difference": 2.329404838020925e-08,
+          "relative_gap_difference": 1.016610129411788e-10,
+          "relative_gap": 0.4114795792972247,
+          "min_log10_raw_second_moment": -19.5841090368126
+        },
+        {
+          "step": 5179,
+          "max_weight_absolute_difference": 3.1512822586642064e-08,
+          "weight_relative_linf_difference": 4.33811461115778e-09,
+          "first_moment_relative_linf_difference": 9.281392242485468e-09,
+          "second_moment_relative_linf_difference": 1.8273265792447616e-08,
+          "relative_gap_difference": 9.921574672944189e-11,
+          "relative_gap": 0.3988278875715159,
+          "min_log10_raw_second_moment": -18.859857295394868
+        },
+        {
+          "step": 6449,
+          "max_weight_absolute_difference": 2.7139672300301176e-08,
+          "weight_relative_linf_difference": 3.628936905313525e-09,
+          "first_moment_relative_linf_difference": 9.779253268445006e-09,
+          "second_moment_relative_linf_difference": 1.9586304908390133e-08,
+          "relative_gap_difference": 2.3197510579109348e-10,
+          "relative_gap": 0.3867778178028862,
+          "min_log10_raw_second_moment": -20.666888074969158
+        },
+        {
+          "step": 8030,
+          "max_weight_absolute_difference": 2.575545587435793e-08,
+          "weight_relative_linf_difference": 3.347447348237769e-09,
+          "first_moment_relative_linf_difference": 9.22765552322807e-09,
+          "second_moment_relative_linf_difference": 1.8536990800508077e-08,
+          "relative_gap_difference": 2.682648547747135e-10,
+          "relative_gap": 0.3758166581695659,
+          "min_log10_raw_second_moment": -18.867197171808616
+        },
+        {
+          "step": 10000,
+          "max_weight_absolute_difference": 2.6758959156131246e-08,
+          "weight_relative_linf_difference": 3.3827961748910863e-09,
+          "first_moment_relative_linf_difference": 8.322993753452068e-09,
+          "second_moment_relative_linf_difference": 1.6728606309449323e-08,
+          "relative_gap_difference": 2.653800512675275e-10,
+          "relative_gap": 0.36576551900383936,
+          "min_log10_raw_second_moment": -19.2285525245262
+        },
+        {
+          "step": 12451,
+          "max_weight_absolute_difference": 2.7395716303574985e-08,
+          "weight_relative_linf_difference": 3.3709715637216943e-09,
+          "first_moment_relative_linf_difference": 7.346697487592896e-09,
+          "second_moment_relative_linf_difference": 1.4759407250279135e-08,
+          "relative_gap_difference": 2.497363427167443e-10,
+          "relative_gap": 0.3564488398938236,
+          "min_log10_raw_second_moment": -20.240722370367894
+        },
+        {
+          "step": 15505,
+          "max_weight_absolute_difference": 2.8500478294231357e-08,
+          "weight_relative_linf_difference": 3.41561613746393e-09,
+          "first_moment_relative_linf_difference": 6.733399395219621e-09,
+          "second_moment_relative_linf_difference": 1.2846634791923028e-08,
+          "relative_gap_difference": 2.2192370163764963e-10,
+          "relative_gap": 0.34762887114457997,
+          "min_log10_raw_second_moment": -20.902411566019058
+        },
+        {
+          "step": 19306,
+          "max_weight_absolute_difference": 3.1521865881400934e-08,
+          "weight_relative_linf_difference": 3.68180179584576e-09,
+          "first_moment_relative_linf_difference": 6.811666822802697e-09,
+          "second_moment_relative_linf_difference": 1.1356220147806712e-08,
+          "relative_gap_difference": 1.8690771153018204e-10,
+          "relative_gap": 0.3387301933399637,
+          "min_log10_raw_second_moment": -20.981977837669824
+        },
+        {
+          "step": 24040,
+          "max_weight_absolute_difference": 3.197573076978155e-08,
+          "weight_relative_linf_difference": 3.6422289398592523e-09,
+          "first_moment_relative_linf_difference": 6.236711179074939e-09,
+          "second_moment_relative_linf_difference": 1.0487012166799019e-08,
+          "relative_gap_difference": 1.7648404959658137e-10,
+          "relative_gap": 0.33010623562249086,
+          "min_log10_raw_second_moment": -19.44153612705876
+        },
+        {
+          "step": 29935,
+          "max_weight_absolute_difference": 3.2379496267814084e-08,
+          "weight_relative_linf_difference": 3.5989422834639725e-09,
+          "first_moment_relative_linf_difference": 5.544970380810398e-09,
+          "second_moment_relative_linf_difference": 9.793359200090102e-09,
+          "relative_gap_difference": 1.6680012926428844e-10,
+          "relative_gap": 0.3219067008227424,
+          "min_log10_raw_second_moment": -19.520969109611453
+        },
+        {
+          "step": 37275,
+          "max_weight_absolute_difference": 3.267399839362514e-08,
+          "weight_relative_linf_difference": 3.5458293068929293e-09,
+          "first_moment_relative_linf_difference": 4.978570356183526e-09,
+          "second_moment_relative_linf_difference": 9.106371504364422e-09,
+          "relative_gap_difference": 1.5799550556749864e-10,
+          "relative_gap": 0.31411768823860353,
+          "min_log10_raw_second_moment": -20.51161793921385
+        },
+        {
+          "step": 46415,
+          "max_weight_absolute_difference": 3.2572814378899195e-08,
+          "weight_relative_linf_difference": 3.4532352315849236e-09,
+          "first_moment_relative_linf_difference": 4.458113652040289e-09,
+          "second_moment_relative_linf_difference": 8.365222257826733e-09,
+          "relative_gap_difference": 1.4771317502493275e-10,
+          "relative_gap": 0.30669945893529194,
+          "min_log10_raw_second_moment": -20.161638846871956
+        },
+        {
+          "step": 57796,
+          "max_weight_absolute_difference": 3.205765660221904e-08,
+          "weight_relative_linf_difference": 3.3219807469099047e-09,
+          "first_moment_relative_linf_difference": 3.816611511982715e-09,
+          "second_moment_relative_linf_difference": 7.529209682663532e-09,
+          "relative_gap_difference": 1.3439382939850475e-10,
+          "relative_gap": 0.2996279713159723,
+          "min_log10_raw_second_moment": -19.48548899756129
+        },
+        {
+          "step": 71968,
+          "max_weight_absolute_difference": 3.111723752540624e-08,
+          "weight_relative_linf_difference": 3.1535155818781577e-09,
+          "first_moment_relative_linf_difference": 3.2488391768581048e-09,
+          "second_moment_relative_linf_difference": 6.50422015294254e-09,
+          "relative_gap_difference": 1.164573992795681e-10,
+          "relative_gap": 0.2929182798449058,
+          "min_log10_raw_second_moment": -19.82864558273132
+        },
+        {
+          "step": 89615,
+          "max_weight_absolute_difference": 2.981082228943263e-08,
+          "weight_relative_linf_difference": 2.956159990004296e-09,
+          "first_moment_relative_linf_difference": 2.6310465652977336e-09,
+          "second_moment_relative_linf_difference": 5.267962401536282e-09,
+          "relative_gap_difference": 9.388190225223525e-11,
+          "relative_gap": 0.28660359794526724,
+          "min_log10_raw_second_moment": -20.503929505674957
+        },
+        {
+          "step": 111588,
+          "max_weight_absolute_difference": 2.8479844902534746e-08,
+          "weight_relative_linf_difference": 2.764919737656285e-09,
+          "first_moment_relative_linf_difference": 2.0412320911142292e-09,
+          "second_moment_relative_linf_difference": 4.086347576159668e-09,
+          "relative_gap_difference": 7.180878114354527e-11,
+          "relative_gap": 0.2807009813749364,
+          "min_log10_raw_second_moment": -19.547623374839343
+        },
+        {
+          "step": 138949,
+          "max_weight_absolute_difference": 2.7454815287094453e-08,
+          "weight_relative_linf_difference": 2.610876666518571e-09,
+          "first_moment_relative_linf_difference": 1.5793499216184275e-09,
+          "second_moment_relative_linf_difference": 3.161047997897629e-09,
+          "relative_gap_difference": 5.569700256558008e-11,
+          "relative_gap": 0.2751821680930632,
+          "min_log10_raw_second_moment": -19.44847209643187
+        },
+        {
+          "step": 173019,
+          "max_weight_absolute_difference": 2.6784048007266748e-08,
+          "weight_relative_linf_difference": 2.496340540831009e-09,
+          "first_moment_relative_linf_difference": 1.2199503625514505e-09,
+          "second_moment_relative_linf_difference": 2.441426073070072e-09,
+          "relative_gap_difference": 4.54777326908129e-11,
+          "relative_gap": 0.27000023459121636,
+          "min_log10_raw_second_moment": -19.733975617385923
+        },
+        {
+          "step": 215443,
+          "max_weight_absolute_difference": 2.6384355248775665e-08,
+          "weight_relative_linf_difference": 2.411455945586297e-09,
+          "first_moment_relative_linf_difference": 9.484657217276344e-10,
+          "second_moment_relative_linf_difference": 1.8978712173152764e-09,
+          "relative_gap_difference": 3.8791414525007895e-11,
+          "relative_gap": 0.26512845307518995,
+          "min_log10_raw_second_moment": -21.89674109775812
+        },
+        {
+          "step": 268269,
+          "max_weight_absolute_difference": 2.6159707683034994e-08,
+          "weight_relative_linf_difference": 2.3460067222075367e-09,
+          "first_moment_relative_linf_difference": 8.851042801836875e-10,
+          "second_moment_relative_linf_difference": 1.5345974227463856e-09,
+          "relative_gap_difference": 3.397715442332583e-11,
+          "relative_gap": 0.2605695457776275,
+          "min_log10_raw_second_moment": -21.420273100118905
+        },
+        {
+          "step": 334048,
+          "max_weight_absolute_difference": 2.6022062908550442e-08,
+          "weight_relative_linf_difference": 2.291273474001769e-09,
+          "first_moment_relative_linf_difference": 8.50411373177156e-10,
+          "second_moment_relative_linf_difference": 1.3672699455083497e-09,
+          "relative_gap_difference": 3.0544788920394694e-11,
+          "relative_gap": 0.2563390705103924,
+          "min_log10_raw_second_moment": -21.729320977800345
+        },
+        {
+          "step": 415956,
+          "max_weight_absolute_difference": 2.5919423388403445e-08,
+          "weight_relative_linf_difference": 2.2423104840048437e-09,
+          "first_moment_relative_linf_difference": 8.16698033190215e-10,
+          "second_moment_relative_linf_difference": 1.350687568717146e-09,
+          "relative_gap_difference": 2.820033095929375e-11,
+          "relative_gap": 0.25246161228319874,
+          "min_log10_raw_second_moment": -20.601574782226777
+        },
+        {
+          "step": 517947,
+          "max_weight_absolute_difference": 2.583124402832232e-08,
+          "weight_relative_linf_difference": 2.1972086689394678e-09,
+          "first_moment_relative_linf_difference": 7.90261483305929e-10,
+          "second_moment_relative_linf_difference": 1.348507777994805e-09,
+          "relative_gap_difference": 2.6645241568701294e-11,
+          "relative_gap": 0.24895586148667237,
+          "min_log10_raw_second_moment": -19.746142457502756
+        },
+        {
+          "step": 644946,
+          "max_weight_absolute_difference": 2.574915843175582e-08,
+          "weight_relative_linf_difference": 2.15521195932612e-09,
+          "first_moment_relative_linf_difference": 7.730565370857586e-10,
+          "second_moment_relative_linf_difference": 1.3646781300726647e-09,
+          "relative_gap_difference": 2.5704771644541324e-11,
+          "relative_gap": 0.24583297801357673,
+          "min_log10_raw_second_moment": -19.70221367599824
+        },
+        {
+          "step": 803085,
+          "max_weight_absolute_difference": 2.5669854716685314e-08,
+          "weight_relative_linf_difference": 2.116023353018816e-09,
+          "first_moment_relative_linf_difference": 7.598448178215779e-10,
+          "second_moment_relative_linf_difference": 1.3897356075279338e-09,
+          "relative_gap_difference": 2.5140223236519432e-11,
+          "relative_gap": 0.24309350736017377,
+          "min_log10_raw_second_moment": -19.698503199709688
+        },
+        {
+          "step": 1000000,
+          "max_weight_absolute_difference": 2.5592802297552675e-08,
+          "weight_relative_linf_difference": 2.079570664251843e-09,
+          "first_moment_relative_linf_difference": 7.433150636062917e-10,
+          "second_moment_relative_linf_difference": 1.408944921322323e-09,
+          "relative_gap_difference": 2.479894067874966e-11,
+          "relative_gap": 0.24072277430330458,
+          "min_log10_raw_second_moment": -19.69456862217512
+        }
+      ]
+    }
+  ]
+}

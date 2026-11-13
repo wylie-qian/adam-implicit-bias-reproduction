@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "one_dimensional_analytic_first_update_both_epsilon_values",
+    "existing_output_directory_refused_before_writes",
+    "modified_evidence_file_detected_by_hash",
+    "altered_baseline_rejected_before_output_creation",
+    "updated_file_hash_cannot_hide_reference_array_mismatch"
+  ],
+  "scope": "Independent analytic first update, output protection, and tampered artifact detection; full replay comparison is in comparison.json."
+}

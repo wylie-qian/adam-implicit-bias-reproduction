@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "study_type": "Full-history direct recurrence audit; a=.5 zero/fixed epsilon followed by remaining fixed-epsilon rates",
+  "parameters": {
+    "beta1": "0.9L",
+    "beta2": "0.99L",
+    "epsilon_placement": "outside_sqrt",
+    "bias_correction": false,
+    "loss": "full_batch_mean_logistic",
+    "initial_moments": "zero",
+    "rate": "t^(-a), t=1..1000000"
+  },
+  "configs": [
+    {
+      "a": "0.5",
+      "mode": "zero_epsilon",
+      "output_prefix": "a-0.5_zero",
+      "epsilon": "0"
+    },
+    {
+      "a": "0.3",
+      "mode": "fixed_epsilon",
+      "output_prefix": "a-0.3_fixed",
+      "epsilon": "1e-8"
+    },
+    {
+      "a": "0.5",
+      "mode": "fixed_epsilon",
+      "output_prefix": "a-0.5_fixed",
+      "epsilon": "1e-8"
+    },
+    {
+      "a": "0.7",
+      "mode": "fixed_epsilon",
+      "output_prefix": "a-0.7_fixed",
+      "epsilon": "1e-8"
+    },
+    {
+      "a": "1",
+      "mode": "fixed_epsilon",
+      "output_prefix": "a-1_fixed",
+      "epsilon": "1e-8"
+    }
+  ],
+  "source_hashes": {
+    "literal_replay.cpp": "b92b5b4e782fe2c5d98fe5e2fc14e0a802195d560c71cb6209495b43a7b34533",
+    "literal_replay.py": "6568f771f81b4779b732510c1dfe36f942900b107742194035061e06db6a9038"
+  },
+  "source_roles": {
+    "literal_replay.cpp": "Executed production recurrence; hash identifies exact source bytes.",
+    "literal_replay.py": "Packaging, verification and future reproduction entrypoint; historical orchestration recorded separately."
+  },
+  "execution_provenance": {
+    "method": "Manual subprocess calls before final Python wrapper existed; wrapper added afterward for packaging, verification, and future reruns.",
+    "compile_command": "g++ -O3 -std=c++17 -fno-fast-math replay_instrumented.cpp -o replay_instrumented",
+    "source_identity": "Historical replay_instrumented.cpp is byte-identical to literal_replay.cpp.",
+    "run_commands": [
+      "../replay_instrumented input.txt a-0.5_zero.csv 0.5 0 1000000 > a-0.5_zero_run.json",
+      "../replay_instrumented input.txt a-0.3_fixed.csv 0.3 1e-8 1000000 > a-0.3_fixed_run.json",
+      "../replay_instrumented input.txt a-0.5_fixed.csv 0.5 1e-8 1000000 > a-0.5_fixed_run.json",
+      "../replay_instrumented input.txt a-0.7_fixed.csv 0.7 1e-8 1000000 > a-0.7_fixed_run.json",
+      "../replay_instrumented input.txt a-1_fixed.csv 1 1e-8 1000000 > a-1_fixed_run.json"
+    ]
+  },
+  "production_cpp_sha256": "b92b5b4e782fe2c5d98fe5e2fc14e0a802195d560c71cb6209495b43a7b34533",
+  "input_hashes": {
+    "data.json": "1745ef5e1068693ad9fa627ccac2a7087bafb0ca2176211fd1a0f2b299f6782f",
+    "reference.json": "4d5aa963428094dd85db6daadc2173f9e5eda07c2c888a70e6385153c4d8a640",
+    "a-0.5_zero_epsilon.json": "ac2445461af691f7da2b5e4b8fd6e0197709f7b99b90ee8a5cdca32bf9bfddfe",
+    "a-0.3_fixed_epsilon.json": "1fb8ff818b09840fc741ad557e9c8ab4ce0edc8ba36f40aadd94d5c8c5544b3a",
+    "a-0.5_fixed_epsilon.json": "e1eec2f7d8cce46a62093cba5849974594ba010f0e3ed46e6e50c39c6e16535f",
+    "a-0.7_fixed_epsilon.json": "a50dfb69b3d9017fcbe2f20148c0273adbd3674811201f59106e4f68d92cda2c",
+    "a-1_fixed_epsilon.json": "40151bcd8656537dea62ee5d5a30acef1275975fc0d7a2731cb70450158d1f0e"
+  },
+  "compiler_version": "g++ (Debian 14.2.0-19) 14.2.0",
+  "compiler_flags": [
+    "-O3",
+    "-std=c++17",
+    "-fno-fast-math"
+  ],
+  "environment": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "numpy": "2.3.5"
+  },
+  "files": {
+    "README.md": "9e102dbcef7d3ba6ff8f9529a3d3105a0a822de794f3b23e08138927d4c4e395",
+    "a-0.3_fixed.csv.gz": "9f8e91fce7e3f6b8e4313384a7ca296484244c1ef1e61cb1cd9f3b4237a0633a",
+    "a-0.3_fixed_run.json": "b5bb94c6db01175a92bca72ee1420acb06b179848cd4d182e2dd28394555c1ac",
+    "a-0.5_fixed.csv.gz": "79d7dcc601320a20a76905e4aaa931f47a3d9c0cfb06bf30de5762f9763862c8",
+    "a-0.5_fixed_run.json": "66440708244a8f2e52a1229280b19ef0cd365376d914cb2dd20cb1682bd6ff06",
+    "a-0.5_zero.csv.gz": "0cfacfc45a6802af74061968292361e9d7d6f7b0066b9da37b32806405b10f14",
+    "a-0.5_zero_run.json": "270f6dcd4f72f92aac591c8d82f8ab849d8f9c1132f54675d3d2bd3e38b72f48",
+    "a-0.7_fixed.csv.gz": "294c7d6e7e5b455afaecc6da578adf037a99d388c6d7c269e4e3c840efb24e3a",
+    "a-0.7_fixed_run.json": "26fee676fa5db1d4ae26fa81707743a15b4318c7f3f5113f1606baa39dfdc9d8",
+    "a-1_fixed.csv.gz": "4c97b2e9f837f5c46fe8649a1b5a0ecafb61425f7d7300997dba12705a2f95f4",
+    "a-1_fixed_run.json": "d360fe1850f937ac3b4342b48a78633f8fce39bbbc80d2c2b55d5fad0da58ad5",
+    "comparison.json": "1e3f4553b8b518b9f5ed19a27f5956ae3919ec6ea0098da2033213b332edf7b9",
+    "input.txt": "bb74762dc141944f726fc6f7edc2d07ecde61fec78dcee15afc2f6b2338944fe",
+    "validation.json": "321dc6193019768a6bef4762935c0ebae1e72c1d02a87c88102e634b23d36e7c"
+  },
+  "limitations": [
+    "Native extended precision is about 19 decimal digits, not arbitrary precision.",
+    "Some negligible per-example logistic weights may underflow in the zero-epsilon run; counters and first steps are retained.",
+    "Full moment histories were replayed, but only 61 checkpoints per condition are retained.",
+    "This audits our own data and recurrence, not the unavailable author implementation."
+  ]
+}

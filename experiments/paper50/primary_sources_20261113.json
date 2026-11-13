@@ -1,0 +1,46 @@
+{
+  "checked_date": "2026-11-13",
+  "scope": "Primary-source follow-up only. No author contact and no repository edits.",
+  "confirmed": [
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/2ac79356a03fe5e9250e5e77ebc76e6e-Paper-Conference.pdf",
+      "location": "NeurIPS checklist items 5-7",
+      "finding": "Item 5 explicitly answers No to open access data and code sufficient for reproduction. Item 6 answers Yes to experimental details. Item 7 answers No to statistical significance. These are the paper statements, not new findings about any later code release."
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.10650",
+      "location": "Submission history",
+      "finding": "Only v1 (15 Jun 2024) listed at this check. No later arXiv correction/version shown."
+    },
+    {
+      "url": "https://yuancaohku.github.io/",
+      "location": "Paper publication entry",
+      "finding": "Paper title links arXiv; no code link shown for this item."
+    },
+    {
+      "url": "https://difanzou.github.io/publications/",
+      "location": "2024 paper publication entry",
+      "finding": "Entry links Paper and Arxiv; no code link shown for this item."
+    }
+  ],
+  "access_limits": [
+    {
+      "url": "https://openreview.net/forum?id=xRQxan3WkM",
+      "finding": "Search/open returns verification challenge. Original rebuttal and review mirror remain unauthenticated."
+    }
+  ],
+  "related_primary_source": {
+    "url": "https://arxiv.org/html/2611.01929v1",
+    "title": "Watch Your Step: Adam’s Margin Maximization Bias Depends on the Learning Rate Schedule",
+    "authors": [
+      "Eitan Gronich",
+      "Gal Vardi"
+    ],
+    "date": "2026-11-01",
+    "location": "Appendix F.2, Figure 5",
+    "finding": "Defines relative same-state update error between zero and positive epsilon; reports increasing effect during finite training. Public experimental code is linked.",
+    "code_url": "https://github.com/EitanGronich/adam-implicit-bias-lr-schedule",
+    "limit": "Different MNIST three-layer network experiment, bias correction and settings. It does not reproduce the 2024 binary-linear experiment or identify a bug. Learning-rate theory for deep models should not be applied to this linear decaying-rate case."
+  },
+  "overall": "No verified author implementation or erratum located in this bounded follow-up. This is not proof that no implementation exists. Checklist code-access answer is a concrete primary-source reproducibility limitation."
+}
