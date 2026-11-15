@@ -1,12 +1,13 @@
 # Figure-legend rerun — 2026-11-13
 
-**Partial qualitative replication.** This is the run shown on slides 8–10 and
-13 and backups B1, B3 and B6. It uses the learning rates printed in the
+**Partial qualitative replication.** This is the main run reported in the
+[root README](../../../../README.md). It uses the learning rates printed in the
 paper's Figure 1 and Figure 2 legends and the averaged loss of eq. 3.1; see
 [protocol_legend.json](../../protocol_legend.json). The first run
 ([2026-11-05](../2026-11-05/README.md)) and the c = 0.1 / summed-loss variant
-([2026-11-12-matched](../2026-11-12-matched/README.md), backup B7 only) are kept
-unchanged. Code and analysis were prepared with AI assistance.
+([2026-11-12-matched](../2026-11-12-matched/README.md), cited only for the order
+of the exponents) are kept unchanged. Code and analysis were prepared with AI
+assistance.
 
 ## Settings
 
@@ -41,8 +42,9 @@ The only setting the paper does not state is where the step count starts.
   2.435% / 22.738%. With ε = 1e-8: 34.336% / 31.512% / 27.430% / 24.072%.
 - Order of the exponents (ε = 0): a = 0.5 is fastest on all ten datasets and
   a = 1 slowest. The paper's Figure 2 shows a = 0.3 fastest. With c = 0.1 and a
-  summed loss the paper's order appears (backup B7), so the order depends on
-  the learning-rate constant.
+  summed loss the paper's order appears
+  ([2026-11-12-matched](../2026-11-12-matched/README.md)), so the order depends
+  on the learning-rate constant.
 - ε dominance on seed 2 (a = 0.5): first coordinate by recorded checkpoint
   2,791, all 50 by 3,118. On the ten datasets all 50 coordinates are dominated
   by checkpoints 3,000–3,118. These are checkpoint bounds.
@@ -55,8 +57,9 @@ Adam without ε about 1% short, GD about 37% short on L∞ and 5% on L2), the
 ε = 0 and GD L∞ curves are close; GD's L2 gap is about twice the paper's. The
 paper's similar ε = 0 / 1e-8 curves are not recovered.
 
-Teammate yqsaski's independent implementation on branch
-`fix/paper50-figure1-alignment` (not merged here) reports the same seed 2
+A group member's independent implementation, whose results are kept in
+[2026-11-12-alignment](../2026-11-12-alignment/README.md) and
+[2026-11-12-diagnosis](../2026-11-12-diagnosis/README.md), reports the same seed 2
 values at these settings (0.657242% and 31.511943%; GD 35.368657% and
 9.977666%). It also changes one convention at a time on seed 2 with ε = 1e-8
 (bias correction 28.591%, β2 = 0.999 42.377%, ε inside the square root 39.753%,
@@ -68,8 +71,7 @@ rescaling over all 10⁶ steps (weights within 1.78e-14).
 `endpoints.json` lists every run's endpoint; `manifest.json` records the
 runner, protocol and dataset hashes. Each run folder has `config.json`,
 `summary.json` and `endpoint_state.json`; seed-2 runs also keep
-`trajectory.csv` (all recorded checkpoints), which the slide animations and the
-backup B1 chart read. From the repository root:
+`trajectory.csv` (all recorded checkpoints). From the repository root:
 
 ```sh
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1

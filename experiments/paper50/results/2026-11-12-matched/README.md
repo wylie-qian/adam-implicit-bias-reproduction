@@ -1,9 +1,9 @@
 # Paper-matched rerun — 2026-11-12
 
-**Partial qualitative replication; no longer the presented run.** From
-2026-11-13 the slides show the [figure-legend rerun](../2026-11-13-legend/README.md),
+**Partial qualitative replication; no longer the main run.** From 2026-11-13
+the main run is the [figure-legend rerun](../2026-11-13-legend/README.md),
 which uses the legends' learning rates and the averaged loss literally. This
-variant is cited only on backup slide B7, for the order of the exponents. Its
+variant is cited only for the order of the exponents. Its
 exponents and GD rate follow the legends; its constant c = 0.1 and summed loss
 were matched to the paper's Figure 1 curves; see
 [protocol_matched.json](../../protocol_matched.json). The first run
@@ -62,7 +62,7 @@ still not recovered; see the hypothesis in the post-hoc README.
 `endpoints.json` lists every run's endpoint; `manifest.json` records the runner
 and protocol hashes. Each run folder has `config.json`, `summary.json` and
 `endpoint_state.json`; seed-2 runs also keep `trajectory.csv` (all recorded
-checkpoints), which the slide animations read. From the repository root:
+checkpoints). From the repository root:
 
 ```sh
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1

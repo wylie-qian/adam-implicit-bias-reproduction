@@ -4,9 +4,9 @@
 after the formal results were known, to explain three differences from the paper.
 They do not replace the formal endpoints in [../2026-11-05](../2026-11-05/README.md).
 The full runs that followed are in [../2026-11-12-matched](../2026-11-12-matched/README.md)
-(c = 0.1 and summed loss, backup B7 only) and
-[../2026-11-13-legend](../2026-11-13-legend/README.md) (the legends' settings, shown
-on the slides).
+(c = 0.1 and summed loss, cited only for the order of the exponents) and
+[../2026-11-13-legend](../2026-11-13-legend/README.md) (the legends' settings, the
+main run).
 Code and analysis were prepared with AI assistance, like the rest of this experiment.
 
 ## Why these runs
@@ -56,7 +56,7 @@ mkdir new-out && python3 -I diag.py new-out jobs.json 9
 |---|---|
 | Adam ε = 0 with the figure-1 learning rate | Seed 2: 0.66% short of the L∞ optimum after 10⁶ updates (frozen a = 0.7: 2.61%). Ten datasets: 0.50–1.29%, nine within 1%. |
 | GD with the figure-1 learning rate | Seed 2: L∞ margin 35.4% short (paper figure 1 ≈ 36%); L2 margin 10.0% short. |
-| Adam ε = 1e-8 with the figure-1 learning rate | Seed 2: stalls at 31.5% short from about 10⁴ updates; min √v about 1e-13 at 10⁶. |
+| Adam ε = 1e-8 with the figure-1 learning rate | Seed 2: levels off at 31.5% short from about 10⁴ updates; min √v about 1e-13 at 10⁶. |
 | Order of the exponents, c = 1 | a = 0.5 fastest on 10 of 10 datasets; a = 0.3 never fastest. |
 | Order of the exponents, c = 0.1 or 0.03 | 0.3 < 0.5 < 0.7 < 1 on 10 of 10 datasets, the order in the paper's figure 2. c = 0.3: a = 0.3 fastest on 6 of 10. |
 | Longer run, seed 2, c = 1 | a = 0.3 catches up with a = 0.5 by 10⁷ updates (both 0.0024 absolute gap). |
