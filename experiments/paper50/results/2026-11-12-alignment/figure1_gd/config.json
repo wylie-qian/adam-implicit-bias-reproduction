@@ -1,0 +1,7 @@
+{
+  "run_id": "figure1_gd",
+  "method": "gd",
+  "epsilon": 0.0,
+  "eta": 0.1,
+  "arithmetic": "literal"
+}

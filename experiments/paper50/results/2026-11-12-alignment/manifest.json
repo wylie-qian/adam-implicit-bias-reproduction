@@ -1,0 +1,740 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "base_commit": "cd22acd6d8e6f6fc97266a752a7f6b20112a4251",
+  "selected_seed": 2,
+  "selection": "maximum Euclidean distance between the L2-unit-normalized L2 and Linfinity reference directions; ties go to smallest seed",
+  "steps_per_run": 1000000,
+  "planned_conditions": [
+    {
+      "run_id": "legacy_adam_eps-0",
+      "method": "adam",
+      "epsilon": 0.0,
+      "a": 0.7,
+      "c": 1.0,
+      "offset": 2,
+      "arithmetic": "scaled"
+    },
+    {
+      "run_id": "legacy_adam_eps-1e-08",
+      "method": "adam",
+      "epsilon": 1e-08,
+      "a": 0.7,
+      "c": 1.0,
+      "offset": 2,
+      "arithmetic": "scaled"
+    },
+    {
+      "run_id": "figure1_adam_eps-0",
+      "method": "adam",
+      "epsilon": 0.0,
+      "a": 0.5,
+      "c": 1.0,
+      "offset": 1,
+      "arithmetic": "scaled"
+    },
+    {
+      "run_id": "figure1_adam_eps-1e-08",
+      "method": "adam",
+      "epsilon": 1e-08,
+      "a": 0.5,
+      "c": 1.0,
+      "offset": 1,
+      "arithmetic": "scaled"
+    },
+    {
+      "run_id": "index_control_adam_eps-0",
+      "method": "adam",
+      "epsilon": 0.0,
+      "a": 0.5,
+      "c": 1.0,
+      "offset": 2,
+      "arithmetic": "scaled"
+    },
+    {
+      "run_id": "index_control_adam_eps-1e-08",
+      "method": "adam",
+      "epsilon": 1e-08,
+      "a": 0.5,
+      "c": 1.0,
+      "offset": 2,
+      "arithmetic": "scaled"
+    },
+    {
+      "run_id": "figure1_gd",
+      "method": "gd",
+      "epsilon": 0.0,
+      "eta": 0.1,
+      "arithmetic": "literal"
+    },
+    {
+      "run_id": "figure1_gdm",
+      "method": "gdm",
+      "epsilon": 0.0,
+      "eta": 0.1,
+      "arithmetic": "literal"
+    },
+    {
+      "run_id": "literal_adam_eps-1e-08",
+      "method": "adam",
+      "epsilon": 1e-08,
+      "a": 0.5,
+      "c": 1.0,
+      "offset": 1,
+      "arithmetic": "literal"
+    }
+  ],
+  "jobs": 3,
+  "data_sha256": "a5b7a6baaf82f4f694b45f056f7985273a18d0317e5d49a6cf8dc53d67883ca2",
+  "dataset_manifest_sha256": "e392baa9a0c79754edec1fbe8bd5158768aeeff410f5a3a820eea372dc61e2d8",
+  "alignment_source_sha256": "2c2a2ea4518f451238f8e6033fec7e827436a08311bc5d43dac25eb0c0a4ec12",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "cpu_count": 9,
+    "git_sha": "cd22acd6d8e6f6fc97266a752a7f6b20112a4251",
+    "git_branch": "fix/paper50-figure1-alignment",
+    "git_status": "M experiments/paper50/SOURCES.md\n?? experiments/paper50/ALIGNMENT.md\n?? experiments/paper50/alignment.py\n?? experiments/paper50/results/2026-11-12-alignment/\n?? experiments/paper50/verify_alignment.py",
+    "source_sha256": "cff71403539c260aa910a48a7332900c25d69b47be74ab464aac43d40c6fdc67",
+    "thread_settings": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "results": [
+    {
+      "config": {
+        "run_id": "legacy_adam_eps-0",
+        "method": "adam",
+        "epsilon": 0.0,
+        "a": 0.7,
+        "c": 1.0,
+        "offset": 2,
+        "arithmetic": "scaled"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "adam",
+        "epsilon": 0.0,
+        "loss_float64": 5.36702943066098e-109,
+        "log_loss": -249.30150055953783,
+        "margin_raw": 247.99511666219087,
+        "norm_l2": 906.9286926767559,
+        "norm_linf": 176.40733760776342,
+        "margin_l2": 0.2734450003232838,
+        "margin_linf": 1.4058095316511199,
+        "gap_l2": 0.056626099191580126,
+        "gap_linf": 0.03768386863832118,
+        "relative_gap_l2": 0.17155727743146476,
+        "relative_gap_linf": 0.02610602073467394,
+        "distance_l2_unit_to_l2_ref": 0.523762676904458,
+        "distance_l2_unit_to_linf_ref": 0.034624975165521925,
+        "adam_moment_log_scale": 247.99505601893614,
+        "log10_min_sqrt_v": -113.96817255353923,
+        "log10_max_sqrt_v": -108.98587061667615,
+        "log10_min_sqrt_v_over_epsilon": null,
+        "epsilon_dominates_coordinates": null,
+        "elapsed_wall_seconds": 22.718140723000033,
+        "elapsed_cpu_seconds": 22.700765613,
+        "log10_max_sqrt_v_over_epsilon": null,
+        "epsilon_update_suppression_min": null,
+        "epsilon_update_suppression_max": null,
+        "epsilon_strong_coordinates": null
+      },
+      "first_all_epsilon_below_recorded_checkpoint": null,
+      "first_all_epsilon_strong_recorded_checkpoint": null,
+      "wall_seconds": 22.732988266999996,
+      "cpu_seconds": 22.71561272,
+      "hashes": {
+        "config.json": "1f673be547359f23e0100373ed6f6f852c3ac5ad388c3bdca68a0a64da507858",
+        "trajectory.csv": "22b3c1131993d5ecec244575e666851064a1a5dbe3f0582cc03e8c39ee3364fa",
+        "states.npz": "1117693d42af4aa13559f49c29731979d4fdb10c21fdc490c12b08a9e8ac33b2"
+      }
+    },
+    {
+      "config": {
+        "run_id": "legacy_adam_eps-1e-08",
+        "method": "adam",
+        "epsilon": 1e-08,
+        "a": 0.7,
+        "c": 1.0,
+        "offset": 2,
+        "arithmetic": "scaled"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "adam",
+        "epsilon": 1e-08,
+        "loss_float64": 5.411542086030746e-10,
+        "log_loss": -21.33731683407068,
+        "margin_raw": 19.908131767312504,
+        "norm_l2": 64.60824175983832,
+        "norm_linf": 19.152337356410555,
+        "margin_l2": 0.30813610191274027,
+        "margin_linf": 1.0394622544933907,
+        "gap_l2": 0.02193499760212364,
+        "gap_linf": 0.4040311457960504,
+        "relative_gap_l2": 0.06645537168920135,
+        "relative_gap_linf": 0.279898159364661,
+        "distance_l2_unit_to_l2_ref": 0.23226843222664087,
+        "distance_l2_unit_to_linf_ref": 0.5107261728638949,
+        "adam_moment_log_scale": 19.90813139512548,
+        "log10_min_sqrt_v": -12.756867577727924,
+        "log10_max_sqrt_v": -10.205249300370065,
+        "log10_min_sqrt_v_over_epsilon": -4.756867577727923,
+        "epsilon_dominates_coordinates": 50,
+        "elapsed_wall_seconds": 22.14110188899997,
+        "elapsed_cpu_seconds": 22.135019086,
+        "log10_max_sqrt_v_over_epsilon": -2.205249300370065,
+        "epsilon_update_suppression_min": 0.9938048502082022,
+        "epsilon_update_suppression_max": 0.9999824965031583,
+        "epsilon_strong_coordinates": 50
+      },
+      "first_all_epsilon_below_recorded_checkpoint": 4115,
+      "first_all_epsilon_strong_recorded_checkpoint": 8949,
+      "wall_seconds": 22.154243464000047,
+      "cpu_seconds": 22.148149146,
+      "hashes": {
+        "config.json": "6ef82898ee81b219fc1d5845f96b2a416e01fd946a1540398536144060d36965",
+        "trajectory.csv": "5a040177fb6ad16b21f03f778adc07b4bc681d60c83e1382cc78739e9c53159c",
+        "states.npz": "b6853c6a944c351db4946a01a2d35a66cfd886f4e5bd6a0d396f2b4048c55f52"
+      }
+    },
+    {
+      "config": {
+        "run_id": "figure1_adam_eps-0",
+        "method": "adam",
+        "epsilon": 0.0,
+        "a": 0.5,
+        "c": 1.0,
+        "offset": 1,
+        "arithmetic": "scaled"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "adam",
+        "epsilon": 0.0,
+        "loss_float64": 0.0,
+        "log_loss": -1953.8884505805647,
+        "margin_raw": 1952.5810061964344,
+        "norm_l2": 7185.187107429243,
+        "norm_linf": 1361.6266526498628,
+        "margin_l2": 0.27175089207872277,
+        "margin_linf": 1.4340061590278912,
+        "gap_l2": 0.058320207436141136,
+        "gap_linf": 0.009487241261549872,
+        "relative_gap_l2": 0.17668983295374774,
+        "relative_gap_linf": 0.006572417483618254,
+        "distance_l2_unit_to_l2_ref": 0.5373310442315936,
+        "distance_l2_unit_to_linf_ref": 0.014274472478573257,
+        "adam_moment_log_scale": 1952.5796553542536,
+        "log10_min_sqrt_v": -853.0269449715366,
+        "log10_max_sqrt_v": -849.2194061792217,
+        "log10_min_sqrt_v_over_epsilon": null,
+        "epsilon_dominates_coordinates": null,
+        "elapsed_wall_seconds": 22.396003145999998,
+        "elapsed_cpu_seconds": 22.385119749,
+        "log10_max_sqrt_v_over_epsilon": null,
+        "epsilon_update_suppression_min": null,
+        "epsilon_update_suppression_max": null,
+        "epsilon_strong_coordinates": null
+      },
+      "first_all_epsilon_below_recorded_checkpoint": null,
+      "first_all_epsilon_strong_recorded_checkpoint": null,
+      "wall_seconds": 22.408767812000065,
+      "cpu_seconds": 22.3978843,
+      "hashes": {
+        "config.json": "faa8f30e727fa577d2c293fb66ec1de3e35eb71b477d319d7c916e50e6bd9c86",
+        "trajectory.csv": "2c72b7d57788bdd9e6911925dedf78c04166b1f1af02fe3489751c83006af059",
+        "states.npz": "71d3823fcc4980fc88343477f914f11651cb78d1dc3a954142803929d1c65eaa"
+      }
+    },
+    {
+      "config": {
+        "run_id": "figure1_adam_eps-1e-08",
+        "method": "adam",
+        "epsilon": 1e-08,
+        "a": 0.5,
+        "c": 1.0,
+        "offset": 1,
+        "arithmetic": "scaled"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "adam",
+        "epsilon": 1e-08,
+        "loss_float64": 4.8217080478645435e-11,
+        "log_loss": -23.755307790868194,
+        "margin_raw": 22.32718146844156,
+        "norm_l2": 71.74480418855475,
+        "norm_linf": 22.584176068783147,
+        "margin_l2": 0.3112027654262293,
+        "margin_linf": 0.9886205899405461,
+        "gap_l2": 0.018868334088634586,
+        "gap_linf": 0.45487281034889493,
+        "relative_gap_l2": 0.05716445370820744,
+        "relative_gap_linf": 0.31511942504045143,
+        "distance_l2_unit_to_l2_ref": 0.2065477793495702,
+        "distance_l2_unit_to_linf_ref": 0.5428098784911085,
+        "adam_moment_log_scale": 22.327180939443814,
+        "log10_min_sqrt_v": -13.29408394096621,
+        "log10_max_sqrt_v": -11.256545265877248,
+        "log10_min_sqrt_v_over_epsilon": -5.294083940966211,
+        "epsilon_dominates_coordinates": 50,
+        "elapsed_wall_seconds": 21.71983309399991,
+        "elapsed_cpu_seconds": 21.716324008999997,
+        "log10_max_sqrt_v_over_epsilon": -3.2565452658772482,
+        "epsilon_update_suppression_min": 0.9994463768627188,
+        "epsilon_update_suppression_max": 0.9999949194134687,
+        "epsilon_strong_coordinates": 50
+      },
+      "first_all_epsilon_below_recorded_checkpoint": 3118,
+      "first_all_epsilon_strong_recorded_checkpoint": 3683,
+      "wall_seconds": 21.737374529999897,
+      "cpu_seconds": 21.733852643,
+      "hashes": {
+        "config.json": "e5f0b2b3d6d2e37356a0eb63c7f8ec5a42ec889c877205c297518c0ffee33e7b",
+        "trajectory.csv": "9834b5b4fcd61a48a0345fc90c744778c6fb7b17640eb96a05474cdea3d31962",
+        "states.npz": "0499beae91cfc079575145007208013660f7a9d48994c97760b856236b621564"
+      }
+    },
+    {
+      "config": {
+        "run_id": "index_control_adam_eps-0",
+        "method": "adam",
+        "epsilon": 0.0,
+        "a": 0.5,
+        "c": 1.0,
+        "offset": 2,
+        "arithmetic": "scaled"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "adam",
+        "epsilon": 0.0,
+        "loss_float64": 0.0,
+        "log_loss": -1953.8735098942268,
+        "margin_raw": 1952.5658555012901,
+        "norm_l2": 7182.796872447357,
+        "norm_linf": 1363.1544778831592,
+        "margin_l2": 0.2718392139127836,
+        "margin_linf": 1.4323878087048705,
+        "gap_l2": 0.05823188560208031,
+        "gap_linf": 0.011105591584570584,
+        "relative_gap_l2": 0.17642224868420509,
+        "relative_gap_linf": 0.007693552033105067,
+        "distance_l2_unit_to_l2_ref": 0.5371513742153408,
+        "distance_l2_unit_to_linf_ref": 0.01354753037454104,
+        "adam_moment_log_scale": 1952.5649308624345,
+        "log10_min_sqrt_v": -853.038610787859,
+        "log10_max_sqrt_v": -849.2129184005594,
+        "log10_min_sqrt_v_over_epsilon": null,
+        "epsilon_dominates_coordinates": null,
+        "elapsed_wall_seconds": 21.963345333999996,
+        "elapsed_cpu_seconds": 21.952065037,
+        "log10_max_sqrt_v_over_epsilon": null,
+        "epsilon_update_suppression_min": null,
+        "epsilon_update_suppression_max": null,
+        "epsilon_strong_coordinates": null
+      },
+      "first_all_epsilon_below_recorded_checkpoint": null,
+      "first_all_epsilon_strong_recorded_checkpoint": null,
+      "wall_seconds": 21.99318812599995,
+      "cpu_seconds": 21.981906874,
+      "hashes": {
+        "config.json": "f4a3f1181f92ecbce6af5897d8f7c2837eef135425857a0c54ab852ba5b3dfef",
+        "trajectory.csv": "13d8f3ba9b422f75c768dc263ce47e6a3c5406f9dbee46466bd0a6761fe48804",
+        "states.npz": "b34a33791ab512389410602a334c3e36c6a8c38cc157f6e4b8245a5dc53eefc4"
+      }
+    },
+    {
+      "config": {
+        "run_id": "index_control_adam_eps-1e-08",
+        "method": "adam",
+        "epsilon": 1e-08,
+        "a": 0.5,
+        "c": 1.0,
+        "offset": 2,
+        "arithmetic": "scaled"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "adam",
+        "epsilon": 1e-08,
+        "loss_float64": 4.830193494214452e-11,
+        "log_loss": -23.753549495158474,
+        "margin_raw": 22.326112129830385,
+        "norm_l2": 71.71782838687767,
+        "norm_linf": 23.13836522907737,
+        "margin_l2": 0.31130491025736956,
+        "margin_linf": 0.9648958303144837,
+        "gap_l2": 0.018766189257494348,
+        "gap_linf": 0.4785975699749574,
+        "relative_gap_l2": 0.056854990591653554,
+        "relative_gap_linf": 0.33155508011258783,
+        "distance_l2_unit_to_l2_ref": 0.21314370541366803,
+        "distance_l2_unit_to_linf_ref": 0.5581690327199904,
+        "adam_moment_log_scale": 22.326111600937317,
+        "log10_min_sqrt_v": -13.597656519916729,
+        "log10_max_sqrt_v": -11.262236445774413,
+        "log10_min_sqrt_v_over_epsilon": -5.597656519916728,
+        "epsilon_dominates_coordinates": 50,
+        "elapsed_wall_seconds": 20.980022394000002,
+        "elapsed_cpu_seconds": 20.964390591999997,
+        "log10_max_sqrt_v_over_epsilon": -3.262236445774412,
+        "epsilon_update_suppression_min": 0.9994535805090108,
+        "epsilon_update_suppression_max": 0.999997474529015,
+        "epsilon_strong_coordinates": 50
+      },
+      "first_all_epsilon_below_recorded_checkpoint": 3118,
+      "first_all_epsilon_strong_recorded_checkpoint": 3683,
+      "wall_seconds": 20.993792059000043,
+      "cpu_seconds": 20.978158069,
+      "hashes": {
+        "config.json": "f0dbf118ea7f1359cfd910203f8fd487fedda248b9a8cabbd1f164634dee66cb",
+        "trajectory.csv": "19f2829d333508dea51b85735887fb56acdcb81803288b4f009152fa83431cb3",
+        "states.npz": "2d8f020c6bee93616b9ebcaa21fc8d1fc709ecaf19a8332dbc15cf515506354b"
+      }
+    },
+    {
+      "config": {
+        "run_id": "figure1_gd",
+        "method": "gd",
+        "epsilon": 0.0,
+        "eta": 0.1,
+        "arithmetic": "literal"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "gd",
+        "epsilon": 0.0,
+        "loss_float64": 9.183660106298685e-05,
+        "log_loss": -9.295499635409469,
+        "margin_raw": 7.863530218605927,
+        "norm_l2": 26.464262294365657,
+        "norm_linf": 8.42868017323342,
+        "margin_l2": 0.2971377071137971,
+        "margin_linf": 0.9329491755515633,
+        "gap_l2": 0.0329333924010668,
+        "gap_linf": 0.5105442247378777,
+        "relative_gap_l2": 0.09977666160252152,
+        "relative_gap_linf": 0.3536865666552451,
+        "distance_l2_unit_to_l2_ref": 0.1302940119036892,
+        "distance_l2_unit_to_linf_ref": 0.558252225439665,
+        "adam_moment_log_scale": null,
+        "log10_min_sqrt_v": null,
+        "log10_max_sqrt_v": null,
+        "log10_min_sqrt_v_over_epsilon": null,
+        "epsilon_dominates_coordinates": null,
+        "elapsed_wall_seconds": 8.682474787000046,
+        "elapsed_cpu_seconds": 8.677661023000006,
+        "log10_max_sqrt_v_over_epsilon": null,
+        "epsilon_update_suppression_min": null,
+        "epsilon_update_suppression_max": null,
+        "epsilon_strong_coordinates": null
+      },
+      "first_all_epsilon_below_recorded_checkpoint": null,
+      "first_all_epsilon_strong_recorded_checkpoint": null,
+      "wall_seconds": 8.690912120999997,
+      "cpu_seconds": 8.686091429000001,
+      "hashes": {
+        "config.json": "5bf6e27c065c20f0ed5257981cfb69dd0f7b303ef4993fdda6f721e5de40719d",
+        "trajectory.csv": "a9e999d432ecafa216e25ce03985bbf57bcfc54d8cba16fb696ea5ff21cbc163",
+        "states.npz": "f298e16469c96456b404f238e0c78270fff78db533d2b7e2f4653fbdf6c54ae9"
+      }
+    },
+    {
+      "config": {
+        "run_id": "figure1_gdm",
+        "method": "gdm",
+        "epsilon": 0.0,
+        "eta": 0.1,
+        "arithmetic": "literal"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "gdm",
+        "epsilon": 0.0,
+        "loss_float64": 9.183054017095825e-05,
+        "log_loss": -9.29556563406323,
+        "margin_raw": 7.863616387310015,
+        "norm_l2": 26.474273903364086,
+        "norm_linf": 8.440571982573143,
+        "margin_l2": 0.29702859523224867,
+        "margin_linf": 0.9316449647660915,
+        "gap_l2": 0.03304250428261524,
+        "gap_linf": 0.5118484355233496,
+        "relative_gap_l2": 0.10010723244531516,
+        "relative_gap_linf": 0.3545900766991499,
+        "distance_l2_unit_to_l2_ref": 0.13301264609835675,
+        "distance_l2_unit_to_linf_ref": 0.5589435236469465,
+        "adam_moment_log_scale": null,
+        "log10_min_sqrt_v": null,
+        "log10_max_sqrt_v": null,
+        "log10_min_sqrt_v_over_epsilon": null,
+        "epsilon_dominates_coordinates": null,
+        "elapsed_wall_seconds": 10.276377002000004,
+        "elapsed_cpu_seconds": 10.274661713,
+        "log10_max_sqrt_v_over_epsilon": null,
+        "epsilon_update_suppression_min": null,
+        "epsilon_update_suppression_max": null,
+        "epsilon_strong_coordinates": null
+      },
+      "first_all_epsilon_below_recorded_checkpoint": null,
+      "first_all_epsilon_strong_recorded_checkpoint": null,
+      "wall_seconds": 10.308249682999985,
+      "cpu_seconds": 10.306532106000006,
+      "hashes": {
+        "config.json": "7196623f3a96c2a443ef323ef9d22a9df9380bbc9a9a6734c0a419faee8d2195",
+        "trajectory.csv": "aff0997ea14d02c0e44280a43da6d0119abe5166c3cad6db3a2f8636abdd3e64",
+        "states.npz": "75b4630dc4762c0d84c4f40b77688fc43b0e1a4e6a7b2a90c59bb95ced632bbb"
+      }
+    },
+    {
+      "config": {
+        "run_id": "literal_adam_eps-1e-08",
+        "method": "adam",
+        "epsilon": 1e-08,
+        "a": 0.5,
+        "c": 1.0,
+        "offset": 1,
+        "arithmetic": "literal"
+      },
+      "requested_updates": 1000000,
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "error": null,
+      "endpoint": {
+        "step": 1000000,
+        "method": "adam",
+        "epsilon": 1e-08,
+        "loss_float64": 4.8217080478645454e-11,
+        "log_loss": -23.755307790868194,
+        "margin_raw": 22.327181468441566,
+        "norm_l2": 71.74480418855474,
+        "norm_linf": 22.584176068783144,
+        "margin_l2": 0.3112027654262295,
+        "margin_linf": 0.9886205899405466,
+        "gap_l2": 0.01886833408863442,
+        "gap_linf": 0.4548728103488945,
+        "relative_gap_l2": 0.057164453708207,
+        "relative_gap_linf": 0.3151194250404512,
+        "distance_l2_unit_to_l2_ref": 0.20654777934957008,
+        "distance_l2_unit_to_linf_ref": 0.5428098784911086,
+        "adam_moment_log_scale": 0.0,
+        "log10_min_sqrt_v": -13.294083940966184,
+        "log10_max_sqrt_v": -11.256545265877248,
+        "log10_min_sqrt_v_over_epsilon": -5.294083940966183,
+        "epsilon_dominates_coordinates": 50,
+        "elapsed_wall_seconds": 13.038433281000039,
+        "elapsed_cpu_seconds": 13.033914319000004,
+        "log10_max_sqrt_v_over_epsilon": -3.2565452658772482,
+        "epsilon_update_suppression_min": 0.9994463768627188,
+        "epsilon_update_suppression_max": 0.9999949194134687,
+        "epsilon_strong_coordinates": 50
+      },
+      "first_all_epsilon_below_recorded_checkpoint": 3118,
+      "first_all_epsilon_strong_recorded_checkpoint": 3683,
+      "wall_seconds": 13.05327412400004,
+      "cpu_seconds": 13.048752904000004,
+      "hashes": {
+        "config.json": "ee13ce49e01a9994e6342b5c3118b221e70b6ca144c479aeb6046d731f4d1dc7",
+        "trajectory.csv": "efcf7a9195a72250ae9d7656f735320e1c08164c47e1897e93788d15a85c0cfd",
+        "states.npz": "0f1ed2e8442847b39d380f1be1a3a15852bad01949f45a67e9860c6fe586aa48"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "data.npz",
+      "sha256": "a5b7a6baaf82f4f694b45f056f7985273a18d0317e5d49a6cf8dc53d67883ca2"
+    },
+    {
+      "path": "figure1_adam_eps-0/config.json",
+      "sha256": "faa8f30e727fa577d2c293fb66ec1de3e35eb71b477d319d7c916e50e6bd9c86"
+    },
+    {
+      "path": "figure1_adam_eps-0/states.npz",
+      "sha256": "71d3823fcc4980fc88343477f914f11651cb78d1dc3a954142803929d1c65eaa"
+    },
+    {
+      "path": "figure1_adam_eps-0/summary.json",
+      "sha256": "949774f301d8baff4c8504cf7b8aae85ff4dd6131fe4b88453a8894c31cd5bb4"
+    },
+    {
+      "path": "figure1_adam_eps-0/trajectory.csv",
+      "sha256": "2c72b7d57788bdd9e6911925dedf78c04166b1f1af02fe3489751c83006af059"
+    },
+    {
+      "path": "figure1_adam_eps-1e-08/config.json",
+      "sha256": "e5f0b2b3d6d2e37356a0eb63c7f8ec5a42ec889c877205c297518c0ffee33e7b"
+    },
+    {
+      "path": "figure1_adam_eps-1e-08/states.npz",
+      "sha256": "0499beae91cfc079575145007208013660f7a9d48994c97760b856236b621564"
+    },
+    {
+      "path": "figure1_adam_eps-1e-08/summary.json",
+      "sha256": "2c9078e059d052a39f2a84b8efa7a62378825a2e60e9d703bef5985efed2e97f"
+    },
+    {
+      "path": "figure1_adam_eps-1e-08/trajectory.csv",
+      "sha256": "9834b5b4fcd61a48a0345fc90c744778c6fb7b17640eb96a05474cdea3d31962"
+    },
+    {
+      "path": "figure1_gd/config.json",
+      "sha256": "5bf6e27c065c20f0ed5257981cfb69dd0f7b303ef4993fdda6f721e5de40719d"
+    },
+    {
+      "path": "figure1_gd/states.npz",
+      "sha256": "f298e16469c96456b404f238e0c78270fff78db533d2b7e2f4653fbdf6c54ae9"
+    },
+    {
+      "path": "figure1_gd/summary.json",
+      "sha256": "79eb3cc38ca9666b87ac811273b9f008a1b7e0cb56e4a06bb2151d74a3dc0d84"
+    },
+    {
+      "path": "figure1_gd/trajectory.csv",
+      "sha256": "a9e999d432ecafa216e25ce03985bbf57bcfc54d8cba16fb696ea5ff21cbc163"
+    },
+    {
+      "path": "figure1_gdm/config.json",
+      "sha256": "7196623f3a96c2a443ef323ef9d22a9df9380bbc9a9a6734c0a419faee8d2195"
+    },
+    {
+      "path": "figure1_gdm/states.npz",
+      "sha256": "75b4630dc4762c0d84c4f40b77688fc43b0e1a4e6a7b2a90c59bb95ced632bbb"
+    },
+    {
+      "path": "figure1_gdm/summary.json",
+      "sha256": "97e18c684b1e7c3c14af5b082b0ac8f86ddac9f9c2079a2aaa44187f9adb417b"
+    },
+    {
+      "path": "figure1_gdm/trajectory.csv",
+      "sha256": "aff0997ea14d02c0e44280a43da6d0119abe5166c3cad6db3a2f8636abdd3e64"
+    },
+    {
+      "path": "index_control_adam_eps-0/config.json",
+      "sha256": "f4a3f1181f92ecbce6af5897d8f7c2837eef135425857a0c54ab852ba5b3dfef"
+    },
+    {
+      "path": "index_control_adam_eps-0/states.npz",
+      "sha256": "b34a33791ab512389410602a334c3e36c6a8c38cc157f6e4b8245a5dc53eefc4"
+    },
+    {
+      "path": "index_control_adam_eps-0/summary.json",
+      "sha256": "ee31bf50cb11b0caba5349403fde2e9dc469521a489d114b7a94d433cb4faf50"
+    },
+    {
+      "path": "index_control_adam_eps-0/trajectory.csv",
+      "sha256": "13d8f3ba9b422f75c768dc263ce47e6a3c5406f9dbee46466bd0a6761fe48804"
+    },
+    {
+      "path": "index_control_adam_eps-1e-08/config.json",
+      "sha256": "f0dbf118ea7f1359cfd910203f8fd487fedda248b9a8cabbd1f164634dee66cb"
+    },
+    {
+      "path": "index_control_adam_eps-1e-08/states.npz",
+      "sha256": "2d8f020c6bee93616b9ebcaa21fc8d1fc709ecaf19a8332dbc15cf515506354b"
+    },
+    {
+      "path": "index_control_adam_eps-1e-08/summary.json",
+      "sha256": "8cb4268f49153a8e5bcd58920322fe7e27009356ee76df12a6ec04140d22708a"
+    },
+    {
+      "path": "index_control_adam_eps-1e-08/trajectory.csv",
+      "sha256": "19f2829d333508dea51b85735887fb56acdcb81803288b4f009152fa83431cb3"
+    },
+    {
+      "path": "legacy_adam_eps-0/config.json",
+      "sha256": "1f673be547359f23e0100373ed6f6f852c3ac5ad388c3bdca68a0a64da507858"
+    },
+    {
+      "path": "legacy_adam_eps-0/states.npz",
+      "sha256": "1117693d42af4aa13559f49c29731979d4fdb10c21fdc490c12b08a9e8ac33b2"
+    },
+    {
+      "path": "legacy_adam_eps-0/summary.json",
+      "sha256": "085160c6705663038b7c4f4fabb47751e8431579a7e3ef10332fc645cb37ed91"
+    },
+    {
+      "path": "legacy_adam_eps-0/trajectory.csv",
+      "sha256": "22b3c1131993d5ecec244575e666851064a1a5dbe3f0582cc03e8c39ee3364fa"
+    },
+    {
+      "path": "legacy_adam_eps-1e-08/config.json",
+      "sha256": "6ef82898ee81b219fc1d5845f96b2a416e01fd946a1540398536144060d36965"
+    },
+    {
+      "path": "legacy_adam_eps-1e-08/states.npz",
+      "sha256": "b6853c6a944c351db4946a01a2d35a66cfd886f4e5bd6a0d396f2b4048c55f52"
+    },
+    {
+      "path": "legacy_adam_eps-1e-08/summary.json",
+      "sha256": "ff7edcbc27b6b0729d307eafdb52faff247b0a59c926fdc4593eb5758f865d50"
+    },
+    {
+      "path": "legacy_adam_eps-1e-08/trajectory.csv",
+      "sha256": "5a040177fb6ad16b21f03f778adc07b4bc681d60c83e1382cc78739e9c53159c"
+    },
+    {
+      "path": "literal_adam_eps-1e-08/config.json",
+      "sha256": "ee13ce49e01a9994e6342b5c3118b221e70b6ca144c479aeb6046d731f4d1dc7"
+    },
+    {
+      "path": "literal_adam_eps-1e-08/states.npz",
+      "sha256": "0f1ed2e8442847b39d380f1be1a3a15852bad01949f45a67e9860c6fe586aa48"
+    },
+    {
+      "path": "literal_adam_eps-1e-08/summary.json",
+      "sha256": "26ab728c8f5786348c66059634295b2afb2d398c9a719d9478aa787f20e76b16"
+    },
+    {
+      "path": "literal_adam_eps-1e-08/trajectory.csv",
+      "sha256": "efcf7a9195a72250ae9d7656f735320e1c08164c47e1897e93788d15a85c0cfd"
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "8d992cecb4e8b9f58d846bf71a7fc6556f011347b878e3026506ce7b04d0e4cf"
+    },
+    {
+      "path": "reference.json",
+      "sha256": "4d5aa963428094dd85db6daadc2173f9e5eda07c2c888a70e6385153c4d8a640"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "snapshot_integrity_passed": true,
+  "datasets_regenerated_exactly": 10,
+  "formal_endpoints_recomputed": 50,
+  "retained_trace_checkpoints": 16968,
+  "checkpoints_recomputed_from_full_states": 6060,
+  "max_absolute_recomputed_metric_difference": 3.410605131648481e-12,
+  "max_independently_checked_certificate_residual": 1.681321748492337e-12,
+  "scheduled_repeat_measurements_equal": true,
+  "scope": "Compact snapshot only; the earlier full 90-run audit is recorded separately",
+  "regenerated_figures": [
+    "01_selected_margins",
+    "06_selected_margins_detail",
+    "02_rate_sensitivity",
+    "03_loss_and_epsilon_scale",
+    "04_all_seeds",
+    "05_epsilon_controls"
+  ],
+  "numerical_checks_passed": 6,
+  "existing_workflow_tests_passed": 19,
+  "existing_exact_geometry_checks_passed": 9,
+  "existing_2d_checks_passed": 6
+}

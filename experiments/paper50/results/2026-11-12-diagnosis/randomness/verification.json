@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "runs": 46,
+  "total_updates": 46000000,
+  "datasets_regenerated": 40,
+  "reference_certificates_checked": 40,
+  "max_reference_residual": 1.681321748492337e-12,
+  "retained_checkpoints_recomputed": 276,
+  "max_margin_recomputation_error": 0.0,
+  "note": "Only retained checkpoints reverified here; full-history audits are separately recorded, not rerun"
+}

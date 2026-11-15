@@ -1,0 +1,568 @@
+{
+  "total_updates": 46000000,
+  "all_outcomes_retained": true,
+  "families": [
+    {
+      "family": "correlated_initialization",
+      "epsilon": 0.0,
+      "runs": 1,
+      "relative_gap_linf_range": [
+        0.009125531419430843,
+        0.009125531419430843
+      ],
+      "within_one_percent": 1
+    },
+    {
+      "family": "correlated_initialization",
+      "epsilon": 1e-08,
+      "runs": 1,
+      "relative_gap_linf_range": [
+        0.3928337195799514,
+        0.3928337195799514
+      ],
+      "within_one_percent": 0
+    },
+    {
+      "family": "dataset",
+      "epsilon": 0.0,
+      "runs": 10,
+      "relative_gap_linf_range": [
+        0.004978703250862915,
+        0.012915019411192552
+      ],
+      "within_one_percent": 9
+    },
+    {
+      "family": "dataset",
+      "epsilon": 1e-08,
+      "runs": 10,
+      "relative_gap_linf_range": [
+        0.24190736788765532,
+        0.42868304176671124
+      ],
+      "within_one_percent": 0
+    },
+    {
+      "family": "independent_initialization",
+      "epsilon": 0.0,
+      "runs": 5,
+      "relative_gap_linf_range": [
+        0.0050457562086747565,
+        0.0075212050902677685
+      ],
+      "within_one_percent": 5
+    },
+    {
+      "family": "independent_initialization",
+      "epsilon": 1e-08,
+      "runs": 5,
+      "relative_gap_linf_range": [
+        0.3177302343497158,
+        0.3820265719009137
+      ],
+      "within_one_percent": 0
+    },
+    {
+      "family": "initialization",
+      "epsilon": 0.0,
+      "runs": 4,
+      "relative_gap_linf_range": [
+        0.005848950656451191,
+        0.009098717672333168
+      ],
+      "within_one_percent": 4
+    },
+    {
+      "family": "initialization",
+      "epsilon": 1e-08,
+      "runs": 4,
+      "relative_gap_linf_range": [
+        0.3042915763669729,
+        0.3844914019875173
+      ],
+      "within_one_percent": 0
+    },
+    {
+      "family": "legacy_rng",
+      "epsilon": 0.0,
+      "runs": 3,
+      "relative_gap_linf_range": [
+        0.006831116976717344,
+        0.008564586760059445
+      ],
+      "within_one_percent": 3
+    },
+    {
+      "family": "legacy_rng",
+      "epsilon": 1e-08,
+      "runs": 3,
+      "relative_gap_linf_range": [
+        0.2834041385998203,
+        0.38860346948519
+      ],
+      "within_one_percent": 0
+    }
+  ],
+  "results": [
+    {
+      "run_id": "dataset-data00-init10000-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-0",
+      "initialization_seed": 10000,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.007498337293028401,
+      "relative_gap_l2": 0.15916811751467963,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data00-init10000-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-0",
+      "initialization_seed": 10000,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.2749446403577588,
+      "relative_gap_l2": 0.07597624883750143,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data01-init10001-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-1",
+      "initialization_seed": 10001,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.004978703250862915,
+      "relative_gap_l2": 0.15612885603964866,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data01-init10001-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-1",
+      "initialization_seed": 10001,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.24865278675969027,
+      "relative_gap_l2": 0.050298066226790894,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data02-init10002-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-2",
+      "initialization_seed": 10002,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.006572417483618254,
+      "relative_gap_l2": 0.17668983295374774,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data02-init10002-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-2",
+      "initialization_seed": 10002,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.31511942504045143,
+      "relative_gap_l2": 0.05716445370820744,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data03-init10003-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-3",
+      "initialization_seed": 10003,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.007489382520361909,
+      "relative_gap_l2": 0.1543804384395111,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data03-init10003-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-3",
+      "initialization_seed": 10003,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.32804134653409356,
+      "relative_gap_l2": 0.06017347750500879,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data04-init10004-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-4",
+      "initialization_seed": 10004,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.00821235455376046,
+      "relative_gap_l2": 0.12220128680996545,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data04-init10004-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-4",
+      "initialization_seed": 10004,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3710408100676217,
+      "relative_gap_l2": 0.05907516641656141,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data05-init10005-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-5",
+      "initialization_seed": 10005,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.006746572625212055,
+      "relative_gap_l2": 0.14227937919672073,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data05-init10005-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-5",
+      "initialization_seed": 10005,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.24190736788765532,
+      "relative_gap_l2": 0.06731106360005645,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data06-init10006-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-6",
+      "initialization_seed": 10006,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.008491321356566606,
+      "relative_gap_l2": 0.1549732323207046,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data06-init10006-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-6",
+      "initialization_seed": 10006,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3303417857512152,
+      "relative_gap_l2": 0.05924232595387269,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data07-init10007-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-7",
+      "initialization_seed": 10007,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.007127970464627431,
+      "relative_gap_l2": 0.13762147672458247,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data07-init10007-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-7",
+      "initialization_seed": 10007,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3843584914920465,
+      "relative_gap_l2": 0.0450924959516521,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data08-init10008-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-8",
+      "initialization_seed": 10008,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.006780774832410241,
+      "relative_gap_l2": 0.14650266215982588,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data08-init10008-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-8",
+      "initialization_seed": 10008,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.36993637555172243,
+      "relative_gap_l2": 0.0637755577376995,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data09-init10009-eps0",
+      "family": "dataset",
+      "data_key": "pcg64-9",
+      "initialization_seed": 10009,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.012915019411192552,
+      "relative_gap_l2": 0.13968756867977317,
+      "seed_collision": false
+    },
+    {
+      "run_id": "dataset-data09-init10009-eps1e-08",
+      "family": "dataset",
+      "data_key": "pcg64-9",
+      "initialization_seed": 10009,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.42868304176671124,
+      "relative_gap_l2": 0.079227718328293,
+      "seed_collision": false
+    },
+    {
+      "run_id": "initialization-data02-init00000-eps0",
+      "family": "initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 0,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.008618213087101645,
+      "relative_gap_l2": 0.1767327791913077,
+      "seed_collision": false
+    },
+    {
+      "run_id": "initialization-data02-init00000-eps1e-08",
+      "family": "initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 0,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3844914019875173,
+      "relative_gap_l2": 0.05353934007787975,
+      "seed_collision": false
+    },
+    {
+      "run_id": "initialization-data02-init00001-eps0",
+      "family": "initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 1,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.006669446274721991,
+      "relative_gap_l2": 0.1766092756296761,
+      "seed_collision": false
+    },
+    {
+      "run_id": "initialization-data02-init00001-eps1e-08",
+      "family": "initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 1,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.33639284105092226,
+      "relative_gap_l2": 0.0495221467545105,
+      "seed_collision": false
+    },
+    {
+      "run_id": "initialization-data02-init00002-eps0",
+      "family": "correlated_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 2,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.009125531419430843,
+      "relative_gap_l2": 0.176393536206926,
+      "seed_collision": true
+    },
+    {
+      "run_id": "initialization-data02-init00002-eps1e-08",
+      "family": "correlated_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 2,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3928337195799514,
+      "relative_gap_l2": 0.0497837466478287,
+      "seed_collision": true
+    },
+    {
+      "run_id": "initialization-data02-init00003-eps0",
+      "family": "initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 3,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.009098717672333168,
+      "relative_gap_l2": 0.17671306747581728,
+      "seed_collision": false
+    },
+    {
+      "run_id": "initialization-data02-init00003-eps1e-08",
+      "family": "initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 3,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3205915586369533,
+      "relative_gap_l2": 0.05064653552427756,
+      "seed_collision": false
+    },
+    {
+      "run_id": "initialization-data02-init00004-eps0",
+      "family": "initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 4,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.005848950656451191,
+      "relative_gap_l2": 0.17696154695730448,
+      "seed_collision": false
+    },
+    {
+      "run_id": "initialization-data02-init00004-eps1e-08",
+      "family": "initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 4,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3042915763669729,
+      "relative_gap_l2": 0.04532740778316624,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20000-eps0",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20000,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.006015002815579318,
+      "relative_gap_l2": 0.17659130263674405,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20000-eps1e-08",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20000,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3299300990354961,
+      "relative_gap_l2": 0.04953525590646457,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20001-eps0",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20001,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.0075212050902677685,
+      "relative_gap_l2": 0.176684653651613,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20001-eps1e-08",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20001,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3820265719009137,
+      "relative_gap_l2": 0.045872918232598425,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20002-eps0",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20002,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.0050457562086747565,
+      "relative_gap_l2": 0.17701863886018399,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20002-eps1e-08",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20002,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3177302343497158,
+      "relative_gap_l2": 0.04939315142956846,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20003-eps0",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20003,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.0059991723630247185,
+      "relative_gap_l2": 0.17640512115029272,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20003-eps1e-08",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20003,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.35415350049387073,
+      "relative_gap_l2": 0.05708733802431665,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20004-eps0",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20004,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.006790951197357176,
+      "relative_gap_l2": 0.1767259472423759,
+      "seed_collision": false
+    },
+    {
+      "run_id": "independent_initialization-data02-init20004-eps1e-08",
+      "family": "independent_initialization",
+      "data_key": "pcg64-2",
+      "initialization_seed": 20004,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.35068255383204416,
+      "relative_gap_l2": 0.04869032387127281,
+      "seed_collision": false
+    },
+    {
+      "run_id": "mt19937-root0-adam_eps-0",
+      "family": "legacy_rng",
+      "data_key": "mt19937-0-0",
+      "initialization_seed": 10000,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.006831116976717344,
+      "relative_gap_l2": 0.21878426601930712,
+      "seed_collision": false
+    },
+    {
+      "run_id": "mt19937-root0-adam_eps-1e-08",
+      "family": "legacy_rng",
+      "data_key": "mt19937-0-0",
+      "initialization_seed": 10000,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.3792832682673556,
+      "relative_gap_l2": 0.09283967040330976,
+      "seed_collision": false
+    },
+    {
+      "run_id": "mt19937-root42-adam_eps-0",
+      "family": "legacy_rng",
+      "data_key": "mt19937-42-6",
+      "initialization_seed": 10042,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.008564586760059445,
+      "relative_gap_l2": 0.16630648089589606,
+      "seed_collision": false
+    },
+    {
+      "run_id": "mt19937-root42-adam_eps-1e-08",
+      "family": "legacy_rng",
+      "data_key": "mt19937-42-6",
+      "initialization_seed": 10042,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.38860346948519,
+      "relative_gap_l2": 0.06113211800763363,
+      "seed_collision": false
+    },
+    {
+      "run_id": "mt19937-root2024-adam_eps-0",
+      "family": "legacy_rng",
+      "data_key": "mt19937-2024-2",
+      "initialization_seed": 12024,
+      "epsilon": 0.0,
+      "relative_gap_linf": 0.0068504151099217925,
+      "relative_gap_l2": 0.23229798520608946,
+      "seed_collision": false
+    },
+    {
+      "run_id": "mt19937-root2024-adam_eps-1e-08",
+      "family": "legacy_rng",
+      "data_key": "mt19937-2024-2",
+      "initialization_seed": 12024,
+      "epsilon": 1e-08,
+      "relative_gap_linf": 0.2834041385998203,
+      "relative_gap_l2": 0.09021441818772025,
+      "seed_collision": false
+    }
+  ]
+}

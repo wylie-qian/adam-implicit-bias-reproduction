@@ -1,0 +1,53 @@
+{
+  "config": {
+    "run_id": "index_control_adam_eps-1e-08",
+    "method": "adam",
+    "epsilon": 1e-08,
+    "a": 0.5,
+    "c": 1.0,
+    "offset": 2,
+    "arithmetic": "scaled"
+  },
+  "requested_updates": 1000000,
+  "updates": 1000000,
+  "stop_reason": "completed_fixed_steps",
+  "error": null,
+  "endpoint": {
+    "step": 1000000,
+    "method": "adam",
+    "epsilon": 1e-08,
+    "loss_float64": 4.830193494214452e-11,
+    "log_loss": -23.753549495158474,
+    "margin_raw": 22.326112129830385,
+    "norm_l2": 71.71782838687767,
+    "norm_linf": 23.13836522907737,
+    "margin_l2": 0.31130491025736956,
+    "margin_linf": 0.9648958303144837,
+    "gap_l2": 0.018766189257494348,
+    "gap_linf": 0.4785975699749574,
+    "relative_gap_l2": 0.056854990591653554,
+    "relative_gap_linf": 0.33155508011258783,
+    "distance_l2_unit_to_l2_ref": 0.21314370541366803,
+    "distance_l2_unit_to_linf_ref": 0.5581690327199904,
+    "adam_moment_log_scale": 22.326111600937317,
+    "log10_min_sqrt_v": -13.597656519916729,
+    "log10_max_sqrt_v": -11.262236445774413,
+    "log10_min_sqrt_v_over_epsilon": -5.597656519916728,
+    "epsilon_dominates_coordinates": 50,
+    "elapsed_wall_seconds": 20.980022394000002,
+    "elapsed_cpu_seconds": 20.964390591999997,
+    "log10_max_sqrt_v_over_epsilon": -3.262236445774412,
+    "epsilon_update_suppression_min": 0.9994535805090108,
+    "epsilon_update_suppression_max": 0.999997474529015,
+    "epsilon_strong_coordinates": 50
+  },
+  "first_all_epsilon_below_recorded_checkpoint": 3118,
+  "first_all_epsilon_strong_recorded_checkpoint": 3683,
+  "wall_seconds": 20.993792059000043,
+  "cpu_seconds": 20.978158069,
+  "hashes": {
+    "config.json": "f0dbf118ea7f1359cfd910203f8fd487fedda248b9a8cabbd1f164634dee66cb",
+    "trajectory.csv": "19f2829d333508dea51b85735887fb56acdcb81803288b4f009152fa83431cb3",
+    "states.npz": "2d8f020c6bee93616b9ebcaa21fc8d1fc709ecaf19a8332dbc15cf515506354b"
+  }
+}

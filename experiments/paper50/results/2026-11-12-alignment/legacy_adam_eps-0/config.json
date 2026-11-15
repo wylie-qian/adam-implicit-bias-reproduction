@@ -1,0 +1,9 @@
+{
+  "run_id": "legacy_adam_eps-0",
+  "method": "adam",
+  "epsilon": 0.0,
+  "a": 0.7,
+  "c": 1.0,
+  "offset": 2,
+  "arithmetic": "scaled"
+}

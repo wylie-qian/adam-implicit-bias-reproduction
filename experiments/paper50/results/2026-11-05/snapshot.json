@@ -1,0 +1,1585 @@
+{
+  "schema_version": 1,
+  "kind": "curated_scientific_snapshot",
+  "paper": "Zhang, Zou, Cao, The Implicit Bias of Adam on Separable Data, NeurIPS 2024 final",
+  "base_repository_sha": "d637e8271e0ce3e04d8429ebb61c0440ce7d99c6",
+  "experiment_source_sha256": "cff71403539c260aa910a48a7332900c25d69b47be74ab464aac43d40c6fdc67",
+  "original_protocol_sha256": "19008c8ba366af91cb9e1d94b42e6ff1ee610a34832033feabcd1e140115604a",
+  "selected_seed": 2,
+  "formal_runs": 50,
+  "formal_updates": 50000000,
+  "pilot_runs_original_audit_only": 40,
+  "full_original_updates": 50400000,
+  "snapshot_scope": "all ten datasets/references and all formal endpoints; selected-seed CSV trajectories; five complete checkpoint-state histories; full original evidence retained separately",
+  "original_full_audit_note": "original-full-validation.json documents the earlier full 90-run audit; this compact snapshot is independently checked only for the retained data and states",
+  "freeze_evidence": {
+    "protocol_mtime_utc": "2026-11-05T14:38:44.492845+00:00",
+    "first_formal_pilot_config_mtime_utc": "2026-11-05T14:40:09.166444+00:00",
+    "first_primary_config_mtime_utc": "2026-11-05T14:40:43.429815+00:00",
+    "criterion": "0 <= (gamma_p-q_p(w_T))/gamma_p <= .01; internal descriptive criterion, no external preregistration"
+  },
+  "runs": [
+    {
+      "suite": "primary",
+      "run_id": "seed-00_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-00_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-00_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-00_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-01_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-01_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-01_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-01_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-02_adam_eps-0_a-0.7",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": true
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": true
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-02_gd_eps-0_a-0.7",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": true
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-02_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": true
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-03_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-03_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-03_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-03_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-04_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-04_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-04_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-04_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-05_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-05_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-05_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-05_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-06_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-06_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-06_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-06_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-07_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-07_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-07_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-07_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-08_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-08_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-08_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-08_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-09_adam_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-09_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-09_gd_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-09_gdm_eps-0_a-0.7",
+      "full_trajectory_retained": false,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-0_a-0.3",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-0_a-0.5",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": true
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-0_a-0.7",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-0_a-1",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.3",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.5",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.7",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-1e-08_a-1",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "epsilon",
+      "run_id": "seed-02_adam_eps-0.0001_a-0.7",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    },
+    {
+      "suite": "epsilon",
+      "run_id": "seed-02_adam_eps-1e-12_a-0.7",
+      "full_trajectory_retained": true,
+      "full_checkpoint_states_retained": false
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5971,
+      "sha256": "d865d2628bc50d64dcd80bb01c853911e4c9fa4e8bd4634d4473a5c1b947475c",
+      "provenance": "interpretation and explicit retention scope"
+    },
+    {
+      "path": "datasets/manifest.json",
+      "bytes": 101670,
+      "sha256": "d7bd50a154b0fd966b73477bb78efee174873f259e4494967d8573bfac45cd72",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/protocol.json",
+      "bytes": 2390,
+      "sha256": "8d992cecb4e8b9f58d846bf71a7fc6556f011347b878e3026506ce7b04d0e4cf",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-00/data.npz",
+      "bytes": 20264,
+      "sha256": "f70ced63555af1206fdf366e2c2b1bcf6c911a90a7dcad56e55d3ea2d2090286",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-00/reference.json",
+      "bytes": 8585,
+      "sha256": "8305b166caab8d2cb6b87b04f606c663fe4f0c4d151d7652745fcd7cb6e4214f",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-01/data.npz",
+      "bytes": 20275,
+      "sha256": "02ce0276bdef6d3c34cad0fcd692a3eae24e321fdd2b08ae511edc9a912867d6",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-01/reference.json",
+      "bytes": 8713,
+      "sha256": "420b7e0ce7083c0ca7cec9a2e8abf84b4cb183157100a3b4223801eb9a304dfe",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-02/data.npz",
+      "bytes": 20280,
+      "sha256": "a5b7a6baaf82f4f694b45f056f7985273a18d0317e5d49a6cf8dc53d67883ca2",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-02/reference.json",
+      "bytes": 8592,
+      "sha256": "4d5aa963428094dd85db6daadc2173f9e5eda07c2c888a70e6385153c4d8a640",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-03/data.npz",
+      "bytes": 20263,
+      "sha256": "9900dd246abac4fd1958a05a6f0787da0a998c073a4b7dacd9bc53000c2b639c",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-03/reference.json",
+      "bytes": 8721,
+      "sha256": "0c95d72054c1e49b4c2aae7e689d799b5d3bc4f4fb76777f30985d09e97f1a8c",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-04/data.npz",
+      "bytes": 20253,
+      "sha256": "cdef6e84f01da68b1f7e4887d04c9772cfc010eb04adccd95bc6eb6fa5044726",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-04/reference.json",
+      "bytes": 8612,
+      "sha256": "2313147fa78594a0d56be7ce784d3fc074faf6f287df31659c97f416fcefc319",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-05/data.npz",
+      "bytes": 20257,
+      "sha256": "fdbc4cd5c6d6d330882d10f962c01e69bfa03e4d37330d3057303d1d2f8111f9",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-05/reference.json",
+      "bytes": 8656,
+      "sha256": "21b839987f0fe74aafef6d85003a17e34708ce7698409b7beb77cf8fce5e695d",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-06/data.npz",
+      "bytes": 20251,
+      "sha256": "2c8dfd08868c7567ecacbc291d3781d6603877e403f10f1cde69229c1632f3f1",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-06/reference.json",
+      "bytes": 8517,
+      "sha256": "ad72b6baeff0e20789b4b03aa52b8f68d25ea459964287799b88a14ff525acb9",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-07/data.npz",
+      "bytes": 20288,
+      "sha256": "683a93db5b92b79f5228a32702de016f7aaedd2bd3c782ce38b8b8e1bf374126",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-07/reference.json",
+      "bytes": 8664,
+      "sha256": "1fbab5d75bec326049c390b49dc8669758c94675b7c637d85ac19621da5fa570",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-08/data.npz",
+      "bytes": 20264,
+      "sha256": "46c5c9f37e66f47d0c642c1522c7e49bf3370d9e75f278978acfd3f5e75ea97d",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-08/reference.json",
+      "bytes": 8565,
+      "sha256": "72ce71bc52809a21d382b1fd4762286827ec8fc75c0f8b8177db430132304a3d",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-09/data.npz",
+      "bytes": 20260,
+      "sha256": "07de6b9ac37c4ac188088b26444459ad9101a6b7c2ac3592818d867eb32ef38e",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "datasets/seed-09/reference.json",
+      "bytes": 8523,
+      "sha256": "d97075e04cedb18a07b500b434187d4bd19b713d3c455974c7774494a042990e",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "endpoints.json",
+      "bytes": 19659,
+      "sha256": "6928f27c7d0beb9fa184a2de1c732f6f044fd6d26981725899d1bbe92cf3d015",
+      "provenance": "derived table of all 50 formal run endpoints; no pilot results substituted"
+    },
+    {
+      "path": "epsilon/manifest.json",
+      "bytes": 5702,
+      "sha256": "ffe8b37e6f168a8488b20155dba3655d062b2c1c932226c2ef8d297124c3f253",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "epsilon/seed-02_adam_eps-0.0001_a-0.7/config.json",
+      "bytes": 161,
+      "sha256": "d3f38642a60d213ced73f18ecb24210fa19f5d4ce4c40f1349af87a488ac2b5b",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "epsilon/seed-02_adam_eps-0.0001_a-0.7/endpoint_state.json",
+      "bytes": 4020,
+      "sha256": "9db832554c7ae5d4bbd6aefde3cdbd2cbb3bdc0bb5c3794eb1de01ed83324af3",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "epsilon/seed-02_adam_eps-0.0001_a-0.7/summary.json",
+      "bytes": 1917,
+      "sha256": "2a3ec4557602bae3cb2e6e9552f419453714b636b8c9d28255bc62fec2cfcdd8",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "epsilon/seed-02_adam_eps-0.0001_a-0.7/trajectory.csv",
+      "bytes": 467711,
+      "sha256": "f5ffdb4a78063adcdd83da2fcd59c3ecee04a0f12edf46f4743ebe8c41497d8f",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "epsilon/seed-02_adam_eps-1e-12_a-0.7/config.json",
+      "bytes": 159,
+      "sha256": "abf30e1094ad8fe8a640bb46f5e5dfb75a003ab5834efc6feec3a8c30721a79a",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "epsilon/seed-02_adam_eps-1e-12_a-0.7/endpoint_state.json",
+      "bytes": 4022,
+      "sha256": "95272ac4cbeaff6fdc4bf43207af52eb024326809eec87b5bfe7a01b939ef35f",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "epsilon/seed-02_adam_eps-1e-12_a-0.7/summary.json",
+      "bytes": 1920,
+      "sha256": "ddafd3bc63fc3b9c4da39a695ee03c3bfc6dfba8e8cfe9634dae08af6ee7d416",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "epsilon/seed-02_adam_eps-1e-12_a-0.7/trajectory.csv",
+      "bytes": 465529,
+      "sha256": "63a91aea938d3a4b696edabb17cb7ecf95f98c0802beb8235b8980ae7deadbeb",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/01_selected_margins.png",
+      "bytes": 153924,
+      "sha256": "0338fd268ba3cd047b040fbff692972ebd21f59f7e226202de3b29a32c0e6d89",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/01_selected_margins.svg",
+      "bytes": 61969,
+      "sha256": "db1c2a26de8da907bbe42a0604d8008277313f0b721e849bcebd7c9a9e1f147e",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/02_rate_sensitivity.png",
+      "bytes": 162923,
+      "sha256": "4484abdea42bd00db961ae550456d287622a22a4438852b1b5c02b13d6d5fbff",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/02_rate_sensitivity.svg",
+      "bytes": 107524,
+      "sha256": "fe697235153c00036356c57bc4196a3faba365a7167ef9df8b58c7fd5c1dcfcc",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/03_loss_and_epsilon_scale.png",
+      "bytes": 136966,
+      "sha256": "10d6b42571d13828712e2ceedd3cc871fc4d055f139ee960f3368b6dedc45271",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/03_loss_and_epsilon_scale.svg",
+      "bytes": 61694,
+      "sha256": "5afcbf6b3e26dc95e2f66f9839a8dfc190af884e63bba78b3b51646771ffdc97",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/04_all_seeds.png",
+      "bytes": 221717,
+      "sha256": "67eae47b861c8ae840bde117933f1924bee5795f2a09a16212fd4aa0681049dd",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/04_all_seeds.svg",
+      "bytes": 53399,
+      "sha256": "0613b91e5c0fa9c7900b55f3c8e50b37413ecacf92bb110def1cb96706d15071",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/05_epsilon_controls.png",
+      "bytes": 99182,
+      "sha256": "3e88e4d7553b67080d7a88ce276a99444c580d4ae2da3187db6f94cca7ef40fb",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/05_epsilon_controls.svg",
+      "bytes": 37241,
+      "sha256": "2537c3fb3d7b5fbc1a1461ee060948fb41d9ac4a60584f37e36ead2c5199552f",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/06_selected_margins_detail.png",
+      "bytes": 148919,
+      "sha256": "3d60eee186211131fb49edd86870702af31189ca090cf50dc4a0b9fcbe174b99",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "figures/06_selected_margins_detail.svg",
+      "bytes": 48659,
+      "sha256": "3726b26d2b0eb6cf46216305da8be5b1fb79d75ca1c99898078ccdee861be5a8",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "original-full-validation.json",
+      "bytes": 16713,
+      "sha256": "52e0ec9c667178476824e81ec9ae3ef1649b658633c499fc1b390b2cc0b4bf59",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/manifest.json",
+      "bytes": 94151,
+      "sha256": "4b01f50e0e6406abef1577fcea3a0290bdf686b63622def7c20616ec558fb7a7",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-00_adam_eps-0_a-0.7/config.json",
+      "bytes": 167,
+      "sha256": "b9be7c29b05e29a579b918a9b7614aa56af846bb9a14a3cd8db86fb1c1ff7f93",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-00_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4035,
+      "sha256": "d9e12df4bb10de834130ebddc30c5df36331853188d710efb7dbc65e095c5cb1",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-00_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1912,
+      "sha256": "ea66141baab47328a007a85d6ef4bf31aab4ec1b837a9c5e251c7c29362b52b5",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-00_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 173,
+      "sha256": "071dfd87ae51fbbcf3cd42685867128c0fc60b7d994822d40be00559d90d0a09",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-00_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 3996,
+      "sha256": "c1bc31a5817ec2131097598cb3f0e1e8de71c2349e654b96707bb0d40a2d371c",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-00_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1946,
+      "sha256": "7a78eb7c40176328ee2ab28fa2d7643e0fbb6e6f7acdb4170e939f594d849e6d",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-00_gd_eps-0_a-0.7/config.json",
+      "bytes": 163,
+      "sha256": "af9b2171853cb4b7fcb7371786afdc343ea5df8682662e3071e61871f6aa2494",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-00_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2215,
+      "sha256": "0fc7629307dc8874824bfd9a8f41208cdeb1755f352b6625bd4c69646bcf21ec",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-00_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1851,
+      "sha256": "29217e591afcfc15e9b2b20c493a6f34639e9d3d3bcdd45ba68bcc7e0558ccde",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-00_gdm_eps-0_a-0.7/config.json",
+      "bytes": 165,
+      "sha256": "2312cd484ccfcba8aa28d3954ef83af24a243a20d47ea0f9ae97c0848dbe01bc",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-00_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3153,
+      "sha256": "2f784ab4e9ebdea1a258df0e163acf8c6971f2b39c052e5083c7f63f9e0e0401",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-00_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1868,
+      "sha256": "2a2083d29402c44ccc98f94374d4d7912f5724200096d9ac75e3ea2c202bf1b6",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-01_adam_eps-0_a-0.7/config.json",
+      "bytes": 168,
+      "sha256": "50439b1ef3481ece6c03a12c8621a6ff46f8f42fe171981c85437d08a2af6682",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-01_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4050,
+      "sha256": "6b2e32ec757f8a0124e2dbfcaa459fe10140408748487f273a8365db1c6d8532",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-01_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1916,
+      "sha256": "0078a155c9585d36a93e09c953c97b2ba8e8d8f46f1c5b63959a226ff52ef8b6",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-01_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 174,
+      "sha256": "486dfae20804d24352cc9bd87ce79a390e1923daa247ede21d10a8f0d846823e",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-01_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 4023,
+      "sha256": "3a7626e354d4976dbd1e5a53d703aa7bdb6ff584c3588174182dc3085b042458",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-01_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1932,
+      "sha256": "913ff79736c898449a86d54560fc0d685d1f8f5f1119db024b5afc7af8ee7dbf",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-01_gd_eps-0_a-0.7/config.json",
+      "bytes": 164,
+      "sha256": "07e573bf63682744c4286fec7252e231fb6fe8eefe05f9a60c7d242dea457ec2",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-01_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2193,
+      "sha256": "5c76f8a2a672f34b79c456989d51c23162fa6f4076a180a60d71b1ca1fbd9c16",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-01_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1862,
+      "sha256": "a2a4557414797ea01abe1869c7e85166eb04bf03e8635e96721ddbdc006c7c85",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-01_gdm_eps-0_a-0.7/config.json",
+      "bytes": 166,
+      "sha256": "a89f8696c49475673fd3ac0c0370df7fec028978600625020b6fed0a4c876ae9",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-01_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3139,
+      "sha256": "08fd58973380cf5853bc7b5d1f18a634479424f82e2bae087a2e608de310c076",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-01_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1875,
+      "sha256": "425c116a802c322f8575da19e5c2afb15b71347f022c247c9399f35f97bf75aa",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-0_a-0.7/config.json",
+      "bytes": 167,
+      "sha256": "6d332b8c20a4873502b93fa85d8185aad78bf27510721d30b286f65f38c18578",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4051,
+      "sha256": "b1192d96eb14220c6ced109b8c956f667d1030daffc62f94d96ddb1b1d571a66",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-0_a-0.7/states.npz",
+      "bytes": 1389671,
+      "sha256": "210263ea9d9c3238ca198ecfe3dad85c82f71aad42823f00370e27f80873998f",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1912,
+      "sha256": "16db70e47e6956f029a4e0b91261411a9b78893dfd4eede33ac43530fae655fe",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-0_a-0.7/trajectory.csv",
+      "bytes": 444193,
+      "sha256": "681514ef7c3742b108b86ae26625995066840c36b97c0291749b82e3aded2588",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 173,
+      "sha256": "752acdbfc7fca7bbd1db1c5ff38cdf9dcd57fa3254c1a1db1bb2f2a17b4311d5",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 4012,
+      "sha256": "7aff91a694756003417d6581b1984fb942b01b36ed17c16fc1e12b010115308d",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-1e-08_a-0.7/states.npz",
+      "bytes": 1286417,
+      "sha256": "6e35073bdcc2833dccc1f38b95305d21b8aa4adfb3b6fa9f99d0422685d918fa",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1934,
+      "sha256": "ac900fe75ff754cfa6ae686d552b5041e97c4da8978cbc634f37e52de57ee3dd",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_adam_eps-1e-08_a-0.7/trajectory.csv",
+      "bytes": 469288,
+      "sha256": "be6d1294a04756eb53217a2dde6ebe151a838f4525647d812dc546ce4c3dee06",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_gd_eps-0_a-0.7/config.json",
+      "bytes": 163,
+      "sha256": "235102d93372d2c7363bfdf1fbeee91b83f76b8bfc727869123fa0b54ec97791",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2199,
+      "sha256": "07227b5d196b3f91717d3419542fa520f5ef1794a465f4504555ee70d957b019",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-02_gd_eps-0_a-0.7/states.npz",
+      "bytes": 465276,
+      "sha256": "fe6f566f7e2622a3c703661364fe530edab88e9f51484a36fede8914965b6a32",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1867,
+      "sha256": "a5c95ead98ec8b45e433472b229e71c8ce64d992491e58645ae796f910b76b8a",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_gd_eps-0_a-0.7/trajectory.csv",
+      "bytes": 373615,
+      "sha256": "da9133db9af69a96b02d7289e6446ef7d4572089a2f8276839c201143474a875",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_gdm_eps-0_a-0.7/config.json",
+      "bytes": 165,
+      "sha256": "e8e58e286043fe6c786ab47d43624a83e1eead722549a4e84990079bcc6571db",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3138,
+      "sha256": "bc13b255cc825e4f68d95ad041a30495137bf456639d0bd7c459c485e45ac743",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-02_gdm_eps-0_a-0.7/states.npz",
+      "bytes": 928000,
+      "sha256": "b11bdb90f0954a0caa89319c7a3436bee0ce64759cbeffdae09d6dc5a8c8adfa",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1871,
+      "sha256": "58339c04a28ab55a144f08630322010601719c52c3145e99880ac09b71562ed7",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-02_gdm_eps-0_a-0.7/trajectory.csv",
+      "bytes": 374758,
+      "sha256": "5d58d51358c32483f01c8fd45b797825aabb4eb27ad48cd484cae67285d0a3a7",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-03_adam_eps-0_a-0.7/config.json",
+      "bytes": 167,
+      "sha256": "fe3f62d8465c85aad44ad40d9c96adbd28e2f73997bfa5b14f4bfb88e717af8f",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-03_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4038,
+      "sha256": "139afb47f52bf15ef4aec2698b27f93ffbbfc55b2c14e0300d5886e06681a6bb",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-03_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1917,
+      "sha256": "deb8909526340c7f47e8dca37909d7d532a16f87602b3a310f7b2e323f769dcd",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-03_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 173,
+      "sha256": "7c84ac83aba6f4317fef545537bdf60591899313517ebd557ed18588d47da200",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-03_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 3998,
+      "sha256": "4553e4016c1380d8b5cb5d93af483daba214375811b21dd1ad6e636d43a28046",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-03_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1934,
+      "sha256": "27df02330120767167403367d4f30e7d9003c88e4de39444b56a97dd68aae112",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-03_gd_eps-0_a-0.7/config.json",
+      "bytes": 163,
+      "sha256": "0d17477cbe8c827eb0a4cce2a7b10736bf1662302d8ec83262a1c593b15c9253",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-03_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2217,
+      "sha256": "f80f9f1c942241bac631fc73e8f3a1bd2ce2b00317b280b8d628efc2c3a7a543",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-03_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1860,
+      "sha256": "5c9d6cbbdde9c7de50159b8e90ea66cd8f4176e51df4a23b16f2bad665527840",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-03_gdm_eps-0_a-0.7/config.json",
+      "bytes": 165,
+      "sha256": "d469008731d5c09a537090e6251492b19ed3036f8bc7aaa4b0b0d543a05f42b1",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-03_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3156,
+      "sha256": "8016f9b1ed251554b63d26d4720841ba58b60ae38e7879a2b36bf1efbb95db79",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-03_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1875,
+      "sha256": "e7e51852919a0dc7d7fe5ef38bf001a38ebc6605ad9666b1a6cb873c5831b988",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-04_adam_eps-0_a-0.7/config.json",
+      "bytes": 167,
+      "sha256": "dfcd5be588eca7c86cf22273a1f55544a1dca000053cc9c0d2f2e21e0277efd0",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-04_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4050,
+      "sha256": "0d3408c424fb2941996f80a3995869dd3b5d772dd7cf5f45e49d20a00e330da5",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-04_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1920,
+      "sha256": "c22f086888f31ca95153f274d49f3fe3fabd93b749230f31009f1b1ab3c6f153",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-04_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 173,
+      "sha256": "6f96d278f680bdbc3cb91fe91347d9263edf4695d7df15a573d64c2872530c41",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-04_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 4007,
+      "sha256": "cf213ba3ecdb1634fdd24981e15d1f9b3dc7f1b07df89942bf7ac8c0b2b03319",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-04_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1945,
+      "sha256": "a9165ae21fb0d37d664c5bf3e421e9b578845165d7d158cdd7e6a78ec083c1cd",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-04_gd_eps-0_a-0.7/config.json",
+      "bytes": 163,
+      "sha256": "a66aa9263d071d755f4907ce4f590e4ef76f616482b1606daaa3d72655f2af17",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-04_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2217,
+      "sha256": "c03d0609edd4e8dceff437fae151244f26bd2aa411c25a385968d4432a400184",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-04_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1870,
+      "sha256": "b2961ff3413b6bfac0911665047b708ad1e249f3b2577c30894d09876c3ca90a",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-04_gdm_eps-0_a-0.7/config.json",
+      "bytes": 165,
+      "sha256": "2618573d561f95889069a924f934b0d88618f26b435c74ba240b4a8e5d12a965",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-04_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3154,
+      "sha256": "56ea099a63006568cd6a96bf97cc66f03c270889fecfde12d88ddd84108be2ed",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-04_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1873,
+      "sha256": "0954ad403226544424cb70cd78c8168587d0a191d0f9ce9b04ea8304146a6c21",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-05_adam_eps-0_a-0.7/config.json",
+      "bytes": 168,
+      "sha256": "5073d3d2e9fcb589509c9f9ea2fd93b4ae90f401bde8c6e83f026a544e451e98",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-05_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4050,
+      "sha256": "e037f318178d123f075648ce14cb64218e63e480cdc1597c9f68deb613b0b5da",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-05_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1922,
+      "sha256": "1182a4983c7610685fc26bb2ca8a73cc115b7036c1996aaf0914d1bc2ba93d94",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-05_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 174,
+      "sha256": "af2afe66c597fd3c03132a08ece2a4d0f2e9b8425a8773a943fbf0107a0cd71a",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-05_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 4009,
+      "sha256": "8dac11b85cfb1c143e8d09be6c438b8609a08167954ee3a8a46f8adcac75476b",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-05_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1941,
+      "sha256": "e596bc5a12c6b9c040c51b511cc469968784224793e5b2026a9874591b25d6f2",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-05_gd_eps-0_a-0.7/config.json",
+      "bytes": 164,
+      "sha256": "84b85d40dad4bb10c4d9794c7fdd0e2faf15816e885d0c912b33fa3d19f17991",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-05_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2213,
+      "sha256": "e5b2a01a66c3fde7da3bece9fd84aba8654e06dc53f81171aead17a9b95ddfa3",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-05_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1873,
+      "sha256": "052feef1cb8719684e5638e36944f95d976142986d1fd5c281ce64438a8f5e9e",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-05_gdm_eps-0_a-0.7/config.json",
+      "bytes": 166,
+      "sha256": "8764b0dc7885330d46e681c94e9b06621977b902a40d41af1f9156ed4239d1d5",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-05_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3146,
+      "sha256": "54de1cf1e85ab6afe405eb2733ddfbced08fe8c4d52103ab6557fdeb165a5005",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-05_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1867,
+      "sha256": "3a3eeb0eca38cfdbfb217fd07522ef3425d70361b4e1314f513d8b56443bdfaa",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-06_adam_eps-0_a-0.7/config.json",
+      "bytes": 167,
+      "sha256": "84b9fbbb960a46404a32c79855f25029d7145aa0dc18eb58c0a3a6ecda5e533f",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-06_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4050,
+      "sha256": "db750a46f64efb781106a225de82c6266ca0dac63424262d648b8966b15edfa7",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-06_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1922,
+      "sha256": "2456b9f78928e3a6e442fecf97246e0b8d9ebb14543579eb9929f786f1384921",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-06_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 173,
+      "sha256": "925bc7087c39476bc2ee0891beef37055ec24a8c75f6374f384ae34dc33fec2f",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-06_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 4007,
+      "sha256": "03a4851f6be6b7f9ec561127a6c5dc22bb655aafb7b13c5a25fe058ae52d24d4",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-06_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1941,
+      "sha256": "e5f2bde52550ca7da70f65c408d2da86aca579e823401625833fcb6efa443187",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-06_gd_eps-0_a-0.7/config.json",
+      "bytes": 163,
+      "sha256": "44d95587383c64d61776f6d40565ae2bfe161de7c556c05970d9ea9ba821762b",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-06_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2209,
+      "sha256": "c6c071e995e98f46c017736729bf69c1ab7ba326771acb75e96e97c1eb693bc6",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-06_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1868,
+      "sha256": "cd250bdb4849bab55be7c25b8acb1ada7c216d38d1b8af6009e08f7df6d9b20c",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-06_gdm_eps-0_a-0.7/config.json",
+      "bytes": 165,
+      "sha256": "542a0231d85faf6a74513300c7b605a21c34b001ca62b76ca75d5a8324e47d9d",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-06_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3141,
+      "sha256": "3e1f712c8fab82cb2354a1eb6deeba558befce2c2efc5b58340df754cd0d2901",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-06_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1876,
+      "sha256": "4c1f636737dc193ce9305b785a7e4371cd12440bd3648a435ddcde4ee4807a22",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-07_adam_eps-0_a-0.7/config.json",
+      "bytes": 167,
+      "sha256": "f6e5da06d77cf47d3df9ce27ca28285d89cb24d7116e1b05f8c1d04dc733577c",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-07_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4039,
+      "sha256": "e00fb6c3e8e8e6fba81e69d4929556b510cb4b288396689be249f49022771eb9",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-07_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1926,
+      "sha256": "0e95f1991b9440d99af4d81889df4085e2d13d142b859d11aa615eb3a27df3d8",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-07_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 173,
+      "sha256": "edcfae712eb75819897210b983ec629bdd9f49970c7307aeff56091302ef5618",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-07_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 4007,
+      "sha256": "1e0f5120bdd1c7e3cd05320df9e3715f281fcc6f8d678ec9f6b7b67b7a732ac2",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-07_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1941,
+      "sha256": "f4fb9e8c0bb735346d1a230eb1e1c1f80fcd08fa577934525d07bf9ba1d46d8b",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-07_gd_eps-0_a-0.7/config.json",
+      "bytes": 163,
+      "sha256": "65fc374aa7357238f53597093cc75f295699afa66363a5fb136ee628a71dca7c",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-07_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2201,
+      "sha256": "9f39cd7d5712cfe357cea87d1dc3ed0bd1a36bb30b0b087caf2f7fa48633a3db",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-07_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1866,
+      "sha256": "ae49a146e0fe6d0c009de741831e5218b9fca61ae7943d43e4bc7aa99d0d5d7c",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-07_gdm_eps-0_a-0.7/config.json",
+      "bytes": 165,
+      "sha256": "bc3bacc9f210cb9ce7fe98047face19331c2bd204a5bbec965f2910acdb46543",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-07_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3139,
+      "sha256": "c5bcd48b798d3601157d339adc35cb8a01284f8ce8a25bf90ce8af0b34c39da8",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-07_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1877,
+      "sha256": "64bb57728d97c46d76ec076bb4305b2a58eb275066ee1e68151488cfab721de6",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-08_adam_eps-0_a-0.7/config.json",
+      "bytes": 166,
+      "sha256": "10b4282e875b997c9527ba8d051af1a6fa7e8aa6bcc3f289534e62cd0e4ab656",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-08_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4041,
+      "sha256": "cade352b238e675565eed3bd3d65faad1306b4b7c36353284c8daf96f60412ed",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-08_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1911,
+      "sha256": "fcba81271b8c4ef6bb0d675daa885e8038c41e6a52bd062fb8578763bdc2b952",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-08_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 172,
+      "sha256": "412f754549b343151f2e953a6394a0d6c49ce718a6bb08d322c9e44280d16a22",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-08_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 3992,
+      "sha256": "e61b0c4f114b864739fe9d66de1b576c4189355163e52509a75403f57307f28b",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-08_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1939,
+      "sha256": "d2422dc3fd6184553b13d860194de41e6df5c27c2f45c6d0c14ee7f854ed728b",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-08_gd_eps-0_a-0.7/config.json",
+      "bytes": 162,
+      "sha256": "df77eddafb86cb6724d9833b306d3ebe4984100c78c291f67cefa42482b7717e",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-08_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2220,
+      "sha256": "8e48edeb1d43c6746765c73efb62bea4607144a026123627ea8313a4f74fcf58",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-08_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1868,
+      "sha256": "ff8effaedd73afd8ff8f0fcabfaae0821556d57f148f90a319f4459236d809f1",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-08_gdm_eps-0_a-0.7/config.json",
+      "bytes": 164,
+      "sha256": "8e915853a268f9cf64cbea2f86f71a719a302fb3a8555f340c004329777de578",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-08_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3159,
+      "sha256": "88652f72e2ed1de796ff6fe495f760cf58e56ab094b4b5948cfed56f47b19b84",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-08_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1874,
+      "sha256": "7308508023c5e48c3552fd4dbcecb523189ee476272e839d9c5de4fcf798cf12",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-09_adam_eps-0_a-0.7/config.json",
+      "bytes": 167,
+      "sha256": "32f27706ff78af0d3e900868c8821c5f3edcaee7f7f73f9adbc9eb4c0447781b",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-09_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4035,
+      "sha256": "a7eb1935f3682fd7f6cff4a0e33460cd4e6d46917c7980a0194ce40b3cf8df23",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-09_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1926,
+      "sha256": "5c9d5177104193671847ca9a38acd162ed30c0c6e0a1bde114fe1b7eb0597fcb",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-09_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 173,
+      "sha256": "e4893f93828ec80ffed51839e413ce3deb9f53dc9d6faac5448aea3b576dc10e",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-09_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 3998,
+      "sha256": "dc5b83152984165356c92feefeebf64b393a0f7b1660afda74ee25ef41d2bd43",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-09_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1939,
+      "sha256": "e357798bbb94e5c2a393f65209af2587e8c06e496acbc74d8f2f4bbb5418af45",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-09_gd_eps-0_a-0.7/config.json",
+      "bytes": 163,
+      "sha256": "f2e46cf5454740203fddf704169bbd919ae368ec9f0bb1bb401ad823b9221962",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-09_gd_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 2211,
+      "sha256": "02b995d2f5b0f22380e09cb53e457af3df83296b007ee7357e5ae38cb832d3f3",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-09_gd_eps-0_a-0.7/summary.json",
+      "bytes": 1870,
+      "sha256": "3f17a2aef34a78ee2a8553a44574533573e7b86de8364f3159b7856e33569594",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-09_gdm_eps-0_a-0.7/config.json",
+      "bytes": 165,
+      "sha256": "a766cc169121e97d6868e042a6c51cb483a24d3b0fe9a6685626489596ecaf94",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "primary/seed-09_gdm_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 3151,
+      "sha256": "cc2350e8a2d315c5e508c9524f396ae8372854792cfea25f81a44380da8a67a0",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "primary/seed-09_gdm_eps-0_a-0.7/summary.json",
+      "bytes": 1876,
+      "sha256": "2d4104f5175e1ab256d2d7482cb62c398025b134574ffa6b8f8a4a12af063f04",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/manifest.json",
+      "bytes": 19641,
+      "sha256": "e22902f1092c277e39670e87c1f7075831cfbb03084107a6bf3ba702925e52bc",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.3/config.json",
+      "bytes": 153,
+      "sha256": "e9e07c4300ac76a14310bb83d407e3865edc2a185c06728a857e28b781336e15",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.3/endpoint_state.json",
+      "bytes": 4015,
+      "sha256": "52ab664069cfd3d34e2b8942ed42e0807bcb5803162c1c3b8282f8acf1ada3ed",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.3/summary.json",
+      "bytes": 1887,
+      "sha256": "b820067795f1b5ea0562313c5bd31354cc9e559b4321ad781dc035d54526dc36",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.3/trajectory.csv",
+      "bytes": 423734,
+      "sha256": "942c977d21388a80442be4bddfd6ac04d16799d17af532412e04b61986e64d5b",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.5/config.json",
+      "bytes": 153,
+      "sha256": "566464be404c7155acd9c8fcedf571db17a0050e63df770883d5578fa8b29f08",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.5/endpoint_state.json",
+      "bytes": 4039,
+      "sha256": "9d805fec1a70f4b41092bc0c3f4042edbd28cfd652cbad9d93526fc8de25b699",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.5/states.npz",
+      "bytes": 1399453,
+      "sha256": "17166cfbfd549196f537586f27071a47c84c3329fdc1b25cc1229a1f5734d010",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.5/summary.json",
+      "bytes": 1888,
+      "sha256": "3e6b4a0433afeab7c8c562d19ec3917133d58edc5ea40403067f2fe906d9ad0c",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.5/trajectory.csv",
+      "bytes": 430106,
+      "sha256": "36a8eac4c93bc457b7ac43c1b7c2b91fc6b5df6d4ea1a0d03706d0cdc0a11fce",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.7/config.json",
+      "bytes": 153,
+      "sha256": "11fc84fb6645f698bae73a0be093559c6aa16aa957014405654648020f65ea9d",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.7/endpoint_state.json",
+      "bytes": 4051,
+      "sha256": "b1192d96eb14220c6ced109b8c956f667d1030daffc62f94d96ddb1b1d571a66",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.7/summary.json",
+      "bytes": 1907,
+      "sha256": "bac6e2db99df69e55c4bf663cf11eaac7b00007325dda7c38d6605905c24e4d5",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-0.7/trajectory.csv",
+      "bytes": 444498,
+      "sha256": "1aeb77c43c9c9a70ccf63700b66177599fcbc89c2a0653b550c2e7eb0785b03f",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-1/config.json",
+      "bytes": 151,
+      "sha256": "532b8d84efabc824893ef2865199f3cd1da28805f0e0d182d8e2f4ca65fda8d5",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-1/endpoint_state.json",
+      "bytes": 4038,
+      "sha256": "194151d103a116c36ce794f0591e39ba674983ec14380980b1ad1a9e236086a2",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-1/summary.json",
+      "bytes": 1906,
+      "sha256": "922fc6f8c254357044a3ade2800ec9c4012b5a689d92f821d43dbe2647b9b226",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-0_a-1/trajectory.csv",
+      "bytes": 443745,
+      "sha256": "d6004241568a25c565c75d99a4b465a2a289c981824c2c68d56426651b5bb517",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.3/config.json",
+      "bytes": 159,
+      "sha256": "2a65cf131afb77d579938325b84366bd6fef43fdedecda35e678414ae0125f29",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.3/endpoint_state.json",
+      "bytes": 4024,
+      "sha256": "79af81004de48d10627c4e48607348ae10a75c71558fa1d0a68d7883fbc7caa8",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.3/summary.json",
+      "bytes": 1928,
+      "sha256": "afa58c72ba5e238ecc9ae2b45a608256255e0043a3bd4ea7646a8efefcb3ef4d",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.3/trajectory.csv",
+      "bytes": 468274,
+      "sha256": "de8b580db32d7ca666e882ab363c32d453ebfd80a053bdac655e9afe72055cbe",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.5/config.json",
+      "bytes": 159,
+      "sha256": "7d01d0039e4ebb0dfcbdea84a1e5d700df09181d9ae3192991b271d60891c0fb",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.5/endpoint_state.json",
+      "bytes": 4015,
+      "sha256": "fb4afcf7d002587860622bec7910292c3a1539e0fbaa2777083299e40cfe4117",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.5/summary.json",
+      "bytes": 1925,
+      "sha256": "7c10e271223a95369073b8096a9ebdc12dff9876eb1c1bbd63842bb8f2b6fdcc",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.5/trajectory.csv",
+      "bytes": 470250,
+      "sha256": "0217cc69749d1399cd9c5dccae5181555770ae3ab1e4a75ed5c62b0501d17c44",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.7/config.json",
+      "bytes": 159,
+      "sha256": "8fd42b093437dd9083948fb86f3a43045515cc1e9557c9a8e46282dc716b89e0",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.7/endpoint_state.json",
+      "bytes": 4012,
+      "sha256": "7aff91a694756003417d6581b1984fb942b01b36ed17c16fc1e12b010115308d",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.7/summary.json",
+      "bytes": 1926,
+      "sha256": "b9c46490bef33bc38a2fc73a7c6bafc59675c245a577c1156925e8a4be8c54a0",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-0.7/trajectory.csv",
+      "bytes": 470030,
+      "sha256": "6e473c97ff9d4fbdcfa8f94a1465ba0bacda10094ddedc0bad2c6dd160670a04",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-1/config.json",
+      "bytes": 157,
+      "sha256": "181554a9ee95c9acbe66c2877a2fe1080ac9769978eaf78deb1a0bb0665e40eb",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-1/endpoint_state.json",
+      "bytes": 4007,
+      "sha256": "481ecc9dd97f9c0f9ce46877e675581a9a189d66076d6c44522a8d66ce19d821",
+      "provenance": "derived last saved state only; full source states SHA256 is in original summary.json"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-1/summary.json",
+      "bytes": 1919,
+      "sha256": "e975d2d3256070276cd221b597b25a9b11a05222e77f715b96f26ab9fb853a72",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "rates/seed-02_adam_eps-1e-08_a-1/trajectory.csv",
+      "bytes": 470337,
+      "sha256": "b48ab5eb7c280ca1bded88a420bfec4a52b2f1885f5a44ef667b04acc2c8f82c",
+      "provenance": "verbatim original experiment output"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 838,
+      "sha256": "8621f1e7140380f2acacd37a87d9a6ec4537cfd9d5fa6a1d39023ab6b2e50af8",
+      "provenance": "compact snapshot verification and relevant test summary"
+    }
+  ]
+}

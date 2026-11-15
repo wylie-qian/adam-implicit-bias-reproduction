@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "runs": 9,
+  "checkpoints_recomputed": 2376,
+  "max_margin_recomputation_error": 0.0,
+  "max_literal_weight_difference": 1.7763568394002505e-14,
+  "note": "Saved checkpoints and literal positive-epsilon comparison; not every intervening update"
+}

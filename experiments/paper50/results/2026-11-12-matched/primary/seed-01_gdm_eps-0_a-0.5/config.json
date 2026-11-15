@@ -1,0 +1,10 @@
+{
+  "seed": 1,
+  "method": "gdm",
+  "epsilon": 0.0,
+  "eta": 0.1,
+  "a": 0.5,
+  "c": 0.1,
+  "steps": 1000000,
+  "run_id": "seed-01_gdm_eps-0_a-0.5"
+}

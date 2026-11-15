@@ -1,0 +1,9 @@
+# Keep scientific hashes stable across checkout platforms.
+experiments/paper50/** text eol=lf
+# Original CSV bytes use the Python csv writer's CRLF line endings.
+experiments/paper50/results/**/*.csv -text whitespace=cr-at-eol
+experiments/paper50/results/**/*.npz binary
+experiments/paper50/results/**/*.png binary
+experiments/paper50/results/**/*.gz binary
+# Preserve Matplotlib's exported SVG path whitespace and original file hashes.
+experiments/paper50/results/**/*.svg whitespace=-blank-at-eol

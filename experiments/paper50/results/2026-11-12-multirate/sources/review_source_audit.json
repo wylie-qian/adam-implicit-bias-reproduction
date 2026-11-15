@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "checked_date_utc": "2026-11-12",
+  "status": "UNAUTHENTICATED_THIRD_PARTY_MIRROR_LEAD",
+  "paper_title": "The Implicit Bias of Adam on Separable Data",
+  "original_forum_id": "xRQxan3WkM",
+  "original_forum_url": "https://openreview.net/forum?id=xRQxan3WkM",
+  "original_note_ids": null,
+  "mirror": {
+    "provider": "MajorTimberWolf/NeurIPS-Dataset on Hugging Face",
+    "viewer_url": "https://huggingface.co/datasets/MajorTimberWolf/NeurIPS-Dataset/viewer/default/train?p=1",
+    "retrieval_url": "https://datasets-server.huggingface.co/rows?dataset=MajorTimberWolf%2FNeurIPS-Dataset&config=default&split=train&offset=150&length=50",
+    "http_status": 200,
+    "row_idx": 171,
+    "truncated_cells": [],
+    "extracted_row_sha256": "2d152420c2564906a4dd503904c37ae80fe2798f272877943c44bebc7f45256b",
+    "extraction_method": "JSON parse rows response; select row_idx 171, confirming exact title; write ensure_ascii=False, indent=2 UTF-8 with no trailing newline.",
+    "scope": "Four reviews, corresponding flattened rebuttal threads and one global response; no original note IDs supplied."
+  },
+  "short_search_phrases": [
+    {
+      "field": "rebuttals_1",
+      "exact_phrase": "our paper focuses more on the practical stopping time"
+    },
+    {
+      "field": "rebuttals_1",
+      "exact_phrase": "the transition of the implicit bias is indeed abrupt"
+    }
+  ],
+  "original_attachment_lead": "https://openreview.net/pdf/46ac4801504f988a0e5ee2062d4e0ab7c43f04a7.pdf",
+  "primary_access_checks": [
+    {
+      "url": "https://api2.openreview.net/notes?forum=xRQxan3WkM&limit=1000",
+      "http_status": 403,
+      "outcome": "Forbidden; no notes retrieved"
+    },
+    {
+      "url": "https://api.openreview.net/notes?forum=xRQxan3WkM&limit=1000",
+      "http_status": 403,
+      "error_name": "ChallengeRequiredError",
+      "outcome": "Challenge verification required; no notes retrieved"
+    },
+    {
+      "url": "https://openreview.net/pdf/46ac4801504f988a0e5ee2062d4e0ab7c43f04a7.pdf",
+      "http_status": 403,
+      "outcome": "HTML verification challenge; no PDF retrieved"
+    }
+  ],
+  "unverified_content_summary": "The mirror attributes to the authors a distinction between a one-million-step practical stopping horizon with training loss below 1e-8 and the much longer horizon in Wang et al. (2022), plus a non-interchangeability explanation for the time and epsilon limits. It includes no executable implementation, numerical epsilon-rescaling details, or admission of an implementation error.",
+  "interpretation_limit": "The primary forum, note IDs and attachment were not authenticated. Treat this as a retrieval lead only, not verified author testimony or evidence of a bug.",
+  "next_experiment_question": "Under the independently implemented recurrence, at the first training-loss threshold of 1e-8, is epsilon already material relative to the original-scale sqrt(v)? Compare fixed-epsilon and zero-epsilon trajectories with that stopping criterion as well as at one million updates.",
+  "copyright_retention": "No full review/rebuttal text included in this audit. Full downloaded row is scratch-only and should not be redistributed in the repository."
+}

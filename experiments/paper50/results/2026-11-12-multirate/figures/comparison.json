@@ -1,0 +1,212 @@
+{
+  "scope": "Own frozen seed-2 dataset and shared initialization; not author arrays or a pointwise figure reproduction",
+  "source_sha256": "bd3b88431ce3272aa756582c7c1dcee0946d5c2bb84d938461498fd03835ea4c",
+  "input_manifest_sha256": "f5e9103e427ef64492e774cceeface9725c18675cbeba1195f372d9d3f5a12b5",
+  "verification": {
+    "passed": true,
+    "conditions_verified": 12,
+    "updates_per_condition": 1000000,
+    "checkpoints_recomputed": 732,
+    "maximum_metric_recomputation_error": 0.0,
+    "prior_a05_checks": [
+      {
+        "mode": "zero_epsilon",
+        "prior_file": "scaled_zero_epsilon.json",
+        "prior_sha256": "1aca593873b2f6d4c4f7f8b32e2563ec95d6f274ba656075df15b3494571bd82",
+        "max_weight_difference": 0.0
+      },
+      {
+        "mode": "fixed_epsilon",
+        "prior_file": "correct_rescaled_eps1e-8.json",
+        "prior_sha256": "657e57a60d2220f358ead149de40f9f3c016d8e698d156cf2771cdb9114e9c9f",
+        "max_weight_difference": 0.0
+      },
+      {
+        "mode": "INVALID_wrong_scale",
+        "prior_file": "wrong_scaled_epsilon.json",
+        "prior_sha256": "7a67638ab23922fd60d7698c70a8540ca12e8ed5b202cf642c7d6623e8261ee9",
+        "max_weight_difference": 0.0
+      }
+    ],
+    "scope": "Margins/loss/epsilon diagnostics recomputed from saved weights and second moments. First moments checked for shape/finiteness and endpoint consistency, not recomputed by replay. Exact event times recorded during execution; unsaved updates are not replayed."
+  },
+  "plot_quantity": "Absolute |gamma_infinity - min_i y_i x_i^T w / ||w||_infinity|, matching Figure 2 quantity",
+  "table_quantity": "Relative gap percent = 100 * (gamma_infinity - normalized margin) / gamma_infinity",
+  "loss_checkpoint_scope": "First retained observation below 1e-8, not an exact first crossing or a rerun with early stopping",
+  "rows": [
+    {
+      "a": 0.3,
+      "endpoints": {
+        "zero_epsilon": {
+          "relative_gap_linf_percent": 1.5234015023422254,
+          "absolute_gap_linf": 0.021990200146220218,
+          "log_loss": -4898.903043033212,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 3340,
+            "log_loss": -21.508187888668175,
+            "relative_gap_linf_percent": 39.39123383381411,
+            "log10_min_sqrt_v_over_actual_epsilon": null,
+            "log10_max_sqrt_v_over_actual_epsilon": null
+          }
+        },
+        "fixed_epsilon": {
+          "relative_gap_linf_percent": 34.33648256960825,
+          "absolute_gap_linf": 0.49564485978382944,
+          "log_loss": -26.232725377690702,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 3340,
+            "log_loss": -20.037877609271003,
+            "relative_gap_linf_percent": 40.02889859507302,
+            "log10_min_sqrt_v_over_actual_epsilon": -1.3851372155669623,
+            "log10_max_sqrt_v_over_actual_epsilon": -0.6608905076179978
+          }
+        },
+        "INVALID_wrong_scale": {
+          "relative_gap_linf_percent": 1.523505546740711,
+          "absolute_gap_linf": 0.021991702020245807,
+          "log_loss": -4898.903020487681,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 3340,
+            "log_loss": -21.50819556896437,
+            "relative_gap_linf_percent": 39.3923333568978,
+            "log10_min_sqrt_v_over_actual_epsilon": 7.3465678448361365,
+            "log10_max_sqrt_v_over_actual_epsilon": 8.07226609194807
+          }
+        }
+      },
+      "fixed_epsilon_events": {
+        "first_any_actual_epsilon_exceeds_sqrt_v": 2704,
+        "first_all_actual_epsilon_exceeds_sqrt_v": 3036,
+        "first_all_sqrt_v_at_most_tenth_actual_epsilon": 3499
+      },
+      "fixed_vs_zero_gap_difference_percentage_points": 32.813081067266026,
+      "invalid_vs_zero_gap_difference_percentage_points": 0.00010404439848565872
+    },
+    {
+      "a": 0.5,
+      "endpoints": {
+        "zero_epsilon": {
+          "relative_gap_linf_percent": 0.6572417483618254,
+          "absolute_gap_linf": 0.009487241261549872,
+          "log_loss": -1953.8884505805647,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 3340,
+            "log_loss": -19.66492931844081,
+            "relative_gap_linf_percent": 34.72133851391603,
+            "log10_min_sqrt_v_over_actual_epsilon": null,
+            "log10_max_sqrt_v_over_actual_epsilon": null
+          }
+        },
+        "fixed_epsilon": {
+          "relative_gap_linf_percent": 31.511942504045145,
+          "absolute_gap_linf": 0.45487281034889493,
+          "log_loss": -23.755307790868194,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 4159,
+            "log_loss": -19.26317684864936,
+            "relative_gap_linf_percent": 34.817521390015216,
+            "log10_min_sqrt_v_over_actual_epsilon": -2.925583701068761,
+            "log10_max_sqrt_v_over_actual_epsilon": -1.2611105265881086
+          }
+        },
+        "INVALID_wrong_scale": {
+          "relative_gap_linf_percent": 0.6573010350626629,
+          "absolute_gap_linf": 0.009488097061163714,
+          "log_loss": -1953.8879663681316,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 3340,
+            "log_loss": -19.664935857906567,
+            "relative_gap_linf_percent": 34.72238442251333,
+            "log10_min_sqrt_v_over_actual_epsilon": 6.579553253629074,
+            "log10_max_sqrt_v_over_actual_epsilon": 7.383413650700124
+          }
+        }
+      },
+      "fixed_epsilon_events": {
+        "first_any_actual_epsilon_exceeds_sqrt_v": 2705,
+        "first_all_actual_epsilon_exceeds_sqrt_v": 3075,
+        "first_all_sqrt_v_at_most_tenth_actual_epsilon": 3660
+      },
+      "fixed_vs_zero_gap_difference_percentage_points": 30.854700755683318,
+      "invalid_vs_zero_gap_difference_percentage_points": 5.928670083754639e-05
+    },
+    {
+      "a": 0.7,
+      "endpoints": {
+        "zero_epsilon": {
+          "relative_gap_linf_percent": 2.434550897446053,
+          "absolute_gap_linf": 0.035142581531321104,
+          "log_loss": -249.35956508874676,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 5179,
+            "log_loss": -21.083395807556805,
+            "relative_gap_linf_percent": 24.35403160294064,
+            "log10_min_sqrt_v_over_actual_epsilon": null,
+            "log10_max_sqrt_v_over_actual_epsilon": null
+          }
+        },
+        "fixed_epsilon": {
+          "relative_gap_linf_percent": 27.429596319285242,
+          "absolute_gap_linf": 0.39594441259491786,
+          "log_loss": -21.33737037498206,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 8030,
+            "log_loss": -18.472312310423607,
+            "relative_gap_linf_percent": 28.795726997050984,
+            "log10_min_sqrt_v_over_actual_epsilon": -3.124247856712947,
+            "log10_max_sqrt_v_over_actual_epsilon": -0.943576121742114
+          }
+        },
+        "INVALID_wrong_scale": {
+          "relative_gap_linf_percent": 2.434678646297672,
+          "absolute_gap_linf": 0.035144425577563254,
+          "log_loss": -249.35946124146858,
+          "first_retained_checkpoint_loss_below_1e_minus8": {
+            "step": 5179,
+            "log_loss": -21.083400153605602,
+            "relative_gap_linf_percent": 24.354776727771387,
+            "log10_min_sqrt_v_over_actual_epsilon": 3.34568605850071,
+            "log10_max_sqrt_v_over_actual_epsilon": 6.861240795773425
+          }
+        }
+      },
+      "fixed_epsilon_events": {
+        "first_any_actual_epsilon_exceeds_sqrt_v": 2775,
+        "first_all_actual_epsilon_exceeds_sqrt_v": 3964,
+        "first_all_sqrt_v_at_most_tenth_actual_epsilon": 8785
+      },
+      "fixed_vs_zero_gap_difference_percentage_points": 24.99504542183919,
+      "invalid_vs_zero_gap_difference_percentage_points": 0.00012774885161936922
+    },
+    {
+      "a": 1.0,
+      "endpoints": {
+        "zero_epsilon": {
+          "relative_gap_linf_percent": 22.737827534584255,
+          "absolute_gap_linf": 0.32821903983091905,
+          "log_loss": -15.259376909938075,
+          "first_retained_checkpoint_loss_below_1e_minus8": null
+        },
+        "fixed_epsilon": {
+          "relative_gap_linf_percent": 24.072277427850565,
+          "absolute_gap_linf": 0.3474817359703877,
+          "log_loss": -14.848974944438375,
+          "first_retained_checkpoint_loss_below_1e_minus8": null
+        },
+        "INVALID_wrong_scale": {
+          "relative_gap_linf_percent": 22.738188008822213,
+          "absolute_gap_linf": 0.3282242432527538,
+          "log_loss": -15.259354063521844,
+          "first_retained_checkpoint_loss_below_1e_minus8": null
+        }
+      },
+      "fixed_epsilon_events": {
+        "first_any_actual_epsilon_exceeds_sqrt_v": 2808,
+        "first_all_actual_epsilon_exceeds_sqrt_v": null,
+        "first_all_sqrt_v_at_most_tenth_actual_epsilon": null
+      },
+      "fixed_vs_zero_gap_difference_percentage_points": 1.33444989326631,
+      "invalid_vs_zero_gap_difference_percentage_points": 0.00036047423795793065
+    }
+  ]
+}

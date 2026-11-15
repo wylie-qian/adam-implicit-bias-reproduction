@@ -1,0 +1,10 @@
+{
+  "seed": 9,
+  "method": "adam",
+  "epsilon": 0.0,
+  "eta": null,
+  "a": 0.3,
+  "c": 1.0,
+  "steps": 1000000,
+  "run_id": "seed-09_adam_eps-0_a-0.3"
+}

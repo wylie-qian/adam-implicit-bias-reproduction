@@ -1,0 +1,9 @@
+{
+  "run_id": "index_control_adam_eps-1e-08",
+  "method": "adam",
+  "epsilon": 1e-08,
+  "a": 0.5,
+  "c": 1.0,
+  "offset": 2,
+  "arithmetic": "scaled"
+}

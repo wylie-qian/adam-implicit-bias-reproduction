@@ -1,0 +1,23 @@
+data/
+artifacts/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.DS_Store
+*.egg-info/
+build/
+dist/
+
+# Keep the reviewed fixed-metrics snapshot of the 2D example; ignore new runs.
+experiments/direction_2d/runs/*
+!experiments/direction_2d/runs/frozen-20k-fixed-metrics/
+experiments/direction_2d/runs/frozen-20k-fixed-metrics/*
+!experiments/direction_2d/runs/frozen-20k-fixed-metrics/gd.csv
+!experiments/direction_2d/runs/frozen-20k-fixed-metrics/adam.csv
+!experiments/direction_2d/runs/frozen-20k-fixed-metrics/summary.json
+!experiments/direction_2d/runs/frozen-20k-fixed-metrics/figures/
+experiments/direction_2d/runs/frozen-20k-fixed-metrics/figures/*
+!experiments/direction_2d/runs/frozen-20k-fixed-metrics/figures/trajectories.png
+!experiments/direction_2d/runs/frozen-20k-fixed-metrics/figures/trajectories.svg

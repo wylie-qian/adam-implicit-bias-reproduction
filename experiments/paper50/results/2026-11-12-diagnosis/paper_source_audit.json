@@ -1,0 +1,253 @@
+{
+  "title": "Primary-source audit: The Implicit Bias of Adam on Separable Data",
+  "checked_date_utc": "2026-11-12",
+  "scope": "Read-only source and figure inspection; no author contact or repository code changes.",
+  "sources": [
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/2ac79356a03fe5e9250e5e77ebc76e6e-Paper-Conference.pdf",
+      "type": "official NeurIPS 2024 PDF",
+      "sha256": "c7a21139871efd5003cc9b3c452dec3ea28bc654bc94ffe41546958466771ead"
+    },
+    {
+      "url": "https://arxiv.org/src/2406.10650v1",
+      "type": "author-submitted TeX source archive",
+      "sha256": "64ecb438d848e3602d8cd1b2279d956c39adced46333d89127ebc92cef6bf9b7",
+      "members": [
+        "ims.bst",
+        "l_2_margin_gap_bothep.png",
+        "l_inf_margin_gap_bothep.png",
+        "main.bbl",
+        "main.tex",
+        "margin_gap_different_a_noep.png",
+        "margin_gap_different_a_notl.png",
+        "mylatexstyle.sty",
+        "reference.bib"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.10650",
+      "type": "arXiv metadata",
+      "finding": "Submission history contains only v1, submitted 2024-06-15, as inspected."
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2ac79356a03fe5e9250e5e77ebc76e6e-Abstract-Conference.html",
+      "type": "official proceedings record",
+      "finding": "Paper and Bibtex links; no supplementary code link observed."
+    },
+    {
+      "url": "https://difanzou.github.io/publications/",
+      "type": "author publications",
+      "finding": "Target entry links Paper and Arxiv; no Code link observed."
+    },
+    {
+      "url": "https://yuancaohku.github.io/",
+      "type": "author homepage",
+      "finding": "Target entry links arXiv; no Code link observed."
+    },
+    {
+      "url": "https://openreview.net/forum?id=xRQxan3WkM",
+      "type": "OpenReview forum",
+      "finding": "Web interface returned browser verification challenge. Public api2 notes and forum endpoints returned HTTP403; reviewer discussion was not inspected."
+    }
+  ],
+  "source_confirmed_settings": {
+    "adam_denominator": "sqrt(v_t) + epsilon",
+    "bias_correction_in_stated_equations": false,
+    "n": 50,
+    "d": 50,
+    "features": "independent standard Gaussian",
+    "labels": "independent uniform +/-1",
+    "dataset_selection": "most different l2 and linfinity max-margin directions among 10 independent draws; exact comparison metric and seeds unspecified",
+    "beta1": 0.9,
+    "beta2": 0.99,
+    "initialization": "standard Gaussian for all algorithms; shared versus independent initial vectors unspecified",
+    "iterations": 1000000,
+    "figure1_adam_eta": "t^-0.5 (PNG legends)",
+    "epsilon": 1e-08,
+    "source_tex_line_locations": {
+      "algorithm": 301,
+      "experiment_setup": [
+        573,
+        580
+      ],
+      "figure1_claim": [
+        588,
+        589
+      ],
+      "figure2_claim": [
+        597,
+        598
+      ],
+      "figure2_image_mapping": [
+        622,
+        623
+      ]
+    }
+  },
+  "archive_limitations": "The retrieved source archive contains TeX, bib/style files and figure PNGs only; no experiment code, raw numeric traces or random seeds.",
+  "figure_files": [
+    {
+      "filename": "l_inf_margin_gap_bothep.png",
+      "sha256": "61bd1af6473ffcec5915b2d228d7ecf1d6c45b48bf57c294945e369b84b618c5",
+      "size": [
+        407,
+        266
+      ],
+      "metadata": {
+        "Software": "Matplotlib version3.5.1, https://matplotlib.org/",
+        "dpi": [
+          72.009,
+          72.009
+        ]
+      },
+      "neurips_page_1_based": 7,
+      "neurips_image_xref": 12,
+      "rgb_pixel_identical_to_neurips_pdf_extraction": true
+    },
+    {
+      "filename": "l_2_margin_gap_bothep.png",
+      "sha256": "1e0b633e0eaefa040c3e5fbdb678bddfdf0fc121e8363471f3485a34a6251dae",
+      "size": [
+        401,
+        266
+      ],
+      "metadata": {
+        "Software": "Matplotlib version3.5.1, https://matplotlib.org/",
+        "dpi": [
+          72.009,
+          72.009
+        ]
+      },
+      "neurips_page_1_based": 7,
+      "neurips_image_xref": 13,
+      "rgb_pixel_identical_to_neurips_pdf_extraction": true
+    },
+    {
+      "filename": "margin_gap_different_a_notl.png",
+      "sha256": "ccc28033c4cc53efa0105486bb75005a5ccfc2cc63817afa2e52f829734fbca0",
+      "size": [
+        409,
+        267
+      ],
+      "metadata": {
+        "Software": "Matplotlib version3.5.1, https://matplotlib.org/",
+        "dpi": [
+          72.009,
+          72.009
+        ]
+      },
+      "neurips_page_1_based": 7,
+      "neurips_image_xref": 14,
+      "rgb_pixel_identical_to_neurips_pdf_extraction": true
+    },
+    {
+      "filename": "margin_gap_different_a_noep.png",
+      "sha256": "55a350eaa5eb2a0549c3a4253c7e6ea5ee9c6f127ccf722d32e897bf9e693a74",
+      "size": [
+        409,
+        267
+      ],
+      "metadata": {
+        "Software": "Matplotlib version3.5.1, https://matplotlib.org/",
+        "dpi": [
+          72.009,
+          72.009
+        ]
+      },
+      "neurips_page_1_based": 7,
+      "neurips_image_xref": 15,
+      "rgb_pixel_identical_to_neurips_pdf_extraction": true
+    }
+  ],
+  "figure2_comparison": {
+    "with_epsilon_filename": "margin_gap_different_a_notl.png",
+    "without_epsilon_filename": "margin_gap_different_a_noep.png",
+    "method": "Decode PNGs with Pillow, convert to RGB, compare corresponding uint8 RGB pixels using numpy.any(a != b, axis=2); no resampling or alignment. Crop coordinates are half-open [x0,y0,x1,y1], origin at top-left.",
+    "crops": [
+      {
+        "name": "whole_image",
+        "box": [
+          0,
+          0,
+          409,
+          267
+        ],
+        "different_pixels": 1254,
+        "total_pixels": 109203
+      },
+      {
+        "name": "data_panel",
+        "box": [
+          70,
+          10,
+          402,
+          225
+        ],
+        "different_pixels": 1254,
+        "total_pixels": 71380
+      },
+      {
+        "name": "upper_data",
+        "box": [
+          70,
+          10,
+          402,
+          130
+        ],
+        "different_pixels": 798,
+        "total_pixels": 39840
+      },
+      {
+        "name": "lower_right_data",
+        "box": [
+          215,
+          130,
+          402,
+          225
+        ],
+        "different_pixels": 456,
+        "total_pixels": 17765
+      },
+      {
+        "name": "legend_block",
+        "box": [
+          70,
+          130,
+          215,
+          225
+        ],
+        "different_pixels": 0,
+        "total_pixels": 13775
+      }
+    ],
+    "difference_bounding_box_inclusive": [
+      107,
+      28,
+      388,
+      215
+    ],
+    "max_absolute_channel_difference": 146,
+    "pixels_at_or_above_max_channel_difference": {
+      "1": 1254,
+      "2": 983,
+      "5": 754,
+      "10": 543,
+      "20": 283,
+      "50": 86,
+      "100": 20
+    },
+    "interpretation": "All changed pixels lie in the plotted-data region, and their pattern follows the four traces. The figures are not duplicates. The visible curves are very close; no raw numeric comparison or implementation inference is justified by raster similarity alone."
+  },
+  "search_result": "No verified official implementation or correction was found in checked primary entrypoints and exact-title/author searches. This is a bounded search finding, not proof none exists.",
+  "github_repository_queries": [
+    "\"Implicit Bias of Adam\"",
+    "adam user:difanzou",
+    "adam user:yuancaohku",
+    "\"separable data\" Adam"
+  ],
+  "excluded_false_lead": {
+    "url": "https://github.com/borshigida/implicit-bias-of-adam",
+    "reason": "Code is for a different paper, On the Implicit Bias of Adam by Cattaneo, Klusowski and Shigida (ICML2024)."
+  },
+  "reporting_caution": "An implementation that changes the effective epsilon can mimic epsilon=0; this does not establish that the authors used that implementation. A mismatch under a disclosed independent dataset and faithful fixed-epsilon implementation is evidence of a reproduction gap, not a refutation of the epsilon=0 theorem."
+}

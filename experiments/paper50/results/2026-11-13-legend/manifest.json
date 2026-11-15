@@ -1,0 +1,15 @@
+{
+  "protocol": "protocol_legend.json",
+  "protocol_sha256": "55a43b2f5ff4694d5ce600af186885278d33667ebebda491099eb41a475a8712",
+  "runner_sha256": "ee6dcc042e5bb53530ef050855317fe4aa8f238aa6e2d87af2b200d2dbd2ecdf",
+  "base_runner_sha256": "cff71403539c260aa910a48a7332900c25d69b47be74ab464aac43d40c6fdc67",
+  "dataset_manifest_sha256": "d7bd50a154b0fd966b73477bb78efee174873f259e4494967d8573bfac45cd72",
+  "selected_seed": 2,
+  "steps_per_run": 1000000,
+  "runs": 90,
+  "python": "3.13.2",
+  "numpy": "1.26.4",
+  "wall_seconds": 249.23563512507826,
+  "sum_worker_cpu_seconds": 2288.635382,
+  "numerical_failures": []
+}

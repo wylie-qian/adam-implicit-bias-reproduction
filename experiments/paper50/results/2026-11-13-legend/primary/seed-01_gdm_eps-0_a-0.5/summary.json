@@ -1,0 +1,52 @@
+{
+  "config": {
+    "seed": 1,
+    "method": "gdm",
+    "epsilon": 0.0,
+    "eta": 0.1,
+    "a": 0.5,
+    "c": 1.0,
+    "steps": 1000000,
+    "run_id": "seed-01_gdm_eps-0_a-0.5"
+  },
+  "data_sha256": "02ce0276bdef6d3c34cad0fcd692a3eae24e321fdd2b08ae511edc9a912867d6",
+  "stop_reason": "completed_fixed_steps",
+  "error": null,
+  "updates": 1000000,
+  "wall_seconds": 10.375833375030197,
+  "cpu_seconds": 9.381863000000001,
+  "recorded_checkpoints": 1212,
+  "trajectory_kept": false,
+  "endpoint": {
+    "step": 1000000,
+    "method": "gdm",
+    "epsilon": 0.0,
+    "loss_float64": 0.0001074835443829084,
+    "log_loss": -9.138172797621637,
+    "margin_raw": 7.7704938790468905,
+    "norm_l2": 28.604080019783424,
+    "norm_linf": 9.612465178854135,
+    "margin_l2": 0.27165683614619274,
+    "margin_linf": 0.8083768039171384,
+    "gap_l2": 0.0333198092689011,
+    "gap_linf": 0.44831754334489715,
+    "relative_gap_l2": 0.10925364210610489,
+    "relative_gap_linf": 0.3567435027631406,
+    "distance_l2_unit_to_l2_ref": 0.148457603959536,
+    "distance_l2_unit_to_linf_ref": 0.43486819415354333,
+    "adam_moment_log_scale": null,
+    "log10_min_sqrt_v": null,
+    "log10_max_sqrt_v": null,
+    "log10_min_sqrt_v_over_epsilon": null,
+    "epsilon_dominates_coordinates": null,
+    "elapsed_wall_seconds": 10.375150250038132,
+    "elapsed_cpu_seconds": 9.38118
+  },
+  "finite_criterion": {
+    "norm": "l2",
+    "relative_gap_threshold": 0.01,
+    "met": false
+  },
+  "first_epsilon_dominant_recorded_checkpoint": null,
+  "first_all_epsilon_dominant_recorded_checkpoint": null
+}

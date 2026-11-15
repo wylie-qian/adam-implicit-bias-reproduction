@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "conditions_verified": 12,
+  "updates_per_condition": 1000000,
+  "checkpoints_recomputed": 732,
+  "maximum_metric_recomputation_error": 0.0,
+  "prior_a05_checks": [
+    {
+      "mode": "zero_epsilon",
+      "prior_file": "scaled_zero_epsilon.json",
+      "prior_sha256": "1aca593873b2f6d4c4f7f8b32e2563ec95d6f274ba656075df15b3494571bd82",
+      "max_weight_difference": 0.0
+    },
+    {
+      "mode": "fixed_epsilon",
+      "prior_file": "correct_rescaled_eps1e-8.json",
+      "prior_sha256": "657e57a60d2220f358ead149de40f9f3c016d8e698d156cf2771cdb9114e9c9f",
+      "max_weight_difference": 0.0
+    },
+    {
+      "mode": "INVALID_wrong_scale",
+      "prior_file": "wrong_scaled_epsilon.json",
+      "prior_sha256": "7a67638ab23922fd60d7698c70a8540ca12e8ed5b202cf642c7d6623e8261ee9",
+      "max_weight_difference": 0.0
+    }
+  ],
+  "scope": "Margins/loss/epsilon diagnostics recomputed from saved weights and second moments. First moments checked for shape/finiteness and endpoint consistency, not recomputed by replay. Exact event times recorded during execution; unsaved updates are not replayed."
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "purpose": "Independent private learning replication of the NeurIPS 2024 experiment design; no course submission or student originality claim",
+  "paper": "Zhang, Zou, Cao, The Implicit Bias of Adam on Separable Data, NeurIPS 2024, final conference PDF, sections 3 and 5",
+  "n": 50,
+  "d": 50,
+  "data_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "generator": "numpy.random.Generator(PCG64(seed)); X=standard_normal((n,d)); then y=choice([-1,1],n)",
+  "initialization_seed_offset": 10000,
+  "initialization": "independent PCG64(seed+10000) standard_normal(d), shared across methods on each data set",
+  "selection": "maximum Euclidean distance between the L2-unit-normalized L2 and Linfinity reference directions; ties go to smallest seed",
+  "loss": "full_batch_mean_logistic",
+  "intercept": false,
+  "dtype": "float64",
+  "bias_correction": false,
+  "weight_decay": 0.0,
+  "beta1": 0.9,
+  "beta2": 0.99,
+  "gdm_formula": "m=0.9*m+0.1*g; w=w-eta*m",
+  "gd_gdm_learning_rate": "0.5/L where L=||X||_2^2/(4*n), fixed per dataset",
+  "adam_learning_rate": "c*(t+2)^(-a), t=0,1,...",
+  "adam_c": 1.0,
+  "primary_adam_a": 0.7,
+  "epsilon_values": [
+    0.0,
+    1e-08
+  ],
+  "rate_sweep_a": [
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "epsilon_sweep": [
+    1e-12,
+    0.0001
+  ],
+  "primary_steps": 1000000,
+  "pilot_steps": 10000,
+  "wall_seconds_per_run": 600.0,
+  "cpu_seconds_per_run": 600.0,
+  "checkpoint_every": 1000,
+  "endpoint_relative_own_margin_gap_threshold": 0.01,
+  "reference_tolerance": 1e-07,
+  "arithmetic": "Common positive exponential rescaling of Adam moments, algebraically the same recurrence in real arithmetic, independently compared with literal float64 Adam before underflow; no epsilon/clamp added",
+  "rules": [
+    "Freeze before primary results; retain all ten data sets and all primary method outcomes",
+    "Selection depends only on convex reference geometry, never on observed optimizer performance",
+    "Pilot, full primary runs, rate sweep, and epsilon extension use separate new output paths",
+    "Preserve explicit budget or numerical failures and all recorded checkpoints",
+    "Raw trajectories means observed optimizer checkpoints, not theoretical or interpolated values",
+    "Finite threshold is a team descriptive criterion, not a paper theorem or proof of convergence"
+  ]
+}

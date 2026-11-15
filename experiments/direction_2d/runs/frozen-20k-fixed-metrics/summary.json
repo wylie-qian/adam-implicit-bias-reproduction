@@ -1,0 +1,179 @@
+{
+  "protocol": {
+    "kind": "synthetic_math_learning_experiment_not_course_submission",
+    "schema_version": 1,
+    "data": {
+      "x": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          -2.0,
+          -0.5
+        ]
+      ],
+      "y": [
+        1,
+        -1
+      ]
+    },
+    "initial_weights": [
+      0.0,
+      0.0
+    ],
+    "loss": "mean_logistic",
+    "intercept": false,
+    "seed": 7,
+    "seed_role": "finite_difference_check_points_only; training_is_deterministic",
+    "steps_per_method": 20000,
+    "process_cpu_seconds": 30,
+    "wall_seconds": 60,
+    "trace_every": 100,
+    "also_record_first_steps": 10,
+    "gd": {
+      "learning_rate": 0.25
+    },
+    "adam": {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 0.0,
+      "bias_correction": false,
+      "weight_decay": 0.0,
+      "learning_rate_formula": "(t+2)^(-2/3)",
+      "a": 0.6666666666666666
+    },
+    "references": {
+      "linfinity_unit": [
+        1.0,
+        1.0
+      ],
+      "gamma_infinity": 2.5,
+      "l2_svm": [
+        0.42857142857142855,
+        0.2857142857142857
+      ]
+    },
+    "endpoint_criteria": {
+      "l2_direction_distance_at_most": 0.001,
+      "own_margin_gap_at_most": 0.001
+    },
+    "rules": [
+      "One prescribed primary run; do not tune after inspecting results",
+      "Retain partial trace and explicit stop reason on budget or numerical failure",
+      "No silent denominator clamp, epsilon, intercept, bias correction or early convergence stop",
+      "Finite endpoint criteria are descriptive and do not prove a limit theorem",
+      "Author code not used or verified; synthetic teaching example only"
+    ]
+  },
+  "protocolSHA256": "a2fb1179e1f75841a9867f94282d8c778e99a40d111d1191618baa6f76ca7799",
+  "sourceSHA256": "b6df3e877898209c9e0dba1c742e3b5042def2c000ac84652bcbcc4825ef7b65",
+  "python_version": "3.12.6",
+  "seed": 7,
+  "seed_used_in_training": false,
+  "timings": {
+    "total_cpu_seconds": 0.086481,
+    "total_wall_seconds": 0.08748612506315112
+  },
+  "results": {
+    "gd": {
+      "stop_reason": "completed_fixed_steps",
+      "updates": 20000,
+      "gradient_evaluations": 20000,
+      "requested_updates": 20000,
+      "endpoint": {
+        "method": "gd",
+        "step": 20000,
+        "loss": 5.3058357256757766e-05,
+        "w1": 4.0805196381258835,
+        "w2": 2.9955728452658796,
+        "norm_l2": 5.062025008672449,
+        "norm_linf": 4.0805196381258835,
+        "margin_raw": 9.658825698884707,
+        "unit_l2_1": 0.8061042035815679,
+        "unit_l2_2": 0.5917736163163464,
+        "unit_linf_1": 1.0,
+        "unit_linf_2": 0.7341155320702483,
+        "margin_l2": 1.9080952153213089,
+        "margin_linf": 2.367057766035124,
+        "gap_l2": 0.03335547146699325,
+        "gap_linf": 0.1329422339648758,
+        "direction_error_l2_reference_l2": 0.045250835382182275,
+        "direction_error_l2_reference_linf": 0.1519941727824954,
+        "min_sqrt_v": null
+      },
+      "endpoint_criteria": {
+        "reference": "l2_svm",
+        "direction_ok": false,
+        "own_margin_gap_ok": false,
+        "note": "descriptive finite-endpoint check only; no theorem is proved"
+      },
+      "cpu_seconds": 0.032813999999999996,
+      "wall_seconds": 0.03333737491630018
+    },
+    "adam": {
+      "stop_reason": "completed_fixed_steps",
+      "updates": 20000,
+      "gradient_evaluations": 20000,
+      "requested_updates": 20000,
+      "endpoint": {
+        "method": "adam",
+        "step": 20000,
+        "loss": 2.245837371363193e-32,
+        "w1": 29.31168303665766,
+        "w2": 27.1142858632709,
+        "norm_l2": 39.92942849975011,
+        "norm_linf": 29.31168303665766,
+        "margin_raw": 72.18050900495076,
+        "unit_l2_1": 0.7340872168215756,
+        "unit_l2_2": 0.6790551951786785,
+        "unit_linf_1": 1.0,
+        "unit_linf_2": 0.9250334015061961,
+        "margin_l2": 1.8077020312324903,
+        "margin_linf": 2.4625167007530977,
+        "gap_l2": 0.13374865555581184,
+        "gap_linf": 0.0374832992469023,
+        "direction_error_l2_reference_l2": 0.15830644434504473,
+        "direction_error_l2_reference_linf": 0.03892088622594257,
+        "min_sqrt_v": 1.5806837868122177e-32
+      },
+      "endpoint_criteria": {
+        "reference": "linfinity_unit",
+        "direction_ok": false,
+        "own_margin_gap_ok": false,
+        "note": "descriptive finite-endpoint check only; no theorem is proved"
+      },
+      "cpu_seconds": 0.049547999999999995,
+      "wall_seconds": 0.04998366581276059
+    }
+  },
+  "assumptions_check": {
+    "separability_witness": [
+      1.0,
+      1.0
+    ],
+    "witness_margins": [
+      3.0,
+      2.5
+    ],
+    "separable": true,
+    "g0": [
+      -0.75,
+      -0.625
+    ],
+    "g0_nonzero": true,
+    "beta_ordering_0_lt_b1_lt_b2_lt_1": true,
+    "beta1_squared_lt_beta2": true,
+    "lr_family_diminishing_divergent_sum": true,
+    "hessian_trace_bound_L": 1.15625,
+    "L_equals_37_over_32": true,
+    "gd_step_le_1_over_L": true,
+    "finite_difference_max_abs_error_seed_points": 1.8922285960343288e-10,
+    "note": "exact mathematical assumptions are not exhaustively proved by a finite run"
+  },
+  "notes": [
+    "No external data or sources used.",
+    "Plots handled separately.",
+    "Criteria are descriptive; a false value means unmet at the finite endpoint."
+  ]
+}

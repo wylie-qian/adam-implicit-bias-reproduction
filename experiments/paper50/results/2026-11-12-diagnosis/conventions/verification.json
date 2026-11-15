@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "conditions_verified": 10,
+  "updates_per_condition": 1000000,
+  "endpoint_metrics_recomputed": 10,
+  "max_endpoint_recomputation_error": 0.0,
+  "max_correct_scaled_vs_literal_endpoint_weight_difference": 1.4210854715202004e-14,
+  "trace_metric_comparisons": 61,
+  "scope": "Endpoint states independently recomputed; scalar traces hashed and paired baseline metrics compared. Intermediate states are not retained/recomputed.",
+  "warning": "INVALID_RECURRENCE is an intentionally wrong control, not fixed-epsilon Adam."
+}

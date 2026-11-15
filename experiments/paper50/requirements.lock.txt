@@ -1,0 +1,5 @@
+# Versions actually available and exercised in the selected cloud environment.
+# Python 3.12.14; no additional installation was needed.
+numpy==2.3.5
+scipy==1.17.0
+matplotlib==3.10.8

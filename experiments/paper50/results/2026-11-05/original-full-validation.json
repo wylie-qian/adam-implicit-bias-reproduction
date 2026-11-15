@@ -1,0 +1,651 @@
+{
+  "all_hash_and_recomputed_metric_checks_passed": true,
+  "datasets": 10,
+  "runs": 90,
+  "recorded_checkpoints": 68440,
+  "max_abs_checkpoint_metric_difference": 5.9117155615240335e-12,
+  "max_reference_certificate_residual_independently_recomputed": 1.681321748492337e-12,
+  "independent_scheduled_repeat_runs": [
+    {
+      "run_id": "seed-02_adam_eps-0_a-0.7",
+      "all_saved_states_bitwise_equal": true
+    },
+    {
+      "run_id": "seed-02_adam_eps-1e-08_a-0.7",
+      "all_saved_states_bitwise_equal": true
+    }
+  ],
+  "runs_with_numerical_or_budget_stop": [],
+  "runs_detail": [
+    {
+      "suite": "pilot",
+      "run_id": "seed-00_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-00_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-00_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-00_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-01_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-01_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-01_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-01_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-02_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-02_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-02_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-03_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-03_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-03_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-03_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-04_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-04_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-04_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-04_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-05_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-05_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-05_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-05_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-06_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-06_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-06_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-06_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-07_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-07_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-07_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-07_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-08_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-08_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-08_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-08_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-09_adam_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-09_adam_eps-1e-08_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-09_gd_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "pilot",
+      "run_id": "seed-09_gdm_eps-0_a-0.7",
+      "updates": 10000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 196
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-00_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-00_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-00_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-00_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-01_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-01_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-01_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-01_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-02_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-02_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-02_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-03_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-03_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-03_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-03_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-04_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-04_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-04_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-04_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-05_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-05_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-05_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-05_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-06_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-06_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-06_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-06_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-07_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-07_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-07_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-07_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-08_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-08_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-08_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-08_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-09_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-09_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-09_gd_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "primary",
+      "run_id": "seed-09_gdm_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-0_a-0.3",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-0_a-0.5",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-0_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-0_a-1",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.3",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.5",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-1e-08_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "rates",
+      "run_id": "seed-02_adam_eps-1e-08_a-1",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "epsilon",
+      "run_id": "seed-02_adam_eps-0.0001_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    },
+    {
+      "suite": "epsilon",
+      "run_id": "seed-02_adam_eps-1e-12_a-0.7",
+      "updates": 1000000,
+      "stop_reason": "completed_fixed_steps",
+      "checkpoints": 1212
+    }
+  ]
+}

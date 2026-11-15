@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "purpose": "Diagnostic convention audit, including an explicitly invalid recurrence control",
+  "status": "completed",
+  "steps_per_condition": 1000000,
+  "jobs": 3,
+  "wall_cpu_limit_per_condition": 600.0,
+  "planned_conditions": [
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 1e-08,
+      "bias_correction": false,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float64",
+      "gradient": "stable",
+      "arithmetic": "literal",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "PAPER_BASELINE",
+      "name": "literal_baseline"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 1e-08,
+      "bias_correction": true,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float64",
+      "gradient": "stable",
+      "arithmetic": "literal",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "CONVENTION_CONTROL",
+      "name": "bias_correction"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.999,
+      "epsilon": 1e-08,
+      "bias_correction": false,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float64",
+      "gradient": "stable",
+      "arithmetic": "literal",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "CONVENTION_CONTROL",
+      "name": "beta2_0999"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 1e-08,
+      "bias_correction": false,
+      "loss_multiplier": 50.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float64",
+      "gradient": "stable",
+      "arithmetic": "literal",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "CONVENTION_CONTROL",
+      "name": "sum_loss"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 1e-08,
+      "bias_correction": false,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "inside_sqrt",
+      "dtype": "float64",
+      "gradient": "stable",
+      "arithmetic": "literal",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "CONVENTION_CONTROL",
+      "name": "epsilon_inside_sqrt"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 1e-08,
+      "bias_correction": false,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float64",
+      "gradient": "naive",
+      "arithmetic": "literal",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "CONVENTION_CONTROL",
+      "name": "naive_1_minus_sigmoid"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 1e-08,
+      "bias_correction": false,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float64",
+      "gradient": "stable",
+      "arithmetic": "scaled_wrong_epsilon",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "INVALID_RECURRENCE",
+      "name": "wrong_scaled_epsilon"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 1e-08,
+      "bias_correction": false,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float32",
+      "gradient": "stable",
+      "arithmetic": "literal",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "CONVENTION_CONTROL",
+      "name": "float32"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 1e-08,
+      "bias_correction": false,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float64",
+      "gradient": "stable",
+      "arithmetic": "scaled_correct",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "PAPER_BASELINE",
+      "name": "correct_rescaled_eps1e-8"
+    },
+    {
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "epsilon": 0.0,
+      "bias_correction": false,
+      "loss_multiplier": 1.0,
+      "epsilon_placement": "outside_sqrt",
+      "dtype": "float64",
+      "gradient": "stable",
+      "arithmetic": "scaled_correct",
+      "a": 0.5,
+      "c": 1.0,
+      "time_offset": 1,
+      "role": "THEORY_BASELINE",
+      "name": "scaled_zero_epsilon"
+    }
+  ],
+  "evaluation_data": "original float64 X and y for every condition",
+  "sources": {
+    "conventions.py": "5cd324d74d6580931e6b90ade9f25e770054f4b1625d7a0c6492746282e3d514",
+    "run.py": "cff71403539c260aa910a48a7332900c25d69b47be74ab464aac43d40c6fdc67"
+  },
+  "inputs": {
+    "data_sha256": "a5b7a6baaf82f4f694b45f056f7985273a18d0317e5d49a6cf8dc53d67883ca2",
+    "reference_sha256": "4d5aa963428094dd85db6daadc2173f9e5eda07c2c888a70e6385153c4d8a640",
+    "X_array_sha256": "19767e126cca8d60f059ea35e755c8ebf325d719b18696510f0d9f2c0141e464",
+    "y_array_sha256": "dae63466d9097354537f6b624db9e209acfc265d8af5c7558df58d03b4cd0eab",
+    "w0_array_sha256": "e5391880ac572d261d8ca74e16a07a55ea516cc990cceb9fb51540b74a576680"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "base_git_commit": "e62309bf0651bd974dc31dbd223f55c80a903812"
+  },
+  "provenance": "Independent AI-assisted diagnostics of the published formulas; no author code. INVALID_RECURRENCE is not a reproduction fix.",
+  "results": [
+    {
+      "name": "literal_baseline",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 22.327181468441573,
+        "norm_l2": 71.74480418855474,
+        "norm_linf": 22.58417606878315,
+        "margin_l2": 0.31120276542622954,
+        "margin_linf": 0.9886205899405466,
+        "gap_l2": 0.018868334088634364,
+        "gap_linf": 0.4548728103488945,
+        "relative_gap_l2": 0.057164453708206775,
+        "relative_gap_linf": 0.3151194250404512,
+        "log10_outside_epsilon_in_mean_gradient_units": -8.0,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": -8.0
+      },
+      "state_dtype": "float64"
+    },
+    {
+      "name": "bias_correction",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 22.322558840865245,
+        "norm_l2": 71.11123342939263,
+        "norm_linf": 21.655818418854,
+        "margin_l2": 0.31391044374205146,
+        "margin_linf": 1.0307880500803779,
+        "gap_l2": 0.01616065577281245,
+        "gap_linf": 0.4127053502090632,
+        "relative_gap_l2": 0.04896113533285784,
+        "relative_gap_linf": 0.2859073343364853,
+        "log10_outside_epsilon_in_mean_gradient_units": -8.0,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": -8.0
+      },
+      "state_dtype": "float64"
+    },
+    {
+      "name": "beta2_0999",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 22.365811559768808,
+        "norm_l2": 84.52480014092708,
+        "norm_linf": 26.888737546442492,
+        "margin_l2": 0.2646065003700522,
+        "margin_linf": 0.8317910620064761,
+        "gap_l2": 0.06546459914481173,
+        "gap_linf": 0.6117023382829649,
+        "relative_gap_l2": 0.19833484131458679,
+        "relative_gap_linf": 0.42376524766951473,
+        "log10_outside_epsilon_in_mean_gradient_units": -8.0,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": -8.0
+      },
+      "state_dtype": "float64"
+    },
+    {
+      "name": "sum_loss",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 26.230162731784993,
+        "norm_l2": 83.57571616905749,
+        "norm_linf": 25.868510162050352,
+        "margin_l2": 0.3138490931830779,
+        "margin_linf": 1.013980417405916,
+        "gap_l2": 0.016222006331786,
+        "gap_linf": 0.42951298288352513,
+        "relative_gap_l2": 0.049147006071204036,
+        "relative_gap_linf": 0.2975510541284093,
+        "log10_outside_epsilon_in_mean_gradient_units": -9.698970004336019,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": -9.698970004336019
+      },
+      "state_dtype": "float64"
+    },
+    {
+      "name": "epsilon_inside_sqrt",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 13.133599384291927,
+        "norm_l2": 44.85612085305328,
+        "norm_linf": 15.101915876003444,
+        "margin_l2": 0.2927939182997351,
+        "margin_linf": 0.8696644513270583,
+        "gap_l2": 0.037277181215128796,
+        "gap_linf": 0.5738289489623828,
+        "relative_gap_l2": 0.11293682261160864,
+        "relative_gap_linf": 0.3975279338633082,
+        "log10_outside_epsilon_in_mean_gradient_units": null,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": -8.0,
+        "log10_denominator_floor_in_mean_gradient_units": -4.0
+      },
+      "state_dtype": "float64"
+    },
+    {
+      "name": "naive_1_minus_sigmoid",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 22.327181496887373,
+        "norm_l2": 71.74480411235324,
+        "norm_linf": 22.584175978562385,
+        "margin_l2": 0.3112027661532497,
+        "margin_linf": 0.9886205951494994,
+        "gap_l2": 0.018868333361614198,
+        "gap_linf": 0.45487280513994166,
+        "relative_gap_l2": 0.05716445150559002,
+        "relative_gap_linf": 0.3151194214318771,
+        "log10_outside_epsilon_in_mean_gradient_units": -8.0,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": -8.0
+      },
+      "state_dtype": "float64"
+    },
+    {
+      "name": "wrong_scaled_epsilon",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 1952.580445286479,
+        "norm_l2": 7185.179981118476,
+        "norm_linf": 1361.6270741054927,
+        "margin_l2": 0.27175108353827654,
+        "margin_linf": 1.4340053032282774,
+        "gap_l2": 0.05832001597658737,
+        "gap_linf": 0.009488097061163714,
+        "relative_gap_l2": 0.17668925289825643,
+        "relative_gap_linf": 0.006573010350626629,
+        "log10_outside_epsilon_in_mean_gradient_units": -855.9943697856734,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": -855.9943697856734
+      },
+      "state_dtype": "float64"
+    },
+    {
+      "name": "float32",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 21.998704356097033,
+        "norm_l2": 70.72909425941981,
+        "norm_linf": 22.245161056518555,
+        "margin_l2": 0.3110276554003406,
+        "margin_linf": 0.9889208848704064,
+        "gap_l2": 0.0190434441145233,
+        "gap_linf": 0.45457251541903465,
+        "relative_gap_l2": 0.05769497584766803,
+        "relative_gap_linf": 0.31491139157815784,
+        "log10_outside_epsilon_in_mean_gradient_units": -8.0,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": -8.0
+      },
+      "state_dtype": "float32"
+    },
+    {
+      "name": "correct_rescaled_eps1e-8",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 22.32718146844156,
+        "norm_l2": 71.74480418855475,
+        "norm_linf": 22.584176068783147,
+        "margin_l2": 0.3112027654262293,
+        "margin_linf": 0.9886205899405461,
+        "gap_l2": 0.018868334088634586,
+        "gap_linf": 0.45487281034889493,
+        "relative_gap_l2": 0.05716445370820744,
+        "relative_gap_linf": 0.31511942504045143,
+        "log10_outside_epsilon_in_mean_gradient_units": -8.0,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": -8.0
+      },
+      "state_dtype": "float64"
+    },
+    {
+      "name": "scaled_zero_epsilon",
+      "status": "completed",
+      "endpoint": {
+        "step": 1000000,
+        "margin_raw": 1952.5810061964344,
+        "norm_l2": 7185.187107429243,
+        "norm_linf": 1361.6266526498628,
+        "margin_l2": 0.27175089207872277,
+        "margin_linf": 1.4340061590278912,
+        "gap_l2": 0.058320207436141136,
+        "gap_linf": 0.009487241261549872,
+        "relative_gap_l2": 0.17668983295374774,
+        "relative_gap_linf": 0.006572417483618254,
+        "log10_outside_epsilon_in_mean_gradient_units": null,
+        "log10_inside_epsilon_in_mean_squared_gradient_units": null,
+        "log10_denominator_floor_in_mean_gradient_units": null
+      },
+      "state_dtype": "float64"
+    }
+  ],
+  "files": [
+    {
+      "path": "beta2_0999.json",
+      "sha256": "127a6cc75e5a7da9f016275c27ff53bd70df13c2aba4563e82c997313da9ed6e"
+    },
+    {
+      "path": "bias_correction.json",
+      "sha256": "d50f0b1635c1e28247e2f10281b59f40db098528dbe6eb3d3acb8b8cabb08a51"
+    },
+    {
+      "path": "correct_rescaled_eps1e-8.json",
+      "sha256": "657e57a60d2220f358ead149de40f9f3c016d8e698d156cf2771cdb9114e9c9f"
+    },
+    {
+      "path": "data.json",
+      "sha256": "1745ef5e1068693ad9fa627ccac2a7087bafb0ca2176211fd1a0f2b299f6782f"
+    },
+    {
+      "path": "epsilon_inside_sqrt.json",
+      "sha256": "c389249f9e46fe1a87682d47a3d30abd327f9f3ae31b1945a6e21632d7f85c12"
+    },
+    {
+      "path": "float32.json",
+      "sha256": "63e5b509d136ab627ab1f602cf24b77a5ad02c748afbfa0d3cc84ef3e54ea42f"
+    },
+    {
+      "path": "literal_baseline.json",
+      "sha256": "48d5852f253c593d4add9de7c6b7077c9999eee9b9979f0ab6e53d59c1e6e978"
+    },
+    {
+      "path": "naive_1_minus_sigmoid.json",
+      "sha256": "ed8d6161f2c55d4808d359efc9e38f1bbf712ede8b65852072f4b276450edff8"
+    },
+    {
+      "path": "reference.json",
+      "sha256": "4d5aa963428094dd85db6daadc2173f9e5eda07c2c888a70e6385153c4d8a640"
+    },
+    {
+      "path": "scaled_zero_epsilon.json",
+      "sha256": "1aca593873b2f6d4c4f7f8b32e2563ec95d6f274ba656075df15b3494571bd82"
+    },
+    {
+      "path": "sum_loss.json",
+      "sha256": "5627718a2786be81a6ee9930ed62dfd538d313a756c166930e44300a75bd6a7d"
+    },
+    {
+      "path": "wrong_scaled_epsilon.json",
+      "sha256": "7a67638ab23922fd60d7698c70a8540ca12e8ed5b202cf642c7d6623e8261ee9"
+    }
+  ]
+}

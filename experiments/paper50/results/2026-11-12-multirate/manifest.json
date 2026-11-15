@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "planned_configs": [
+    {
+      "run_id": "a-0.3_zero_epsilon",
+      "a": 0.3,
+      "mode": "zero_epsilon",
+      "epsilon": 0.0,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "PUBLISHED_RECURRENCE"
+    },
+    {
+      "run_id": "a-0.3_fixed_epsilon",
+      "a": 0.3,
+      "mode": "fixed_epsilon",
+      "epsilon": 1e-08,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "PUBLISHED_RECURRENCE"
+    },
+    {
+      "run_id": "a-0.3_INVALID_wrong_scale",
+      "a": 0.3,
+      "mode": "INVALID_wrong_scale",
+      "epsilon": 1e-08,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "INVALID_RECURRENCE"
+    },
+    {
+      "run_id": "a-0.5_zero_epsilon",
+      "a": 0.5,
+      "mode": "zero_epsilon",
+      "epsilon": 0.0,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "PUBLISHED_RECURRENCE"
+    },
+    {
+      "run_id": "a-0.5_fixed_epsilon",
+      "a": 0.5,
+      "mode": "fixed_epsilon",
+      "epsilon": 1e-08,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "PUBLISHED_RECURRENCE"
+    },
+    {
+      "run_id": "a-0.5_INVALID_wrong_scale",
+      "a": 0.5,
+      "mode": "INVALID_wrong_scale",
+      "epsilon": 1e-08,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "INVALID_RECURRENCE"
+    },
+    {
+      "run_id": "a-0.7_zero_epsilon",
+      "a": 0.7,
+      "mode": "zero_epsilon",
+      "epsilon": 0.0,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "PUBLISHED_RECURRENCE"
+    },
+    {
+      "run_id": "a-0.7_fixed_epsilon",
+      "a": 0.7,
+      "mode": "fixed_epsilon",
+      "epsilon": 1e-08,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "PUBLISHED_RECURRENCE"
+    },
+    {
+      "run_id": "a-0.7_INVALID_wrong_scale",
+      "a": 0.7,
+      "mode": "INVALID_wrong_scale",
+      "epsilon": 1e-08,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "INVALID_RECURRENCE"
+    },
+    {
+      "run_id": "a-1_zero_epsilon",
+      "a": 1.0,
+      "mode": "zero_epsilon",
+      "epsilon": 0.0,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "PUBLISHED_RECURRENCE"
+    },
+    {
+      "run_id": "a-1_fixed_epsilon",
+      "a": 1.0,
+      "mode": "fixed_epsilon",
+      "epsilon": 1e-08,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "PUBLISHED_RECURRENCE"
+    },
+    {
+      "run_id": "a-1_INVALID_wrong_scale",
+      "a": 1.0,
+      "mode": "INVALID_wrong_scale",
+      "epsilon": 1e-08,
+      "beta1": 0.9,
+      "beta2": 0.99,
+      "c": 1.0,
+      "time_offset": 1,
+      "bias_correction": false,
+      "role": "INVALID_RECURRENCE"
+    }
+  ],
+  "steps_per_condition": 1000000,
+  "fixed_before_this_run": true,
+  "study_type": "Diagnostic extension informed by earlier a=.5 controls; not preregistration",
+  "sources": {
+    "multirate_audit.py": "9f5129a8093db5876cb6df636886839aacbe4830dd4fcf02d2cd92e9c480ebbf",
+    "run.py": "cff71403539c260aa910a48a7332900c25d69b47be74ab464aac43d40c6fdc67",
+    "conventions.py": "5cd324d74d6580931e6b90ade9f25e770054f4b1625d7a0c6492746282e3d514"
+  },
+  "input_sha256": {
+    "data.json": "1745ef5e1068693ad9fa627ccac2a7087bafb0ca2176211fd1a0f2b299f6782f",
+    "reference.json": "4d5aa963428094dd85db6daadc2173f9e5eda07c2c888a70e6385153c4d8a640"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "jobs": 3,
+  "stopping_rule": "Fixed requested updates or explicit numerical failure; no silent runtime truncation",
+  "attribution": "AI-assisted independent experiments; no author code. INVALID_wrong_scale is not fixed-epsilon Adam.",
+  "results": [
+    {
+      "run_id": "a-0.3_zero_epsilon",
+      "status": "completed",
+      "relative_gap_linf": 0.015234015023422254
+    },
+    {
+      "run_id": "a-0.3_fixed_epsilon",
+      "status": "completed",
+      "relative_gap_linf": 0.3433648256960825
+    },
+    {
+      "run_id": "a-0.3_INVALID_wrong_scale",
+      "status": "completed",
+      "relative_gap_linf": 0.01523505546740711
+    },
+    {
+      "run_id": "a-0.5_zero_epsilon",
+      "status": "completed",
+      "relative_gap_linf": 0.006572417483618254
+    },
+    {
+      "run_id": "a-0.5_fixed_epsilon",
+      "status": "completed",
+      "relative_gap_linf": 0.31511942504045143
+    },
+    {
+      "run_id": "a-0.5_INVALID_wrong_scale",
+      "status": "completed",
+      "relative_gap_linf": 0.006573010350626629
+    },
+    {
+      "run_id": "a-0.7_zero_epsilon",
+      "status": "completed",
+      "relative_gap_linf": 0.024345508974460528
+    },
+    {
+      "run_id": "a-0.7_fixed_epsilon",
+      "status": "completed",
+      "relative_gap_linf": 0.27429596319285243
+    },
+    {
+      "run_id": "a-0.7_INVALID_wrong_scale",
+      "status": "completed",
+      "relative_gap_linf": 0.02434678646297672
+    },
+    {
+      "run_id": "a-1_zero_epsilon",
+      "status": "completed",
+      "relative_gap_linf": 0.22737827534584254
+    },
+    {
+      "run_id": "a-1_fixed_epsilon",
+      "status": "completed",
+      "relative_gap_linf": 0.24072277427850564
+    },
+    {
+      "run_id": "a-1_INVALID_wrong_scale",
+      "status": "completed",
+      "relative_gap_linf": 0.22738188008822213
+    }
+  ],
+  "files": [
+    {
+      "path": "a-0.3_INVALID_wrong_scale.json",
+      "sha256": "cd5642fee41b4928be884a8f6a9cadcabdef81c1158baaa381d956e84a6c5a44"
+    },
+    {
+      "path": "a-0.3_fixed_epsilon.json",
+      "sha256": "1fb8ff818b09840fc741ad557e9c8ab4ce0edc8ba36f40aadd94d5c8c5544b3a"
+    },
+    {
+      "path": "a-0.3_zero_epsilon.json",
+      "sha256": "19365efbbe8ced3a79f04d026836a8518be3dc512c848d9cef4f1d4725e919ac"
+    },
+    {
+      "path": "a-0.5_INVALID_wrong_scale.json",
+      "sha256": "effd2f87b8d6ef54e4a8645158a660f9b8f82263959920a4bc8bff654d8c607c"
+    },
+    {
+      "path": "a-0.5_fixed_epsilon.json",
+      "sha256": "e1eec2f7d8cce46a62093cba5849974594ba010f0e3ed46e6e50c39c6e16535f"
+    },
+    {
+      "path": "a-0.5_zero_epsilon.json",
+      "sha256": "ac2445461af691f7da2b5e4b8fd6e0197709f7b99b90ee8a5cdca32bf9bfddfe"
+    },
+    {
+      "path": "a-0.7_INVALID_wrong_scale.json",
+      "sha256": "fb7dadc85763655d392f89ac532aeb84dccf9e6efa83b359562fca220350a940"
+    },
+    {
+      "path": "a-0.7_fixed_epsilon.json",
+      "sha256": "a50dfb69b3d9017fcbe2f20148c0273adbd3674811201f59106e4f68d92cda2c"
+    },
+    {
+      "path": "a-0.7_zero_epsilon.json",
+      "sha256": "61396498909c8690cd61531e75d4a24ef898ad53a4d38c3a54e79bc6448d4659"
+    },
+    {
+      "path": "a-1_INVALID_wrong_scale.json",
+      "sha256": "9ecd9f4a92a024a085db140418e202e30bf2ea93c1130b2aba65435af0bb3372"
+    },
+    {
+      "path": "a-1_fixed_epsilon.json",
+      "sha256": "40151bcd8656537dea62ee5d5a30acef1275975fc0d7a2731cb70450158d1f0e"
+    },
+    {
+      "path": "a-1_zero_epsilon.json",
+      "sha256": "f9762490c10c8c02e3d414868017090f60875ef84a174ac80b9478bc1b5f4ddd"
+    },
+    {
+      "path": "data.json",
+      "sha256": "1745ef5e1068693ad9fa627ccac2a7087bafb0ca2176211fd1a0f2b299f6782f"
+    },
+    {
+      "path": "reference.json",
+      "sha256": "4d5aa963428094dd85db6daadc2173f9e5eda07c2c888a70e6385153c4d8a640"
+    }
+  ]
+}

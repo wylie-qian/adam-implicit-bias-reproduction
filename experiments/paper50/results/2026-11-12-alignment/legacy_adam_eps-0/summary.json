@@ -1,0 +1,53 @@
+{
+  "config": {
+    "run_id": "legacy_adam_eps-0",
+    "method": "adam",
+    "epsilon": 0.0,
+    "a": 0.7,
+    "c": 1.0,
+    "offset": 2,
+    "arithmetic": "scaled"
+  },
+  "requested_updates": 1000000,
+  "updates": 1000000,
+  "stop_reason": "completed_fixed_steps",
+  "error": null,
+  "endpoint": {
+    "step": 1000000,
+    "method": "adam",
+    "epsilon": 0.0,
+    "loss_float64": 5.36702943066098e-109,
+    "log_loss": -249.30150055953783,
+    "margin_raw": 247.99511666219087,
+    "norm_l2": 906.9286926767559,
+    "norm_linf": 176.40733760776342,
+    "margin_l2": 0.2734450003232838,
+    "margin_linf": 1.4058095316511199,
+    "gap_l2": 0.056626099191580126,
+    "gap_linf": 0.03768386863832118,
+    "relative_gap_l2": 0.17155727743146476,
+    "relative_gap_linf": 0.02610602073467394,
+    "distance_l2_unit_to_l2_ref": 0.523762676904458,
+    "distance_l2_unit_to_linf_ref": 0.034624975165521925,
+    "adam_moment_log_scale": 247.99505601893614,
+    "log10_min_sqrt_v": -113.96817255353923,
+    "log10_max_sqrt_v": -108.98587061667615,
+    "log10_min_sqrt_v_over_epsilon": null,
+    "epsilon_dominates_coordinates": null,
+    "elapsed_wall_seconds": 22.718140723000033,
+    "elapsed_cpu_seconds": 22.700765613,
+    "log10_max_sqrt_v_over_epsilon": null,
+    "epsilon_update_suppression_min": null,
+    "epsilon_update_suppression_max": null,
+    "epsilon_strong_coordinates": null
+  },
+  "first_all_epsilon_below_recorded_checkpoint": null,
+  "first_all_epsilon_strong_recorded_checkpoint": null,
+  "wall_seconds": 22.732988266999996,
+  "cpu_seconds": 22.71561272,
+  "hashes": {
+    "config.json": "1f673be547359f23e0100373ed6f6f852c3ac5ad388c3bdca68a0a64da507858",
+    "trajectory.csv": "22b3c1131993d5ecec244575e666851064a1a5dbe3f0582cc03e8c39ee3364fa",
+    "states.npz": "1117693d42af4aa13559f49c29731979d4fdb10c21fdc490c12b08a9e8ac33b2"
+  }
+}
