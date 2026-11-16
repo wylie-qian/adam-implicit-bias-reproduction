@@ -21,6 +21,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+import matplotlib.ticker  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 OUT = os.path.join(ROOT, "docs", "report", "figures")
@@ -30,29 +31,47 @@ P50 = os.path.join(ROOT, "experiments", "paper50", "results")
 C = {"gd": "#2B5797", "gdm": "#7FA7D6", "adam0": "#C0601F", "adameps": "#6C3D91", "grey": "#8A8F99"}
 LABEL = {"gd": "GD", "gdm": "GDM", "adam0": r"Adam, $\varepsilon=0$", "adameps": r"Adam, $\varepsilon=10^{-8}$"}
 
+# Serif text and STIX maths, to match the Times body text of the NeurIPS template.
 plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["Times New Roman", "Times", "STIXGeneral"],
     "mathtext.fontset": "stix",
-    "font.size": 8,
-    "axes.labelsize": 8,
-    "axes.titlesize": 8,
-    "legend.fontsize": 7,
-    "xtick.labelsize": 7,
-    "ytick.labelsize": 7,
+    "font.size": 7.5,
+    "axes.labelsize": 7.5,
+    "axes.titlesize": 7.5,
+    "legend.fontsize": 6.5,
+    "xtick.labelsize": 6.5,
+    "ytick.labelsize": 6.5,
     "axes.linewidth": 0.6,
+    "axes.edgecolor": "#333333",
+    "axes.labelcolor": "#222222",
+    "xtick.color": "#333333",
+    "ytick.color": "#333333",
     "xtick.major.width": 0.6,
     "ytick.major.width": 0.6,
     "xtick.minor.width": 0.4,
     "ytick.minor.width": 0.4,
+    "xtick.major.size": 2.5,
+    "ytick.major.size": 2.5,
+    "xtick.minor.size": 1.5,
+    "ytick.minor.size": 1.5,
     "axes.spines.top": False,
     "axes.spines.right": False,
+    "axes.grid": True,
+    "axes.grid.axis": "y",
+    "axes.axisbelow": True,
+    "grid.color": "#E3E5E8",
+    "grid.linewidth": 0.5,
     "legend.frameon": False,
+    "lines.solid_capstyle": "round",
     "pdf.fonttype": 42,  # embed TrueType, not Type 3
     "ps.fonttype": 42,
     "savefig.dpi": 300,
 })
 TEXTWIDTH = 5.5  # inches, NeurIPS text width
+LW = 1.2         # data lines
+REF = dict(color="#55595F", ls=(0, (4, 2.5)), lw=0.6)  # reference lines (optimum, epsilon)
+SMALL = 6.5      # in-plot labels
 
 
 def read_csv(path):
@@ -72,8 +91,18 @@ def col(rows, name, skip_empty=True):
     return out
 
 
-def panel_label(ax, s):
-    ax.text(-0.02, 1.04, s, transform=ax.transAxes, ha="right", va="bottom", fontweight="bold")
+def panel_label(ax, s, x=-0.02, y=1.04):
+    ax.text(x, y, s, transform=ax.transAxes, ha="right", va="bottom", fontweight="bold", fontsize=8)
+
+
+def log_axis(ax, axis="x"):
+    """Decades as major ticks, unlabelled minor ticks at 2..9."""
+    major = matplotlib.ticker.LogLocator(base=10, numticks=12)
+    minor = matplotlib.ticker.LogLocator(base=10, subs=range(2, 10), numticks=12)
+    target = ax.xaxis if axis == "x" else ax.yaxis
+    target.set_major_locator(major)
+    target.set_minor_locator(minor)
+    target.set_minor_formatter(matplotlib.ticker.NullFormatter())
 
 
 def save(fig, name):
@@ -93,40 +122,48 @@ def fig1():
     g = (1.0, 0.05)
     n = math.hypot(*g)
     t = [i / 200 * 2 * math.pi for i in range(201)]
+    sq_x, sq_y = [-1, 1, 1, -1, -1], [-1, -1, 1, 1, -1]
+    a.fill(sq_x, sq_y, color="#FBF1EA", lw=0)                                   # pale orange box
+    a.fill([math.cos(s) for s in t], [math.sin(s) for s in t], color="#EAF0F8", lw=0)  # pale blue ball
+    a.plot(sq_x, sq_y, color=C["adam0"], lw=0.9)
     a.plot([math.cos(s) for s in t], [math.sin(s) for s in t], color=C["gd"], lw=0.9)
-    a.plot([-1, 1, 1, -1, -1], [-1, -1, 1, 1, -1], color=C["adam0"], lw=0.9)
-    kw = dict(arrowstyle="-|>", mutation_scale=7, lw=1.0)
-    a.annotate("", xy=(0.62 * g[0] / n, 0.62 * g[1] / n), xytext=(0, 0), arrowprops=dict(color="black", **kw))
-    a.text(0.66, 0.06, r"$g$", ha="left", va="bottom")
+    kw = dict(arrowstyle="-|>", mutation_scale=7, lw=1.1, shrinkA=0, shrinkB=0)
+    a.annotate("", xy=(0.55 * g[0] / n, 0.55 * g[1] / n), xytext=(0, 0), arrowprops=dict(color="#222222", **kw))
+    a.text(0.6, 0.0, r"$g$", ha="left", va="center")
     a.annotate("", xy=(-g[0] / n, -g[1] / n), xytext=(0, 0), arrowprops=dict(color=C["gd"], **kw))
     a.annotate("", xy=(-1, -1), xytext=(0, 0), arrowprops=dict(color=C["adam0"], **kw))
-    a.text(-1.08, 0.0, r"GD step" "\n" r"$-g/\|g\|_2$", color=C["gd"], ha="right", va="center", fontsize=7)
-    a.text(-1.05, -1.08, r"sign step $-\mathrm{sign}(g)$", color=C["adam0"], ha="left", va="top", fontsize=7)
-    a.text(-0.93, 0.93, r"$\|d\|_2\leq 1$", color=C["gd"], ha="left", va="top", fontsize=7)
-    a.text(1.0, 1.05, r"$\|d\|_\infty\leq 1$", color=C["adam0"], ha="right", va="bottom", fontsize=7)
+    a.plot([0], [0], "o", ms=2.2, color="#222222")
+    a.text(-1.12, 0.0, r"GD step" "\n" r"$-g/\|g\|_2$", color=C["gd"], ha="right", va="center", fontsize=SMALL,
+           linespacing=1.15)
+    a.text(0.0, -1.12, r"sign step $-\mathrm{sign}(g)$", color=C["adam0"], ha="center", va="top", fontsize=SMALL)
+    a.text(0.0, 0.58, r"$\|d\|_2\leq 1$", color=C["gd"], ha="center", va="center", fontsize=SMALL)
+    a.text(0.0, 1.08, r"$\|d\|_\infty\leq 1$", color=C["adam0"], ha="center", va="bottom", fontsize=SMALL)
     a.set_aspect("equal")
-    a.set_xlim(-1.75, 1.1)
-    a.set_ylim(-1.35, 1.3)
+    a.set_xlim(-2.05, 1.2)
+    a.set_ylim(-1.5, 1.45)
     a.axis("off")
-    panel_label(a, "(a)")
+    panel_label(a, "(a)", x=0.04, y=0.97)
 
     # (b) direction of w_t in our 2D runs (z_1 = (1, 2), z_2 = (2, 1/2))
     run = os.path.join(ROOT, "experiments", "direction_2d", "runs", "frozen-20k-fixed-metrics")
     l2_dir = math.degrees(math.atan2(2, 3))   # max L2-margin direction (3, 2)/sqrt(13)
     linf_dir = 45.0                             # max L-inf-margin direction (1, 1)
+    b.axhline(l2_dir, color=C["gd"], ls=(0, (4, 2.5)), lw=0.7)
+    b.axhline(linf_dir, color=C["adam0"], ls=(0, (4, 2.5)), lw=0.7)
     for key, fname in (("gd", "gd.csv"), ("adam0", "adam.csv")):
         rows = [r for r in read_csv(os.path.join(run, fname)) if int(r["step"]) >= 1]
         steps = col(rows, "step")
         ang = [math.degrees(math.atan2(float(r["w2"]), float(r["w1"]))) for r in rows]
-        b.plot(steps, ang, color=C[key], lw=1.1)
-    b.axhline(l2_dir, color=C["gd"], ls="--", lw=0.7)
-    b.axhline(linf_dir, color=C["adam0"], ls="--", lw=0.7)
-    b.text(1.15, l2_dir + 0.35, r"max $L_2$-margin direction ($33.7^\circ$)", color=C["gd"], va="bottom", fontsize=7)
-    b.text(1.15, linf_dir + 0.35, r"max $L_\infty$-margin direction ($45^\circ$)", color=C["adam0"], va="bottom", fontsize=7)
-    b.text(2e3, 36.9, "GD", color=C["gd"], ha="center", va="top", fontsize=7)
-    b.text(30, 43.6, r"Adam, $\varepsilon=0$", color=C["adam0"], ha="center", va="top", fontsize=7)
-    b.set_ylim(32.5, 46.5)
+        b.plot(steps, ang, color=C[key], lw=LW)
+    b.text(1.2, l2_dir + 0.4, r"max $L_2$-margin direction ($33.7^\circ$)", color=C["gd"], va="bottom", fontsize=SMALL)
+    b.text(1.2, linf_dir + 0.4, r"max $L_\infty$-margin direction ($45^\circ$)", color=C["adam0"], va="bottom",
+           fontsize=SMALL)
+    b.text(2e3, 36.6, "GD", color=C["gd"], ha="center", va="top", fontsize=SMALL)
+    b.text(30, 43.5, r"Adam, $\varepsilon=0$", color=C["adam0"], ha="center", va="top", fontsize=SMALL)
+    b.set_ylim(32.5, 46.8)
+    b.set_yticks([35, 40, 45])
     b.set_xscale("log")
+    log_axis(b, "x")
     b.set_xlim(1, 2e4)
     b.set_xlabel("update $t$")
     b.set_ylabel(r"angle of $w_t$ (degrees)")
@@ -147,25 +184,33 @@ def fig2():
         "adam0": "seed-02_adam_eps-0_a-0.5",
         "adameps": "seed-02_adam_eps-1e-08_a-0.5",
     }
-    fig, axes = plt.subplots(1, 2, figsize=(TEXTWIDTH, 1.7), sharex=True)
+    fig, axes = plt.subplots(1, 2, figsize=(TEXTWIDTH, 1.7), sharex=True, sharey=True)
     ends = {}
+    for ax in axes:
+        ax.axhline(1.0, **REF)
     for key, name in runs.items():
         rows = [r for r in legend_traj(name) if int(r["step"]) >= 1]
         s = col(rows, "step")
         for ax, gap in zip(axes, ("relative_gap_linf", "relative_gap_l2")):
             ratio = [1 - v for v in col(rows, gap)]
-            ax.plot(s, ratio, color=C[key], lw=1.1 if key != "gdm" else 0.9,
-                    ls="-" if key != "gdm" else (0, (3, 1.5)), label=LABEL[key])
+            if key == "gdm":  # GDM lies on GD: draw it as a light dashed line on top
+                ax.plot(s, ratio, color=C[key], lw=0.9, ls=(0, (2.5, 1.8)), label=LABEL[key])
+            else:
+                ax.plot(s, ratio, color=C[key], lw=LW, label=LABEL[key])
         ends[key] = (1 - float(rows[-1]["relative_gap_linf"]), 1 - float(rows[-1]["relative_gap_l2"]))
     for ax, title in zip(axes, (r"$L_\infty$ margin $q_\infty(w_t)/\gamma_\infty$", r"$L_2$ margin $q_2(w_t)/\gamma_2$")):
-        ax.axhline(1.0, color="black", ls="--", lw=0.6)
         ax.set_xscale("log")
+        log_axis(ax, "x")
         ax.set_xlim(1, 1e6)
-        ax.set_ylim(0.4, 1.03)
+        ax.set_ylim(0.4, 1.04)
+        ax.set_yticks([0.4, 0.6, 0.8, 1.0])
         ax.set_xlabel("update $t$")
-        ax.set_title(title, loc="left")
+        ax.set_title(title, loc="left", pad=4)
+        ax.tick_params(axis="y", labelleft=True)
     axes[0].set_ylabel("margin / optimum")
-    axes[0].legend(loc="upper left", handlelength=1.8)
+    axes[1].text(1.5, 0.985, "optimum", color=REF["color"], fontsize=SMALL, ha="left", va="top")
+    axes[0].legend(loc="upper left", bbox_to_anchor=(0.0, 0.9), handlelength=1.8, labelspacing=0.35,
+                   borderaxespad=0.2)
     panel_label(axes[0], "(a)")
     panel_label(axes[1], "(b)")
     fig.tight_layout(w_pad=1.5)
@@ -187,39 +232,49 @@ def fig3():
     fig, (a, b, c) = plt.subplots(1, 3, figsize=(TEXTWIDTH, 1.65), gridspec_kw={"width_ratios": [1, 1, 1.05]})
 
     # (a) L-inf gap, seed 2
+    a.axvline(alls, color=C["adameps"], ls=(0, (1, 1.5)), lw=0.9)
     for rows, key in ((r0, "adam0"), (r1, "adameps")):
-        a.plot(col(rows, "step"), [100 * v for v in col(rows, "relative_gap_linf")], color=C[key], lw=1.1, label=LABEL[key])
-    a.axvline(alls, color=C["adameps"], ls=":", lw=0.8)
-    a.text(alls * 1.4, 150, "$\\varepsilon$ takes over\n($t$ = %s)" % format(alls, ","), color=C["adameps"], fontsize=6.5, va="center")
+        a.plot(col(rows, "step"), [100 * v for v in col(rows, "relative_gap_linf")], color=C[key], lw=LW)
+    a.text(alls / 1.35, 330, "$\\varepsilon$ takes over\n($t$ = %s)" % format(alls, ","), color=C["adameps"],
+           fontsize=SMALL, ha="right", va="center", linespacing=1.15)
+    a.text(1.5e5, 52, r"$\varepsilon=10^{-8}$", color=C["adameps"], fontsize=SMALL, ha="center", va="bottom")
+    a.text(1.2e4, 2.2, r"$\varepsilon=0$", color=C["adam0"], fontsize=SMALL, ha="center", va="top")
     a.set_xscale("log")
     a.set_yscale("log")
+    log_axis(a, "x")
     a.set_xlim(1, 1e6)
-    a.set_ylim(0.3, 700)
+    a.set_ylim(0.3, 900)
     a.set_yticks([1, 10, 100])
     a.set_yticklabels(["1", "10", "100"])
+    a.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
     a.set_xlabel("update $t$")
     a.set_ylabel(r"$L_\infty$ margin gap (%)")
-    a.legend(loc="lower left", handlelength=1.4)
     panel_label(a, "(a)")
 
     # (b) largest sqrt(v) along the eps = 1e-8 run, with the beta2 lower bound
     s1 = col(r1, "step")
     mx = [10 ** v if not math.isnan(v) else math.nan for v in col(r1, "log10_max_sqrt_v")]
-    b.plot(s1, mx, color=C["adameps"], lw=1.1)
-    b.text(1.3, 0.12, r"largest $\sqrt{v_{t,j}}$", color=C["adameps"], fontsize=6.5, va="bottom")
     v1 = next(v for v in mx if not math.isnan(v))
-    lb_s = [10 ** (k / 20) for k in range(0, 121)]
-    b.plot(lb_s, [v1 * beta2 ** ((t - 1) / 2) for t in lb_s], color=C["grey"], ls=":", lw=1.0)
-    b.text(6e3, 3e-13, "lower bound", color=C["grey"], fontsize=6.5, va="bottom")
-    b.axhline(eps, color="black", ls="--", lw=0.6)
-    b.text(1.3, eps * 1.8, r"$\varepsilon=10^{-8}$", fontsize=7, va="bottom")
-    b.axvline(alls, color=C["adameps"], ls=":", lw=0.8)
+    lb_s = [10 ** (k / 40) for k in range(0, 241)]
+    # The bound is drawn as a wide pale band under the run, so that "the run follows the bound" is visible.
+    b.plot(lb_s, [v1 * beta2 ** ((t - 1) / 2) for t in lb_s], color=C["grey"], lw=3.2, alpha=0.35,
+           solid_capstyle="butt")
+    b.axhline(eps, **REF)
+    b.axvline(alls, color=C["adameps"], ls=(0, (1, 1.5)), lw=0.9)
+    b.plot(s1, mx, color=C["adameps"], lw=LW)
+    b.text(1.5, eps * 2.2, r"$\varepsilon=10^{-8}$", color=REF["color"], fontsize=SMALL, va="bottom")
+    b.annotate("lower bound (5)", xy=(4.2e3, 3e-11), xytext=(1.6, 1.5e-12), color="#6B7078", fontsize=SMALL,
+               ha="left", va="center",
+               arrowprops=dict(arrowstyle="-", color="#9DA2AA", lw=0.6, shrinkA=1, shrinkB=1))
     b.set_xscale("log")
     b.set_yscale("log")
+    log_axis(b, "x")
     b.set_xlim(1, 1e6)
     b.set_ylim(1e-13, 1)
+    b.set_yticks([1e-1, 1e-5, 1e-9, 1e-13])
+    b.yaxis.set_minor_locator(matplotlib.ticker.NullLocator())
     b.set_xlabel("update $t$")
-    b.set_ylabel(r"$\sqrt{v}$ (Adam, $\varepsilon=10^{-8}$)")
+    b.set_ylabel(r"largest $\sqrt{v_{t,j}}$")
     panel_label(b, "(b)")
 
     # (c) final gap against the learning-rate constant c, ten datasets
@@ -235,9 +290,14 @@ def fig3():
             hi.append(max(g))
         xs = [cv * dx for cv in cs]
         c.errorbar(xs, med, yerr=[[m - l for m, l in zip(med, lo)], [h - m for m, h in zip(med, hi)]],
-                   fmt="o", ms=3, color=C[key], lw=0.9, capsize=1.5, label=LABEL[key])
+                   fmt="o", ms=3, mec="white", mew=0.4, color=C[key], ecolor=C[key], elinewidth=0.8,
+                   capsize=1.6, capthick=0.8)
+    # Direct labels between the first two columns, clear of every error bar.
+    c.text(0.055, 52, r"$\varepsilon=10^{-8}$", color=C["adameps"], fontsize=SMALL, ha="center", va="bottom")
+    c.text(0.055, 2.6, r"$\varepsilon=0$", color=C["adam0"], fontsize=SMALL, ha="center", va="bottom")
     c.set_xscale("log")
     c.set_yscale("log")
+    c.set_xlim(0.019, 4.7)
     c.set_ylim(0.3, 100)
     c.set_xticks(cs)
     c.set_xticklabels([f"{v:g}" for v in cs])
@@ -245,10 +305,9 @@ def fig3():
     c.set_yticks([0.5, 1, 2, 5, 10, 20, 50])
     c.set_yticklabels(["0.5", "1", "2", "5", "10", "20", "50"])
     c.set_xlabel(r"constant $c$ in $\eta_t=c\,t^{-1/2}$")
-    c.set_ylabel(r"$L_\infty$ gap after $10^6$ updates (%)")
-    c.legend(loc="center right", handlelength=1.0, fontsize=6.5)
+    c.set_ylabel(r"final $L_\infty$ gap (%)")
     panel_label(c, "(c)")
-    fig.tight_layout(w_pad=0.8)
+    fig.tight_layout(w_pad=0.6)
     save(fig, "fig3_epsilon")
     return first, alls
 
