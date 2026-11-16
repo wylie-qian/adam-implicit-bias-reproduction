@@ -32,6 +32,17 @@ of the exponents. The same seed 2 values were obtained independently in
 section below). `run.py` and the 2026-11-05 snapshot are unchanged and still
 verify.
 
+**When epsilon takes over (2026-11-13, follow-up for the report).**
+[results/2026-11-13-eps-timing](results/2026-11-13-eps-timing/README.md)
+([eps_timing.py](eps_timing.py), [protocol_eps_timing.json](protocol_eps_timing.json))
+checks after every update when sqrt(v) falls below epsilon in all coordinates.
+Because v_t >= beta2*v_(t-1), sqrt(v) shrinks by at most about 0.5% per update,
+so epsilon=1e-8 cannot take over before about 3,000 updates. With the legends'
+c = 1 it takes over at that earliest time on all ten datasets. Smaller c
+delays it but also slows Adam: all 65 epsilon=1e-8 runs, with c from 0.03 to 3
+and a from 0.3 to 1, ended at least 15% short of the L-infinity optimum. Only a
+far smaller epsilon gets close (1e-256: 1.8-7.0%).
+
 The primary study retains ten 50×50 synthetic candidates and runs GD, GDM and
 Adam with epsilon=0/1e-8 for one million updates each. Seed 2 was selected by
 reference geometry before observing optimizer results. The main a=.7 Adam

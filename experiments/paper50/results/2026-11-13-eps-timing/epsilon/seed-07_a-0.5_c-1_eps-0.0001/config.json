@@ -1,0 +1,9 @@
+{
+  "seed": 7,
+  "a": 0.5,
+  "c": 1.0,
+  "epsilon": 0.0001,
+  "keep_trajectory": false,
+  "steps": 1000000,
+  "run_id": "seed-07_a-0.5_c-1_eps-0.0001"
+}

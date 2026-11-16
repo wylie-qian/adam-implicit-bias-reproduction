@@ -1,0 +1,16 @@
+{
+  "protocol": "protocol_eps_timing.json",
+  "protocol_sha256": "f295369c33c0f391c65b4053ed24b05a0e116a2d678f051d05372248fb6fa823",
+  "runner_sha256": "419a815794ad07b6a83e68caf5604a9cbc1d212695f91641b1b112f32cb4831a",
+  "adam_step_source_sha256": "ee6dcc042e5bb53530ef050855317fe4aa8f238aa6e2d87af2b200d2dbd2ecdf",
+  "base_runner_sha256": "cff71403539c260aa910a48a7332900c25d69b47be74ab464aac43d40c6fdc67",
+  "dataset_manifest_sha256": "d7bd50a154b0fd966b73477bb78efee174873f259e4494967d8573bfac45cd72",
+  "selected_seed": 2,
+  "steps_per_run": 1000000,
+  "runs": 200,
+  "python": "3.13.2",
+  "numpy": "2.3.5",
+  "wall_seconds": 661.4913280409528,
+  "sum_worker_cpu_seconds": 6009.373683,
+  "numerical_failures": []
+}
