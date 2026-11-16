@@ -1,16 +1,17 @@
-# Friday reproduction decision — 2026-11-13
+# Fixed-epsilon evidence summary — 2026-11-13
 
-**Presentation status: partial reproduction with a controlled fixed-epsilon discrepancy.**
+**Status: partial reproduction with a controlled fixed-epsilon discrepancy.**
 The zero-epsilon margin trend is supported. The positive-epsilon overlap in the
 paper's Figures 1–2 remains unreproduced on our declared inputs. No verified
 author implementation has been obtained, so no author code error has been
 established. The main theorem concerns zero epsilon and is not refuted here.
 
-## Results to use in the main presentation
+## Main results
 
 Use the frozen seed-2 dataset and shared initialization, full-batch mean logistic
 loss, beta1=.9, beta2=.99, no bias correction, and one million updates with
-eta_t=(t+1)^(-.5), t starting at zero. These are our AI-assisted experiments.
+eta_t=(t+1)^(-.5), t starting at zero. These are our own experiments, prepared
+with AI assistance and reviewed by the group.
 
 | Recurrence | Relative training L-infinity margin gap |
 |---|---:|
@@ -71,9 +72,9 @@ full differences and underflow diagnostics.
 Primary URLs and related-work distinctions are in [FOLLOWUP_SOURCES.md](FOLLOWUP_SOURCES.md).
 The independent multiclass and MNIST studies support investigating epsilon's
 effect, but do not reproduce the target experiment. Unauthenticated review
-mirrors are excluded from slide claims.
+mirrors are excluded from our claims.
 
-## Copy-ready conclusion
+## Conclusion
 
 > We reproduce the zero-epsilon max-margin trend, but do not recover the paper's
 > positive-epsilon overlap on our declared data. Independent implementations
@@ -81,8 +82,5 @@ mirrors are excluded from slide claims.
 > imitate the reported qualitative behavior, but we have no verified evidence
 > that the authors used it.
 
-Use [two-slide copy and speaker notes](reproduction_update.md)
-for integration. Keep the full audit as backup rather than expanding the main
-nine-minute presentation. The live Google Slides has not been modified by this
-update. The PR remains a draft for group review, and earlier evidence remains
-unchanged.
+A shorter summary with answers to likely questions is in
+[reproduction_update.md](reproduction_update.md). Earlier evidence is unchanged.

@@ -46,6 +46,15 @@ In the exponent sweep with ε = 0, a = 0.5 ends with the smallest gap on all ten
 datasets, while the paper's Figure 2 shows a = 0.3 as the fastest. All numbers
 come from [endpoints.json](experiments/paper50/results/2026-11-13-legend/endpoints.json).
 
+A follow-up study, [results/2026-11-13-eps-timing](experiments/paper50/results/2026-11-13-eps-timing/README.md),
+measures when ε takes over, that is, when √v falls below ε in every
+coordinate. Because v_t ≥ β2·v_(t−1) without bias correction, √v shrinks by at
+most about 0.5% per update, so ε = 1e-8 cannot take over before about 3,000
+updates, whatever the learning rate. With the legend learning rate it takes
+over at that time on all ten datasets. Over learning-rate constants from 0.03
+to 3 and exponents from 0.3 to 1, every run with ε = 1e-8 ended at least 15%
+short of the L∞ optimum.
+
 The diagnostic studies did not find the cause of the ε = 1e-8 difference.
 Common implementation conventions and other random draws did not bring the two
 Adam curves together. One-step checks at 80 and 120 digits support our
@@ -63,6 +72,7 @@ The audit notes are Markdown files next to the code.
 - [MULTIRATE.md](experiments/paper50/MULTIRATE.md) repeats the ε comparison at four learning-rate exponents and studies the late update direction.
 - [FOLLOWUP_SOURCES.md](experiments/paper50/FOLLOWUP_SOURCES.md) separates the paper's claims from our own algebra and from related work.
 - [reproduction_update.md](experiments/paper50/reproduction_update.md) gives a short summary of the four-rate results and answers to likely questions.
+- [FINAL_REPRODUCTION.md](experiments/paper50/FINAL_REPRODUCTION.md) summarizes the fixed-ε evidence, including the full long-double replays.
 
 Each results folder keeps its own README.
 
@@ -73,6 +83,8 @@ Each results folder keeps its own README.
 - [2026-11-12-posthoc](experiments/paper50/results/2026-11-12-posthoc/README.md) holds post-hoc runs that explain three differences between the first run and the paper.
 - [2026-11-12-matched](experiments/paper50/results/2026-11-12-matched/README.md) holds a rerun with c = 0.1 and a summed loss, chosen after the first run by comparison with the paper's curves. We cite it only for the order of the exponents.
 - [2026-11-13-legend](experiments/paper50/results/2026-11-13-legend/README.md) holds the main run with the legend settings.
+- [2026-11-13-eps-timing](experiments/paper50/results/2026-11-13-eps-timing/README.md) holds 200 runs that measure when ε takes over as the learning rate, ε and the dataset change.
+- [2026-11-13-literal-replay](experiments/paper50/results/2026-11-13-literal-replay/README.md) holds five million-step replays of the raw Adam recurrence in C++ long double, without rescaling, written independently by a second group member.
 
 ## Two-dimensional example
 
@@ -127,6 +139,12 @@ The checks cover less than a full rerun.
 - The four-rate checks recompute the margins, losses and ε diagnostics at all 732 saved states. First moments are checked for shape and finite values but are not replayed. The ε crossing times were logged during the runs and are not replayed.
 - The `INVALID_RECURRENCE` control in the diagnosis and four-rate studies is deliberately wrong. It is not a fix for the optimizer.
 
+The long-double replays have their own read-only check,
+`python3 experiments/paper50/literal_replay.py verify`. It needs x86-64 native
+extended precision, so it stops with "Verifier requires native extended
+precision/range" on Apple Silicon, where NumPy's long double is the same as a
+double.
+
 The main run has no separate verifier. Its seed-2 values agree with the
 verified alignment run at the reported precision (0.657% and 31.512%). The next
 section shows how to rerun it in full.
@@ -157,6 +175,20 @@ macOS on 2026-11-15, with Python 3.13.2 and the pinned packages, reproduced all
 reproduce the study. The commands for the other studies are in
 [experiments/paper50/README.md](experiments/paper50/README.md) and in each audit
 file. The `artifacts/` folder is ignored by git.
+
+## Figures in the report
+
+The three figures of the group's report are drawn only from results saved in
+this repository: the two-point example, the seed-2 runs of the main run and the
+ε-takeover study. Matplotlib is needed.
+
+```sh
+python3 docs/report/figures/make_figures.py
+```
+
+The script writes `docs/report/figures/fig1_geometry`, `fig2_margins` and
+`fig3_epsilon` as PDF and PNG. A rerun with the pinned packages gives the same
+bytes as the saved files.
 
 ## AI assistance
 
