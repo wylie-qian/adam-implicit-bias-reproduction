@@ -27,28 +27,35 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")
 OUT = os.path.join(ROOT, "docs", "report", "figures")
 P50 = os.path.join(ROOT, "experiments", "paper50", "results")
 
-# Same colours as the slides: GD blue, Adam (eps = 0) orange, Adam (eps > 0) purple.
-# GDM is a slightly darker light blue than on the slides, for at least 3:1 contrast on white.
-# GD and Adam (eps > 0) have almost the same grey level, so they are also told apart by direct labels.
-C = {"gd": "#2B5797", "gdm": "#6A93C8", "adam0": "#C0601F", "adameps": "#6C3D91", "grey": "#8A8F99"}
+# Slate for the baselines (GD dark, GDM light, 3:1 contrast on white) and two accents for the two Adam runs:
+# vermilion for eps = 0, steel blue for eps = 1e-8. The two accents have a similar grey level, so the
+# panels also name them with direct labels.
+C = {"gd": "#475569", "gdm": "#8796AB", "adam0": "#E4572E", "adameps": "#2E86AB", "grey": "#8A8F99"}
 LABEL = {"gd": "GD", "gdm": "GDM", "adam0": r"Adam, $\varepsilon=0$", "adameps": r"Adam, $\varepsilon=10^{-8}$"}
 
-# Serif text and STIX maths, to match the Times body text of the NeurIPS template.
+# Sans-serif text with matching sans maths (Arial; DejaVu Sans where Arial is missing).
 plt.rcParams.update({
-    "font.family": "serif",
-    "font.serif": ["Times New Roman", "Times", "STIXGeneral"],
-    "mathtext.fontset": "stix",
-    "font.size": 7.5,
-    "axes.labelsize": 7.5,
-    "axes.titlesize": 7.5,
+    "font.family": "sans-serif",
+    "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
+    "mathtext.fontset": "custom",
+    "mathtext.rm": "Arial",
+    "mathtext.it": "Arial:italic",
+    "mathtext.bf": "Arial:bold",
+    "mathtext.fallback": "stixsans",
+    "font.size": 7,
+    "axes.labelsize": 7,
+    "axes.titlesize": 7,
     "legend.fontsize": 6.5,
-    "xtick.labelsize": 6.5,
-    "ytick.labelsize": 6.5,
-    "axes.linewidth": 0.6,
-    "axes.edgecolor": "#333333",
-    "axes.labelcolor": "#222222",
-    "xtick.color": "#333333",
-    "ytick.color": "#333333",
+    "xtick.labelsize": 6.3,
+    "ytick.labelsize": 6.3,
+    "axes.linewidth": 0.55,
+    "axes.edgecolor": "#4A4A4A",
+    "axes.labelcolor": "#262626",
+    "axes.titleweight": "normal",
+    "xtick.color": "#4A4A4A",
+    "ytick.color": "#4A4A4A",
+    "xtick.labelcolor": "#404040",
+    "ytick.labelcolor": "#404040",
     "xtick.major.width": 0.6,
     "ytick.major.width": 0.6,
     "xtick.minor.width": 0.4,
@@ -62,7 +69,7 @@ plt.rcParams.update({
     "axes.grid": True,
     "axes.grid.axis": "y",
     "axes.axisbelow": True,
-    "grid.color": "#E3E5E8",
+    "grid.color": "#ECEEF1",
     "grid.linewidth": 0.5,
     "legend.frameon": False,
     "lines.solid_capstyle": "round",
@@ -71,9 +78,20 @@ plt.rcParams.update({
     "savefig.dpi": 300,
 })
 TEXTWIDTH = 5.5  # inches, NeurIPS text width
-LW = 1.2         # data lines
-REF = dict(color="#55595F", ls=(0, (4, 2.5)), lw=0.6)  # reference lines (optimum, epsilon)
-SMALL = 6.5      # in-plot labels
+LW = 1.3         # data lines
+REF = dict(color="#7A7F87", ls=(0, (3.5, 2.5)), lw=0.6)  # reference lines (optimum, epsilon)
+SMALL = 6.3      # in-plot labels
+MUTED = "#6B7078"  # annotation text
+
+
+def tint(hex_colour, f):
+    """Mix a colour with white; f = 0 keeps it, f = 1 gives white."""
+    rgb = [int(hex_colour[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#" + "".join(f"{round(c + (255 - c) * f):02X}" for c in rgb)
+
+
+def end_dot(ax, x, y, colour):
+    ax.plot([x], [y], "o", ms=2.6, color=colour, mec="white", mew=0.5, zorder=5, clip_on=False)
 
 
 def read_csv(path):
@@ -94,7 +112,8 @@ def col(rows, name, skip_empty=True):
 
 
 def panel_label(ax, s, x=-0.02, y=1.04):
-    ax.text(x, y, s, transform=ax.transAxes, ha="right", va="bottom", fontweight="bold", fontsize=8)
+    ax.text(x, y, s, transform=ax.transAxes, ha="right", va="bottom", fontweight="bold", fontsize=7.5,
+            color="#1A1A1A")
 
 
 def log_axis(ax, axis="x"):
@@ -134,8 +153,8 @@ def fig1():
     n = math.hypot(*g)
     t = [i / 200 * 2 * math.pi for i in range(201)]
     sq_x, sq_y = [-1, 1, 1, -1, -1], [-1, -1, 1, 1, -1]
-    a.fill(sq_x, sq_y, color="#FBF1EA", lw=0)                                   # pale orange box
-    a.fill([math.cos(s) for s in t], [math.sin(s) for s in t], color="#EAF0F8", lw=0)  # pale blue ball
+    a.fill(sq_x, sq_y, color=tint(C["adam0"], 0.9), lw=0)                                     # L-inf box
+    a.fill([math.cos(s) for s in t], [math.sin(s) for s in t], color=tint(C["gd"], 0.88), lw=0)  # L2 ball
     a.plot(sq_x, sq_y, color=C["adam0"], lw=0.9)
     a.plot([math.cos(s) for s in t], [math.sin(s) for s in t], color=C["gd"], lw=0.9)
     kw = dict(arrowstyle="-|>", mutation_scale=7, lw=1.1, shrinkA=0, shrinkB=0)
@@ -166,8 +185,8 @@ def fig1():
         steps = col(rows, "step")
         ang = [math.degrees(math.atan2(float(r["w2"]), float(r["w1"]))) for r in rows]
         b.plot(steps, ang, color=C[key], lw=LW)
-    b.text(1.2, l2_dir + 0.4, r"max $L_2$-margin direction ($33.7^\circ$)", color=C["gd"], va="bottom", fontsize=SMALL)
-    b.text(1.2, linf_dir + 0.4, r"max $L_\infty$-margin direction ($45^\circ$)", color=C["adam0"], va="bottom",
+    b.text(1.2, l2_dir + 0.4, "max $L_2$-margin direction (33.7°)", color=C["gd"], va="bottom", fontsize=SMALL)
+    b.text(1.2, linf_dir + 0.4, "max $L_\\infty$-margin direction (45°)", color=C["adam0"], va="bottom",
            fontsize=SMALL)
     b.text(2e3, 36.6, "GD", color=C["gd"], ha="center", va="top", fontsize=SMALL)
     b.text(30, 43.5, r"Adam, $\varepsilon=0$", color=C["adam0"], ha="center", va="top", fontsize=SMALL)
@@ -207,6 +226,7 @@ def fig2():
                 ax.plot(s, ratio, color=C[key], lw=0.9, ls=(0, (2.5, 1.8)), label=LABEL[key])
             else:
                 ax.plot(s, ratio, color=C[key], lw=LW, label=LABEL[key])
+                end_dot(ax, s[-1], ratio[-1], C[key])
         ends[key] = (1 - float(rows[-1]["relative_gap_linf"]), 1 - float(rows[-1]["relative_gap_l2"]))
     for ax, title in zip(axes, (r"$L_\infty$ margin $q_\infty(w_t)/\gamma_\infty$", r"$L_2$ margin $q_2(w_t)/\gamma_2$")):
         ax.set_xscale("log")
@@ -243,10 +263,15 @@ def fig3():
 
     fig, (a, b, c) = new_figure(1.47, 3, [1, 1, 1.05])
 
-    # (a) L-inf gap, seed 2
-    a.axvline(alls, color=C["adameps"], ls=(0, (1, 1.5)), lw=0.9)
+    # (a) L-inf gap, seed 2; the pale band marks the updates after eps has taken over
+    for ax in (a, b):
+        ax.axvspan(alls, 1e6, color=tint(C["adameps"], 0.93), lw=0, zorder=0)
+        ax.axvline(alls, color=C["adameps"], ls=(0, (1, 1.5)), lw=0.8)
     for rows, key in ((r0, "adam0"), (r1, "adameps")):
-        a.plot(col(rows, "step"), [100 * v for v in col(rows, "relative_gap_linf")], color=C[key], lw=LW)
+        s = col(rows, "step")
+        y = [100 * v for v in col(rows, "relative_gap_linf")]
+        a.plot(s, y, color=C[key], lw=LW)
+        end_dot(a, s[-1], y[-1], C[key])
     a.text(alls / 1.35, 330, "$\\varepsilon$ takes over\n($t$ = %s)" % format(alls, ","), color=C["adameps"],
            fontsize=SMALL, ha="right", va="center", linespacing=1.15)
     a.text(1.5e5, 52, r"$\varepsilon=10^{-8}$", color=C["adameps"], fontsize=SMALL, ha="center", va="bottom")
@@ -272,10 +297,9 @@ def fig3():
     b.plot(lb_s, [v1 * beta2 ** ((t - 1) / 2) for t in lb_s], color=C["grey"], lw=3.2, alpha=0.35,
            solid_capstyle="butt")
     b.axhline(eps, **REF)
-    b.axvline(alls, color=C["adameps"], ls=(0, (1, 1.5)), lw=0.9)
     b.plot(s1, mx, color=C["adameps"], lw=LW)
     b.text(1.5, eps * 2.2, r"$\varepsilon=10^{-8}$", color=REF["color"], fontsize=SMALL, va="bottom")
-    b.annotate("lower bound (5)", xy=(4.2e3, 3e-11), xytext=(1.6, 1.5e-12), color="#6B7078", fontsize=SMALL,
+    b.annotate("lower bound (5)", xy=(4.2e3, 3e-11), xytext=(1.6, 1.5e-12), color=MUTED, fontsize=SMALL,
                ha="left", va="center",
                arrowprops=dict(arrowstyle="-", color="#9DA2AA", lw=0.6, shrinkA=1, shrinkB=1))
     b.set_xscale("log")
@@ -292,7 +316,8 @@ def fig3():
     # (c) final gap against the learning-rate constant c, ten datasets
     e = [r for r in json.load(open(os.path.join(base, "endpoints.json"))) if r["suite"] == "c"]
     cs = sorted({r["c"] for r in e})
-    for epsv, key, dx in ((0.0, "adam0", 0.94), (1e-8, "adameps", 1.06)):
+    # Median over the ten datasets as a line with points; the band is the min-max range.
+    for epsv, key in ((0.0, "adam0"), (1e-8, "adameps")):
         med, lo, hi = [], [], []
         for cv in cs:
             g = [100 * r["relative_gap_linf"] for r in e if r["c"] == cv and r["epsilon"] == epsv]
@@ -300,16 +325,13 @@ def fig3():
             med.append(statistics.median(g))
             lo.append(min(g))
             hi.append(max(g))
-        xs = [cv * dx for cv in cs]
-        c.errorbar(xs, med, yerr=[[m - l for m, l in zip(med, lo)], [h - m for m, h in zip(med, hi)]],
-                   fmt="o", ms=3, mec="white", mew=0.4, color=C[key], ecolor=C[key], elinewidth=0.8,
-                   capsize=1.6, capthick=0.8)
-    # Direct labels between the first two columns, clear of every error bar.
-    c.text(0.055, 52, r"$\varepsilon=10^{-8}$", color=C["adameps"], fontsize=SMALL, ha="center", va="bottom")
-    c.text(0.055, 2.6, r"$\varepsilon=0$", color=C["adam0"], fontsize=SMALL, ha="center", va="bottom")
+        c.fill_between(cs, lo, hi, color=C[key], alpha=0.16, lw=0)
+        c.plot(cs, med, "-o", color=C[key], lw=1.0, ms=3.2, mec="white", mew=0.5)
+    c.text(0.04, 42, r"$\varepsilon=10^{-8}$", color=C["adameps"], fontsize=SMALL, ha="left", va="bottom")
+    c.text(0.04, 5.0, r"$\varepsilon=0$", color=C["adam0"], fontsize=SMALL, ha="left", va="bottom")
     c.set_xscale("log")
     c.set_yscale("log")
-    c.set_xlim(0.019, 4.7)
+    c.set_xlim(0.022, 4.1)
     c.set_ylim(0.3, 100)
     c.set_xticks(cs)
     c.set_xticklabels([f"{v:g}" for v in cs])
