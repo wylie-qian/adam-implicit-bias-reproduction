@@ -28,7 +28,9 @@ OUT = os.path.join(ROOT, "docs", "report", "figures")
 P50 = os.path.join(ROOT, "experiments", "paper50", "results")
 
 # Same colours as the slides: GD blue, Adam (eps = 0) orange, Adam (eps > 0) purple.
-C = {"gd": "#2B5797", "gdm": "#7FA7D6", "adam0": "#C0601F", "adameps": "#6C3D91", "grey": "#8A8F99"}
+# GDM is a slightly darker light blue than on the slides, for at least 3:1 contrast on white.
+# GD and Adam (eps > 0) have almost the same grey level, so they are also told apart by direct labels.
+C = {"gd": "#2B5797", "gdm": "#6A93C8", "adam0": "#C0601F", "adameps": "#6C3D91", "grey": "#8A8F99"}
 LABEL = {"gd": "GD", "gdm": "GDM", "adam0": r"Adam, $\varepsilon=0$", "adameps": r"Adam, $\varepsilon=10^{-8}$"}
 
 # Serif text and STIX maths, to match the Times body text of the NeurIPS template.
@@ -105,10 +107,19 @@ def log_axis(ax, axis="x"):
     target.set_minor_formatter(matplotlib.ticker.NullFormatter())
 
 
+def new_figure(height, ncols, width_ratios, wspace=0.04, **kw):
+    """Figure at the exact text width, so text keeps its nominal size when LaTeX places it at \\linewidth.
+    Heights equal the printed heights of the earlier, cropped versions, so the page layout does not move."""
+    fig, axes = plt.subplots(1, ncols, figsize=(TEXTWIDTH, height), layout="constrained",
+                             gridspec_kw={"width_ratios": width_ratios}, **kw)
+    fig.get_layout_engine().set(w_pad=0.03, h_pad=0.03, wspace=wspace)
+    return fig, axes
+
+
 def save(fig, name):
-    # No creation date in the PDF, so a rerun gives the same bytes.
-    fig.savefig(os.path.join(OUT, f"{name}.pdf"), bbox_inches="tight", pad_inches=0.02, metadata={"CreationDate": None})
-    fig.savefig(os.path.join(OUT, f"{name}.png"), bbox_inches="tight", pad_inches=0.02)
+    # Page size kept as set (no "tight" crop). No creation date in the PDF, so a rerun gives the same bytes.
+    fig.savefig(os.path.join(OUT, f"{name}.pdf"), metadata={"CreationDate": None})
+    fig.savefig(os.path.join(OUT, f"{name}.png"))
     plt.close(fig)
     print("wrote", name)
 
@@ -116,7 +127,7 @@ def save(fig, name):
 # ---------------------------------------------------------------- Figure 1
 def fig1():
     """(a) steepest-descent steps in the L2 ball and the L-inf box; (b) our 2D runs."""
-    fig, (a, b) = plt.subplots(1, 2, figsize=(TEXTWIDTH, 1.65), gridspec_kw={"width_ratios": [1, 1.9]})
+    fig, (a, b) = new_figure(1.56, 2, [1, 1.9])
 
     # (a) geometry for g = (1, 0.05), as on slide 3
     g = (1.0, 0.05)
@@ -168,7 +179,6 @@ def fig1():
     b.set_xlabel("update $t$")
     b.set_ylabel(r"angle of $w_t$ (degrees)")
     panel_label(b, "(b)")
-    fig.tight_layout(w_pad=1.0)
     save(fig, "fig1_geometry")
 
 
@@ -184,7 +194,7 @@ def fig2():
         "adam0": "seed-02_adam_eps-0_a-0.5",
         "adameps": "seed-02_adam_eps-1e-08_a-0.5",
     }
-    fig, axes = plt.subplots(1, 2, figsize=(TEXTWIDTH, 1.7), sharex=True, sharey=True)
+    fig, axes = new_figure(1.51, 2, [1, 1], wspace=0.06, sharex=True, sharey=True)
     ends = {}
     for ax in axes:
         ax.axhline(1.0, **REF)
@@ -209,11 +219,13 @@ def fig2():
         ax.tick_params(axis="y", labelleft=True)
     axes[0].set_ylabel("margin / optimum")
     axes[1].text(1.5, 0.985, "optimum", color=REF["color"], fontsize=SMALL, ha="left", va="top")
-    axes[0].legend(loc="upper left", bbox_to_anchor=(0.0, 0.9), handlelength=1.8, labelspacing=0.35,
-                   borderaxespad=0.2)
+    # Direct labels next to the curves in (a), instead of a legend; (b) uses the same colours.
+    lab = dict(fontsize=SMALL, ha="center")
+    axes[0].text(1.0e3, 0.84, r"Adam, $\varepsilon=0$", color=C["adam0"], va="bottom", **lab)
+    axes[0].text(1.5e5, 0.705, r"Adam, $\varepsilon=10^{-8}$", color=C["adameps"], va="bottom", **lab)
+    axes[0].text(1.5e5, 0.545, "GD and GDM", color=C["gd"], va="top", **lab)
     panel_label(axes[0], "(a)")
     panel_label(axes[1], "(b)")
-    fig.tight_layout(w_pad=1.5)
     save(fig, "fig2_margins")
     return ends
 
@@ -229,7 +241,7 @@ def fig3():
     ev = {e["kind"]: e["row"]["step"] for e in summ["events"] if e["threshold"] == eps}
     first, alls = ev["first"], ev["all"]
 
-    fig, (a, b, c) = plt.subplots(1, 3, figsize=(TEXTWIDTH, 1.65), gridspec_kw={"width_ratios": [1, 1, 1.05]})
+    fig, (a, b, c) = new_figure(1.47, 3, [1, 1, 1.05])
 
     # (a) L-inf gap, seed 2
     a.axvline(alls, color=C["adameps"], ls=(0, (1, 1.5)), lw=0.9)
@@ -307,7 +319,6 @@ def fig3():
     c.set_xlabel(r"constant $c$ in $\eta_t=c\,t^{-1/2}$")
     c.set_ylabel(r"final $L_\infty$ gap (%)")
     panel_label(c, "(c)")
-    fig.tight_layout(w_pad=0.6)
     save(fig, "fig3_epsilon")
     return first, alls
 
