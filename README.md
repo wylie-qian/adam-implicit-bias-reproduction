@@ -15,11 +15,11 @@ chosen by us.
 The result is a partial qualitative reproduction. Adam without ε approaches the
 L∞ max-margin direction, as the paper reports. Adam with the default ε = 1e-8
 stays far from it, while the paper's Figure 1 shows the curves with and without
-ε close together. We do not recreate the authors' random samples or their exact
-curves.
+ε close together. This does not contradict the paper's theorem, which assumes
+ε = 0. We do not recreate the authors' random samples or their exact curves.
 
 The main run, which the group presented, is [results/2026-11-13-legend](experiments/paper50/results/2026-11-13-legend/README.md).
-It uses the learning rates printed in the legends of Figures 1 and 2 (Adam
+It uses the learning rates that are printed in the legends of Figures 1 and 2 (Adam
 η_t = t^-0.5, GD and GDM η = 0.1) and the averaged logistic loss of
 equation 3.1. Each run has 10⁶ full-batch updates on 50×50 Gaussian data. For
 the learning rates, the only setting we chose is that the step count t starts
@@ -40,8 +40,8 @@ selected seed-2 data are as follows.
 | Adam, ε = 0 | 0.657% | 17.669% |
 | Adam, ε = 1e-8 | 31.512% | 5.716% |
 
-On all ten datasets, Adam with ε = 0 ends 0.50–1.29% short of the L∞ optimum,
-and nine of the ten are within 1%. Adam with ε = 1e-8 ends 24.19–42.87% short.
+On all ten datasets, the L∞ gap of Adam with ε = 0 is 0.50–1.29%, and nine of
+the ten gaps are below 1%. With ε = 1e-8, the gap is 24.19–42.87%.
 In the exponent sweep with ε = 0, a = 0.5 ends with the smallest gap on all ten
 datasets, while the paper's Figure 2 shows a = 0.3 as the fastest. All numbers
 come from [endpoints.json](experiments/paper50/results/2026-11-13-legend/endpoints.json).
@@ -52,8 +52,8 @@ coordinate. Because v_t ≥ β2·v_(t−1) without bias correction, √v shrinks
 most about 0.5% per update, so ε = 1e-8 cannot take over before about 3,000
 updates, whatever the learning rate. With the legend learning rate it takes
 over at that time on all ten datasets. Over learning-rate constants from 0.03
-to 3 and exponents from 0.3 to 1, every run with ε = 1e-8 ended at least 15%
-short of the L∞ optimum.
+to 3 and exponents from 0.3 to 1, every run with ε = 1e-8 ended with an L∞ gap
+of at least 15%.
 
 The diagnostic studies did not find the cause of the ε = 1e-8 difference.
 Common implementation conventions and other random draws did not bring the two
@@ -76,7 +76,7 @@ The audit notes are Markdown files next to the code.
 
 Each results folder keeps its own README.
 
-- [2026-11-05](experiments/paper50/results/2026-11-05/README.md) is the first run under the frozen protocol, with a = 0.7 as the main Adam setting.
+- [2026-11-05](experiments/paper50/results/2026-11-05/README.md) is the first run under the frozen protocol, with a = 0.7 as its main Adam setting. The 2026-11-13-legend run supersedes it.
 - [2026-11-12-alignment](experiments/paper50/results/2026-11-12-alignment/README.md) holds nine seed-2 runs with the Figure 1 learning rates and an independent unscaled Adam check.
 - [2026-11-12-diagnosis](experiments/paper50/results/2026-11-12-diagnosis/README.md) holds 56 convention and randomness controls and high-precision one-step checks.
 - [2026-11-12-multirate](experiments/paper50/results/2026-11-12-multirate/README.md) holds 12 runs at four exponents with their saved moment states.

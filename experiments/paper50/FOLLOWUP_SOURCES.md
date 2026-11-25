@@ -100,6 +100,6 @@ of an author implementation error. The model, bias correction, beta2 and other
 settings differ. Its deep-model learning-rate claims are not transferred to our
 linear model.
 
-The source audit record is retained with the
-[full literal replay](primary_sources_20261113.json).
+The source audit record is retained in
+[primary_sources_20261113.json](primary_sources_20261113.json).
 No author was contacted and no external message was sent.

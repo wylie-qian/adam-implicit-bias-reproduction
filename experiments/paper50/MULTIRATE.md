@@ -1,5 +1,8 @@
 # Four-rate follow-up — 2026-11-12
 
+The final result is in [results/2026-11-13-legend](results/2026-11-13-legend/README.md).
+This file records a diagnostic study.
+
 **Status: partial qualitative reproduction; the fixed-positive-epsilon overlap remains unresolved.** We completed 12 additional million-update conditions on the frozen seed-2 dataset: four learning-rate exponents crossed with three recurrences. Three a=.5 conditions deliberately repeat the preceding audit and match its final weights exactly. These are AI-assisted independent experiments, not recovered author data or author code. The matrix was fixed before this round of production, informed by earlier diagnostics; it was not externally preregistered.
 
 ## Result and scope

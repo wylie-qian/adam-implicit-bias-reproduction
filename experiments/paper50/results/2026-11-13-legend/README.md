@@ -1,7 +1,7 @@
 # Figure-legend rerun — 2026-11-13
 
-**Partial qualitative replication.** This is the main run reported in the
-[root README](../../../../README.md). It uses the learning rates printed in the
+**Partial qualitative reproduction.** This is the main run reported in the
+[root README](../../../../README.md). It uses the learning rates that are printed in the
 paper's Figure 1 and Figure 2 legends and the averaged loss of eq. 3.1; see
 [protocol_legend.json](../../protocol_legend.json). The first run
 ([2026-11-05](../2026-11-05/README.md)) and the c = 0.1 / summed-loss variant
@@ -46,8 +46,11 @@ The only setting the paper does not state is where the step count starts.
   ([2026-11-12-matched](../2026-11-12-matched/README.md)), so the order depends
   on the learning-rate constant.
 - ε dominance on seed 2 (a = 0.5): first coordinate by recorded checkpoint
-  2,791, all 50 by 3,118. On the ten datasets all 50 coordinates are dominated
-  by checkpoints 3,000–3,118. These are checkpoint bounds.
+  2,791, all 50 coordinates by checkpoint 3,118. On the ten datasets all 50
+  coordinates are dominated by checkpoints 3,000–3,118. These are checkpoint
+  bounds. The exact values from checks after every update are 2,705 and 3,075
+  on seed 2 and 2,963–3,075 for all 50 coordinates on the ten datasets; see
+  [2026-11-13-eps-timing](../2026-11-13-eps-timing/README.md).
 - Other ε at a = 0.5: 1e-12 → 28.021%, 1e-4 → 39.877%.
 - Adam ε = 0 on seed 2 ends at an L∞ margin of 1.43401 against the optimum
   1.44349 (ratio 0.993).

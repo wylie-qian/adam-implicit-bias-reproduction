@@ -55,7 +55,7 @@ mkdir new-out && python3 -I diag.py new-out jobs.json 9
 | Question | Result |
 |---|---|
 | Adam ε = 0 with the figure-1 learning rate | Seed 2: 0.66% short of the L∞ optimum after 10⁶ updates (frozen a = 0.7: 2.61%). Ten datasets: 0.50–1.29%, nine within 1%. |
-| GD with the figure-1 learning rate | Seed 2: L∞ margin 35.4% short (paper figure 1 ≈ 36%); L2 margin 10.0% short. |
+| GD with the figure-1 learning rate | Seed 2: L∞ margin 35.4% short (paper figure 1 about 36–37%, read by eye); L2 margin 10.0% short. |
 | Adam ε = 1e-8 with the figure-1 learning rate | Seed 2: levels off at 31.5% short from about 10⁴ updates; min √v about 1e-13 at 10⁶. |
 | Order of the exponents, c = 1 | a = 0.5 fastest on 10 of 10 datasets; a = 0.3 never fastest. |
 | Order of the exponents, c = 0.1 or 0.03 | 0.3 < 0.5 < 0.7 < 1 on 10 of 10 datasets, the order in the paper's figure 2. c = 0.3: a = 0.3 fastest on 6 of 10. |

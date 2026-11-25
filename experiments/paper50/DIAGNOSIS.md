@@ -1,5 +1,8 @@
 # Fixed-epsilon discrepancy: second diagnostic audit
 
+The final result is in [results/2026-11-13-legend](results/2026-11-13-legend/README.md).
+This file records a diagnostic study.
+
 **The positive-epsilon overlap is still not reproduced.** After the Figure 1
 learning-rate correction, we ran **56 additional million-step conditions**:
 10 implementation-convention controls and 46 paired data/initialization/RNG

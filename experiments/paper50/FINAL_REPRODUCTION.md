@@ -1,5 +1,10 @@
 # Fixed-epsilon evidence summary — 2026-11-13
 
+The final reproduction result and its numbers are in
+[results/2026-11-13-legend](results/2026-11-13-legend/README.md) and in the
+[top-level README](../../README.md). This file collects the evidence about the
+fixed-ε difference.
+
 **Status: partial reproduction with a controlled fixed-epsilon discrepancy.**
 The zero-epsilon margin trend is supported. The positive-epsilon overlap in the
 paper's Figures 1–2 remains unreproduced on our declared inputs. No verified

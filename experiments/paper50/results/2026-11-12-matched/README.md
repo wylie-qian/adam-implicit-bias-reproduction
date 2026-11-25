@@ -1,6 +1,6 @@
 # Paper-matched rerun — 2026-11-12
 
-**Partial qualitative replication; no longer the main run.** From 2026-11-13
+**Partial qualitative reproduction; no longer the main run.** From 2026-11-13
 the main run is the [figure-legend rerun](../2026-11-13-legend/README.md),
 which uses the legends' learning rates and the averaged loss literally. This
 variant is cited only for the order of the exponents. Its
@@ -69,7 +69,7 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 python3 experiments/paper50/run_matched.py --output artifacts/paper50-matched-new --jobs 9
 ```
 
-The rerun takes about 4 minutes on 10 workers. On 2026-11-13 `run_matched.py`
+The rerun takes about 4 minutes on 9 workers. On 2026-11-13 `run_matched.py`
 gained a `--protocol` option (default `protocol_matched.json`) and reads the
 loss scale from the protocol; with the default it gives the same arithmetic
 (identical weights in a 3,000-update regression check), but its hash differs

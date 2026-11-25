@@ -57,11 +57,11 @@ paper's curves, is [results/2026-11-12-matched](results/2026-11-12-matched/READM
 | Adam moment equations | paper_setting | m=.9m+.1g, v=.99v+.01g²; epsilon outside sqrt; no bias correction in equations 3.2–3.4 |
 | Adam beta values and epsilon comparison | paper_setting | beta1=.9, beta2=.99; epsilon=0 or 1e-8 (§5) |
 | GDM momentum | paper_setting / team_choice | .9 is from §5; normalized EMA convention m=.9m+.1g is our declared choice, since §5 does not specify the recurrence |
-| Primary Adam step schedule | team_choice | eta=(t+2)^(-.7), c=1, t begins at zero. Exponent .7 appears in Figure 2; this differs from Figure 1's explicit t^(-.5) legend |
+| Primary Adam step schedule (historical, first run only) | team_choice | eta=(t+2)^(-.7), c=1, t begins at zero. Exponent .7 appears in Figure 2; this differs from Figure 1's explicit t^(-.5) legend |
 | GD/GDM step sizes | team_choice | Historical choice eta=.5/L, L=||X||_spectral²/(4n), fixed independently for each candidate; Figure 1 explicitly uses eta=.1 |
 | Iterations | paper_setting | 1,000,000 updates per primary run (§5) |
 | All-ten training | deviation / extension | Keep and train all ten, while paper shows its selected data set only |
-| Rate sweep exponents | paper_setting / team_choice | .3,.5,.7,1 and c=1 from Figure 2 legends; the t+2 convention is ours |
+| Rate sweep exponents | paper_setting / team_choice | .3,.5,.7,1 and c=1 from Figure 2 legends; the t+2 convention is ours and was used only in the first run |
 | Additional epsilon levels | deviation / extension | 1e-12 and 1e-4 on selected data, planned in protocol before primary results |
 | Arithmetic | team_choice | float64, algebraically rescaled Adam moments to avoid numerical underflow; equivalent real recurrence, no hidden epsilon or denominator clamp |
 | Reference solvers | team_choice | SciPy HiGHS LP and SLSQP QP, independently checked primal/dual/KKT residuals |

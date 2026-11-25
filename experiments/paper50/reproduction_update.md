@@ -1,6 +1,7 @@
 # Reproduction summary, questions and answers
 
-Prepared on 2026-11-12. This note summarizes the corrected Figure 1 comparison
+Prepared on 2026-11-12, before the main run. The final result is in
+[results/2026-11-13-legend](results/2026-11-13-legend/README.md). This note summarizes the corrected Figure 1 comparison
 and the four-rate diagnostics in short form. All results below are **our own
 independent experiments**, prepared with AI assistance and reviewed by the
 group. They are not the authors' code or data.
